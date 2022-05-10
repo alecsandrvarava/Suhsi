@@ -1,0 +1,221 @@
+.popup {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	top: 0;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+	overflow-y: auto;
+	overflow-x: hidden;
+	transition: 0.2s;
+	z-index: 50;
+	&__area {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+	&.open {
+		opacity: 1;
+		visibility: visible;
+	}
+	&__close {
+		font-size: 34px;
+		color: $color-white;
+		transition: 0.1s;
+		padding: 10px;
+		position: absolute;
+		top: -50px;
+		right: -10px;
+		&:hover {
+			transform: scale(0.9);
+			font-weight: 700;
+		}
+		&:active {
+			transform: scale(1);
+			font-weight: 700;
+		}
+	}
+	&__body {
+		min-height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 30px;
+		// @media (max-width: 767px) {
+		// 	align-items: flex-start;
+		// 	margin-top: 100px;
+		// }
+	}
+
+	&__content {
+		background-color: rgba(255, 255, 255, 0.9);
+		border-radius: 44px;
+		color: $color-black;
+		max-width: 1100px;
+		padding: 50px 15px;
+		position: relative;
+		@media (max-width: 767px) {
+			padding: 25px 10px;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			background-color: rgba(86, 32, 0, 1);
+			border-radius: 44px;
+			width: 104%;
+			height: 110%;
+			left: -2%;
+			top: -5%;
+			z-index: -1;
+			@media (max-width: 767px) {
+				width: 106%;
+				height: 106%;
+				left: -3%;
+				top: -3%;
+			}
+		}
+	}
+
+	&__close {
+	}
+
+	&__form {
+	}
+
+	&__form-items {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -10px;
+		margin-bottom: 20px;
+		align-items: center;
+		@media (max-width: 992px) {
+			margin-bottom: 30px;
+		}
+		@media (max-width: 767px) {
+			flex-direction: column;
+			margin-bottom: 20px;
+			margin: 0px;
+			align-items: stretch;
+		}
+	}
+}
+.popup-items {
+	&__item {
+		flex: 1 1 50%;
+		padding: 0 10px;
+		@media (max-width: 992px) {
+		}
+		@media (max-width: 767px) {
+			flex: 1 1 100%;
+			margin-bottom: 20px;
+			padding: 0px;
+		}
+		& p {
+			font-weight: 300;
+			font-size: 22px;
+			line-height: 32px;
+			color: $color-black;
+			width: 100%;
+			text-align: center;
+
+			@media (max-width: 992px) {
+				font-size: 18px;
+				line-height: 22px;
+				margin-bottom: 0px;
+				width: 100%;
+			}
+			@media (max-width: 767px) {
+				width: 100%;
+				font-size: 14px;
+				line-height: 22px;
+				margin-bottom: 0px;
+			}
+		}
+		& h3 {
+			font-weight: 500;
+			font-size: 40px;
+			line-height: 58px;
+			color: $color-black;
+			margin-bottom: 30px;
+			text-align: center;
+			@media (max-width: 992px) {
+				line-height: 50px;
+				margin-bottom: 20px;
+			}
+			@media (max-width: 767px) {
+				font-size: 28px;
+				line-height: 32px;
+			}
+		}
+	}
+
+	&__button {
+		display: flex;
+		justify-content: center;
+		& button {
+			font-weight: 600;
+			font-size: 14.4702px;
+			line-height: 18px;
+			text-align: center;
+			color: $color-white;
+			background: linear-gradient(90deg, #eb9562 0%, #e0cfa7 148.54%);
+			box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+			border-radius: 31px;
+			padding: 20px 70px;
+			&:hover {
+				transition: 1.2s;
+				background: linear-gradient(90deg, #b1653a 0%, #a18c5c 148.54%);
+			}
+			&:active {
+				background: linear-gradient(90deg, #eb9562 0%, #e0cfa7 148.54%);
+			}
+		}
+	}
+}
+.popup-item {
+	&__input {
+		max-width: 550px;
+		border: 1px solid rgba(0, 0, 0, 0.6);
+		margin-bottom: 10px;
+		@media (max-width: 992px) {
+		}
+		@media (max-width: 768px) {
+			max-width: 100%;
+		}
+		& input {
+			font-weight: 400;
+			width: 100%;
+			padding: 10px 10px;
+			color: $color-black;
+			font-weight: 300;
+			font-size: 18px;
+			line-height: 22px;
+			color: $color-black;
+			background-color: transparent;
+			@media (max-width: 992px) {
+				padding: 5px 5px;
+				font-size: 14px;
+			}
+			@media (max-width: 768px) {
+				padding: 5px 5px;
+				font-size: 14px;
+			}
+			&::placeholder {
+				color: $color-black;
+				font-weight: 300;
+				font-size: 21px;
+				@media (max-width: 992px) {
+					font-size: 14px;
+				}
+				@media (max-width: 768px) {
+					font-size: 12px;
+					line-height: 22px;
+				}
+			}
+		}
+	}
+}

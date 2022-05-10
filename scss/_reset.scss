@@ -1,0 +1,150 @@
+@import "var";
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	overflow-anchor: none;
+}
+*,
+*:before,
+*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,
+:active {
+	outline: none;
+}
+a:focus,
+a:active {
+	outline: none;
+}
+nav,
+footer,
+header,
+aside {
+	display: block;
+}
+html,
+body {
+	font-family: $font-body;
+	color: $color-black;
+	height: 100%;
+	width: 100%;
+	line-height: 1;
+	font-size: 18px;
+	font-weight: 400;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	@media (max-width: 1400px) {
+		font-size: 16px;
+	}
+}
+body.lock-padding {
+	overflow: hidden;
+	padding-right: 17px;
+}
+body.lock {
+	overflow: hidden;
+}
+input,
+button,
+textarea {
+	font-family: inherit;
+}
+input::-ms-clear {
+	display: none;
+}
+button {
+	cursor: pointer;
+}
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+a,
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+ul li {
+	list-style: none;
+}
+img {
+	vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+	font-weight: inherit;
+}
+.wrapper {
+	min-height: 100%;
+
+	overflow: hidden;
+}
+.container {
+	max-width: 1760px;
+	margin: auto;
+	padding: 0 15px;
+}
+.container-main {
+	max-width: 1170px;
+	margin: auto;
+}
+.container-body {
+	max-width: 950px;
+	margin: auto;
+	padding: 0px 60px 0 60px;
+	@media (max-width: 1400px) {
+		padding: 0px 50px 0 50px;
+	}
+	@media (max-width: 992px) {
+		// padding: 40px 0px 0 0px;
+	}
+	@media (max-width: 768px) {
+		// padding: 40px 0px 0 0px;
+	}
+}
+.container-form {
+}
+.flex-box {
+	display: flex;
+	justify-content: space-between;
+}
+.main {
+	flex: 1 1 65%;
+	background-color: $color-bg-gray;
+	min-width: 0;
+
+	@media (max-width: 992px) {
+		// padding: 40px 0px 0 0px;
+	}
+	@media (max-width: 768px) {
+		// padding: 40px 0px 0 0px;
+	}
+}
+.cart {
+	flex: 0 0 20%;
+}
+.hidden {
+	display: none !important;
+}
+.opacity {
+	opacity: 0;
+	visibility: hidden;
+}
+/*------ Одна строка, сокращение(троеточие)-------
+display: -webkit-box;
+		-webkit-line-clamp: 1;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+-----------------------------------------------*/

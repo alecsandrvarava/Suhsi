@@ -1,0 +1,123 @@
+@media (max-width: 992px) {
+}
+@media (max-width: 767px) {
+}
+
+.footer {
+	background-color: $color-bg-gray;
+	position: relative;
+	z-index: 10;
+	margin-bottom: 50px;
+	@media (max-width: 1400px) {
+		text-align: center;
+	}
+	&__items {
+		margin-bottom: 50px;
+		display: flex;
+		justify-content: space-between;
+		margin: 0 -35px;
+		position: relative;
+		@media (max-width: 1400px) {
+			margin: 0 -10px;
+		}
+		&::after {
+			content: "";
+			display: block;
+			width: 92%;
+			height: 1px;
+			position: absolute;
+			left: 4%;
+			top: -20px;
+			background-color: $color-gray;
+		}
+	}
+
+	&__item {
+		flex: 1 1 33.333%;
+		padding: 0 35px;
+		@media (max-width: 1400px) {
+			padding: 0 10px;
+		}
+	}
+
+	&__title-about {
+		margin-bottom: 20px;
+	}
+
+	&__link-about a {
+		color: $color-black;
+		margin-bottom: 20px;
+		display: block;
+		transition: 0.3s;
+		&:hover {
+			color: $color-orange;
+		}
+	}
+
+	&__title-feedback {
+		margin-bottom: 10px;
+	}
+	&__text-feedback {
+		font-size: 16px;
+		margin-bottom: 10px;
+		line-height: 22px;
+		color: $color-gray;
+	}
+	&__number-feedback {
+		margin-bottom: 20px;
+		color: $color-black;
+		background-color: transparent;
+		border: none;
+		padding: 5px;
+		font-size: 18px;
+		width: 100%;
+		&::placeholder {
+			color: $color-gray;
+		}
+	}
+	&__links-feedback {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__link-feedback svg,
+	&__link-feedback img {
+		@media (max-width: 1400px) {
+			width: 35px;
+			height: 35px;
+			transition: 0.3s;
+		}
+		transition: 0.3s;
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+
+	&__link-contacts {
+		color: $color-gray;
+		margin-bottom: 10px;
+		@media (max-width: 1400px) {
+			font-size: 14px;
+		}
+		& a {
+			color: $color-gray;
+			margin-bottom: 10px;
+			transition: 0.3s;
+		}
+	}
+}
+.line {
+	position: relative;
+	&::after {
+		content: "";
+		display: block;
+		width: 1px;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		background-color: $color-gray;
+	}
+}
+
+.container-body {
+}

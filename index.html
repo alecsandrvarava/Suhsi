@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/swiper-bundle.min.css">
+	<!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
+	<link rel="stylesheet" href="css/main.css">
+
+	<title></title>
+</head>
+
+<body>
+
+	<div class="wrapper">
+
+		<div class="container">
+
+			<header class="header">
+
+				<div class="header__logo">
+					<a href="index.html"><img src="img/logo.png" alt="логотип"></a>
+				</div>
+
+				<div class="header__body">
+
+					<div class="container-main">
+
+						<div class="header__items">
+
+							<div class="header__item">
+
+								<div class="header__contacts">
+									<h3 class="header__title">Наш телефон</h3>
+									<div class="header__tel">
+										<a href="tel:380958479628""">+380 (95) 847-96-28</a>
+									</div>
+									<div class="header__tel">
+										<a href="tel:380958479628""">+380 (95) 847-96-28</a>
+									</div>
+									<div class="header__work">
+										<svg width="15" height="15">
+											<use xlink:href="img/sprite-icon.svg#watch"></use>
+										</svg>
+										<p>работаем с 10:00 до 00:00</p>
+									</div>
+								</div>
+								<div class="header__city">
+									<p>Город:</p>
+									<h3 class="header__city-selected">Мариуполь</h3>
+								</div>
+
+							</div>
+
+							<div class="header__item">
+
+								<ul class="header__sub-menu">
+									<li class="link-hidden"><a href="#">Отзывы</a> </li>
+									<li class="link-hidden"><a href="#">Доставка и оплата</a></li>
+								</ul>
+								<a class="search-link" id="search-link" href="#">
+									<input type="text" maxlength="10" class="search hidden">
+									<svg class="svg" width="30" height="30">
+										<use xlink:href="img/sprite-icon.svg#search"></use>
+									</svg>
+									<!-- <a class="close hidden" href="#">X</a> -->
+								</a>
+
+
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="header__gag"></div>
+
+			</header>
+
+			<div class="flex-box">
+
+				<aside class="menu">
+
+					<nav class="menu__body ">
+
+						<ul class="menu__list">
+							<li><a href="#">
+									<svg fill="none" width="30" height="28">
+										<use xlink:href="img/sprite-icon.svg#pizza"></use>
+									</svg>Пицца</a>
+							</li>
+							<li><a href="products.html">
+									<svg width="28" height="29">
+										<use xlink:href="img/sprite-icon.svg#set"></use>
+									</svg>Сеты</a>
+							</li>
+							<li><a href="#">
+									<svg width="30" height="30">
+										<use xlink:href="img/sprite-icon.svg#wok"></use>
+									</svg>WOK</a>
+							</li>
+							<li><a href="#">
+									<svg width="30" height="30">
+										<use xlink:href="img/sprite-icon.svg#rols"></use>
+									</svg>Роллы</a>
+							</li>
+							<li><a href="#">
+									<svg width="30" height="30">
+										<use xlink:href="img/sprite-icon.svg#sushi"></use>
+									</svg>Суши</a>
+							</li>
+							<li><a href="#">
+									<svg width="30" height="30">
+										<use xlink:href="img/sprite-icon.svg#salads"></use>
+									</svg>Салаты</a>
+							</li>
+							<li><a href="#">
+									<svg width="28" height="29">
+										<use xlink:href="img/sprite-icon.svg#sup"></use>
+									</svg>Супы</a>
+							</li>
+							<li><a href="#">
+									<svg width="27" height="27">
+										<use xlink:href="img/sprite-icon.svg#corn"></use>
+									</svg>Корн доги</a>
+							</li>
+							<li><a href="#">
+									<svg width="30" height="30">
+										<use xlink:href="img/sprite-icon.svg#drinks"></use>
+									</svg>Напитки</a>
+							</li>
+							<li><a href="#">
+									<svg width="30" height="30">
+										<use xlink:href="img/sprite-icon.svg#stock"></use>
+									</svg>Акции</a>
+							</li>
+						</ul>
+
+						<div class="menu__burger hidden">
+							<span></span>
+						</div>
+
+					</nav>
+
+				</aside>
+
+				<main class="main">
+
+					<section class="home-slider">
+
+						<div class="container-main">
+
+							<div class="container-body">
+
+								<div id="swiper" class="swiper home-slider__swiper">
+									<div class="swiper-wrapper home-slider__wrapper">
+										<div class="swiper-slide home-slider__slide">
+											<a href="#"><img src="img/slide.webp" alt=""></a>
+											<a class="btn" href="#">Хочу!</a>
+										</div>
+										<div class="swiper-slide home-slider__slide">
+											<a href="#"><img src="img/slide2.webp" alt=""></a>
+											<a class="btn" href="#">Хочу!</a>
+										</div>
+										<div class="swiper-slide home-slider__slide">
+											<a href="#"><img src="img/slide3.webp" alt=""></a>
+											<a class="btn" href="#">Хочу!</a>
+										</div>
+										<div class="swiper-slide home-slider__slide">
+											<a href="#"><img src="img/slide4.webp" alt=""></a>
+											<a class="btn" href="#">Хочу!</a>
+										</div>
+									</div>
+									<div class="swiper-pagination"></div>
+								</div>
+
+							</div>
+
+						</div>
+
+					</section>
+
+					<section class="sub-menu">
+						<div class="container-body">
+							<div class="sub-menu__items">
+								<div class="sub-menu__item">
+									<div class="sub-menu__img">
+										<a href="#">
+											<img src="img/rols_sub-menu.webp" alt="">
+										</a>
+									</div>
+									<div class="sub-menu__link">
+										<a href="#">Ролли</a>
+									</div>
+								</div>
+								<div class="sub-menu__item">
+									<div class="sub-menu__img">
+										<a href="#">
+											<img src="img/korn-dog_sub-menu.webp" alt="">
+										</a>
+									</div>
+									<div class="sub-menu__link">
+										<a href="#">Корн доги</a>
+									</div>
+								</div>
+								<div class="sub-menu__item">
+									<div class="sub-menu__img">
+										<a href="#">
+											<img src="img/piza_sub-menu.webp" alt="">
+										</a>
+									</div>
+									<div class="sub-menu__link">
+										<a href="#">Пицца</a>
+									</div>
+								</div>
+								<div class="sub-menu__item">
+									<div class="sub-menu__img">
+										<a href="#">
+											<img src="img/stock_sub-menu.webp" alt="">
+										</a>
+									</div>
+									<div class="sub-menu__link">
+										<a href="#">Акции</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<section class="slider-menu">
+						<div class="container-main">
+							<div class="container-body">
+								<div class="slider-menu__link">
+									<span data-flag="new" id="productNew" class="product-new product">Новинки</span>
+									<span data-flag="popular" id="productPopular"
+										class="product-popular _active product">Популярное</span>
+								</div>
+								<div class="slider-menu__swiper swiper">
+									<div id="swiperSlide" class="slider-menu__wrapper swiper-wrapper">
+
+
+
+										<!-- <button class="slider-menu__btn">Хочу</button> -->
+									</div>
+								</div>
+								<div class="slider-menu__buttons">
+									<div class="slider-menu__button-next swiper-button-next"></div>
+									<div class="slider-menu__button-prev swiper-button-prev"></div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<section class="description">
+						<div class="container-body">
+							<h2 class="description__title">Замовити суші в Маріуполі</h2>
+
+							<div class="description__text  opacity" id="contentSpoiler">
+
+								<p>Ресторан “Суши и Лапша” предлагаем своим клиентам самые вкусные суши с доставкой на дом,
+									приготовленные по классическим и адаптированным к европейской аудитории рецептам, а также
+									собственным наработкам наших поваров. Мы ценим время наших клиентов, поэтому вы можете
+									заказать суши в Харькове с доставкой на дом или в офис.</p>
+								<p>В нашем меню более 20 видов суши:</p>
+								<ul>
+									<li>Классические с сырым лососем, тунцом, окунем.</li>
+									<li>Экзотические с тигровой креветкой, морским гребешком.</li>
+									<li>Пикантные с копченым лососем, угрем.</li>
+								</ul>
+								<p>В меню также представлены гунканы: с начинкой из красной икры и тобико, а также феликсы, где
+									японский майонез сочетается с рыбой, морепродуктами, угрем. Любители острых блюд могут купить
+									суши с соусом спайси. Популярные начинки — копченая курица, снежный краб, креветки, гребешки,
+									тунец, лосось и окунь.</p>
+							</div>
+
+							<div class="description__link" id="linkSpoiler">
+								<h3 class="description__btn">Детальніше</h3>
+								<img class="description__arrow" src="img/arrow-bottom.svg" alt="">
+							</div>
+						</div>
+					</section>
+
+					<footer class="footer">
+
+						<div class="container-body">
+							<div class="footer__items">
+								<div class="footer__item">
+									<div class="footer__title-about">О компании</div>
+									<div class="footer__link-about"><a href="#">Доставка и оплата</a></div>
+									<div class="footer__link-about"><a href="#">Лента материалов</a></div>
+									<div class="footer__link-about"><a href="#">Политика возврата</a></div>
+								</div>
+								<div class="footer__item line">
+									<div class="footer__title-feedback">Введите номер</div>
+									<!-- <form>
+										<p>Телефон в формате 2xxx-xxx: <input type="tel" name="tel" pattern="[0-9]{7}">
+										</p>
+										<p><input type="submit" value="Отправить"></p>
+									</form> -->
+									<!-- <div class="footer__number-feedback"><input value="+380 (  ) " type="tel"></div> -->
+									<input class="footer__number-feedback" type=tel name=phone
+										placeholder="+38 ( ___ ) ___ __ __" required>
+									<div class="footer__text-feedback">Выберите удобный мессенджер для общения</div>
+									<div class="footer__links-feedback">
+										<div class="footer__link-feedback"><a href="#"><svg width="50" height="50">
+													<use xlink:href="img/sprite-icon.svg#telegram"></use>
+												</svg></a></div>
+										<div class="footer__link-feedback"><a href="#"><svg width="50" height="50">
+													<use xlink:href="img/sprite-icon.svg#whatsapp"></use>
+												</svg></a></div>
+										<div class="footer__link-feedback"><a href="#"><img src="img/instagram.png" alt=""></a>
+										</div>
+									</div>
+
+								</div>
+								<div class="footer__item line">
+									<div class="footer__link-contacts"><a href="tel:380975703106">Тел: +380 97 570 31 06 </a>
+									</div>
+									<div class="footer__link-contacts"><a href="tel:380975703106">Тел: +380 97 570 31 06 </a>
+									</div>
+									<div class="footer__link-contacts">Пер.Кибальчича, дом 20</div>
+								</div>
+							</div>
+						</div>
+
+
+						<!-- <br>
+						<br>
+						<br>
+						<br>
+						<div class="slider-menu__swiper ">
+							<div class="slider-menu__wrapper">
+								<div class="slider-menu__slide ">
+									<div class="slider-menu__body">
+										<div class="slider-menu__img">
+											<a href=""><img src="${element.img}" alt="картинка"></a>
+										</div>
+										<h2 class="slider-menu__title">${element.title}</h2>
+										<div class="slider-menu__text">${element.text}</div>
+										<div class="slider-menu__items">
+											<div class="slider-menu__price">${element.price}</div>
+
+											<div><button class="slider-menu__btn">Хочу</button></div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div> -->
+					</footer>
+
+				</main>
+
+				<aside class="cart">
+
+					<section class="cart-body">
+						<div class="container-cart">
+							<div class="cart-body__wrapper ">
+								<div class="cart-body__title">
+									<h2>Ваш кошик порожній.</h2>
+								</div>
+								<!-- <div class="cart-body__hide "> -->
+								<p class="cart-body__text">Додайте ж швидше щось!</p>
+								<!-- <input type="text" placeholder=""> -->
+								<div class="cart-body__link">
+									<a href="#">Бесплатна доставка від 300грн.</a>
+								</div>
+								<div class="cart-body__map">
+									<!-- <a href="https://goo.gl/maps/Q6CrC4LYfXh6RKHV7"> -->
+									<img src="img/map.webp" alt="">
+									<!-- </a> -->
+								</div>
+								<div class="cart-body__svg">
+									<a href="#"><img src="img/address.svg" alt=""></a>
+								</div>
+								<div class="cart-body__sub-title">
+									<h2>Укажите адрес</h2>
+								</div>
+								<input class="cart-body__input" type="text" placeholder="И узнайте время доставки">
+								<!-- </div> -->
+							</div>
+							<div class="cart-sub-body hidden">
+								<div class="cart-body__title">
+									<h2>Кошик</h2>
+									<!-- <svg width="50" height="50">
+										<use xlink:href="img/sprite-icon.svg#cart"></use>
+									</svg> -->
+								</div>
+								<div class="cart-sub-body__items">
+
+									<!-- <div class="cart-sub-body__item">
+										<div class="cart-sub-body__img">
+											<img src="img/product-base1.png" alt="">
+										</div>
+										<div class="cart-sub-body__text">
+											<h2 class="cart-sub-body__title">Самая большая Филадельфия</h2>
+											<div class="cart-sub-body__calc">
+												<div class="cart-sub-body__caunter">
+													<div class="cart-sub-body__minus">
+														<svg width="20" height="20">
+															<use xlink:href="img/sprite-icon.svg#minus"></use>
+														</svg>
+													</div>
+													<div class="cart-sub-body__summa">9</div>
+													<div class="cart-sub-body__plus">
+														<svg width="20" height="20">
+															<use xlink:href="img/sprite-icon.svg#amount"></use>
+														</svg>
+													</div>
+												</div>
+												<div class="cart-sub-body__price">200 UAH</div>
+											</div>
+										</div>
+									</div> -->
+
+									<!-- <div class="cart-sub-body__item">
+										<div class="cart-sub-body__img">
+											<img src="img/product-base1.png" alt="">
+										</div>
+										<div class="cart-sub-body__text">
+											<h2 class="cart-sub-body__title">Самая большая Филадельфия</h2>
+											<div class="cart-sub-body__calc">
+												<div class="cart-sub-body__caunter">
+													<svg class="cart-sub-body__minus" width="18" height="3">
+														<use xlink:href="img/sprite-icon.svg#minus"></use>
+													</svg>
+													<div class="cart-sub-body__summa"></div>
+													<svg class="cart-sub-body__plus" width="20" height="20">
+														<use xlink:href="img/sprite-icon.svg#amount"></use>
+													</svg>
+												</div>
+												<div class="cart-sub-body__price">200 UAH</div>
+											</div>
+										</div>
+									</div> -->
+
+									<!-- <div class="cart-sub-body__item">
+										<div class="cart-sub-body__img">
+											<img src="img/product-base1.png" alt="">
+										</div>
+										<div class="cart-sub-body__text">
+											<h2 class="cart-sub-body__title">Самая большая Филадельфия</h2>
+											<div class="cart-sub-body__calc">
+												<div class="cart-sub-body__caunter">
+													<svg class="cart-sub-body__minus" width="18" height="3">
+														<use xlink:href="img/sprite-icon.svg#minus"></use>
+													</svg>
+													<div class="cart-sub-body__summa">1</div>
+													<svg class="cart-sub-body__plus" width="20" height="20">
+														<use xlink:href="img/sprite-icon.svg#amount"></use>
+													</svg>
+												</div>
+												<div class="cart-sub-body__price">200 UAH</div>
+											</div>
+										</div>
+									</div> -->
+
+
+
+								</div>
+								<div class="cart-sub-body__checkout">
+									<div class="cart-sub-body__total"></div>
+									<a href="checkout.html" class="cart-sub-body__btn">Оформить заказ</a>
+								</div>
+							</div>
+						</div>
+			</div>
+		</div>
+		</section>
+
+
+		</aside>
+
+	</div>
+
+
+
+	</div>
+
+
+
+
+
+
+
+	<!-- <div id="popup" class="popup">
+			<a href="#" class="popup__area"></a>
+			<div class="popup__body">
+				<div class="popup__content">
+					<a href="#" class="popup__close">&#9587;</a>
+					<form class="popup__form">
+						<div class="popup__form-items popup-items">
+							<div class="popup-items__item">
+								<h3>Отримайте детальну консультацію</h3>
+								<p>Заповніть анкету, щоб отримати детальну відповідь на ваші запитання та попередню вартість.
+								</p>
+							</div>
+							<div class="popup-items__item popup-item">
+								<div class="popup-item__input">
+									<input type="text" placeholder="Ваше ім'я">
+								</div>
+								<div class="popup-item__input">
+									<input type="text" placeholder="Бажана площа Вашої квартири">
+								</div>
+								<div class="popup-item__input">
+									<input type="text" placeholder="Однокімнатна або двокімнатна квартира">
+								</div>
+								<div class="popup-item__input">
+									<input type="text" placeholder="Номер телефону">
+								</div>
+							</div>
+						</div>
+						<div class="popup-items__button">
+							<button id="formSubmission" type="button">Відправити</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div> -->
+
+	</div>
+	<script src="js/swiper-bundle.min.js"></script>
+	<!-- <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script> -->
+	<script src="js/main.js"></script>
+
+</body>
+
+</html>
