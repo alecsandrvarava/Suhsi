@@ -72,7 +72,7 @@ const productBase = [
 		text: '1100 грамм 32 кусочек',
 		price: '550 UAH',
 		type: 'set',
-		count: 1,
+		id: '0001',
 	},
 	{
 		name: 'new',
@@ -81,7 +81,7 @@ const productBase = [
 		text: '1120 грамм 40 кусочек',
 		price: '900 UAH',
 		type: 'set',
-		count: 1,
+		id: '0002',
 	},
 	{
 		name: 'new',
@@ -90,7 +90,7 @@ const productBase = [
 		text: '1320 грамм 46 кусочек',
 		price: '1100 UAH',
 		type: 'set',
-		count: 1,
+		id: '0003',
 	},
 	{
 		name: 'new',
@@ -99,7 +99,7 @@ const productBase = [
 		text: '1050 грамм, 30 кусочков',
 		price: '990 UAH',
 		type: 'set',
-		count: 1,
+		id: '0004',
 	},
 	{
 		name: 'new',
@@ -108,7 +108,7 @@ const productBase = [
 		text: '1270 грамм 50 кусочек',
 		price: '990 UAH',
 		type: 'set',
-		count: 1,
+		id: '0005',
 	},
 	{
 		name: 'popular',
@@ -117,7 +117,7 @@ const productBase = [
 		text: '2050 грамм, 45 кусочков',
 		price: '600 UAH',
 		type: 'set',
-		count: 1,
+		id: '0006',
 	},
 	{
 		name: 'popular',
@@ -126,7 +126,7 @@ const productBase = [
 		text: '1050 грамм, 30 кусочков',
 		price: '450 UAH',
 		type: 'set',
-		count: 1,
+		id: '0007',
 	},
 	{
 		name: 'popular',
@@ -135,7 +135,7 @@ const productBase = [
 		text: '1260 грамм, 36 кусочков',
 		price: '400 UAH',
 		type: 'set',
-		count: 1,
+		id: '0008',
 	},
 	{
 		name: 'popular',
@@ -144,7 +144,7 @@ const productBase = [
 		text: '2050 грамм, 45 кусочков',
 		price: '600 UAH',
 		type: 'set',
-		count: 1,
+		id: '0009',
 	},
 	{
 		name: 'popular',
@@ -153,7 +153,7 @@ const productBase = [
 		text: '1050 грамм, 30 кусочков',
 		price: '450 UAH',
 		type: 'set',
-		count: 1,
+		id: '0010',
 	},
 	{
 		name: 'popular',
@@ -162,7 +162,7 @@ const productBase = [
 		text: '1260 грамм, 36 кусочков',
 		price: '400 UAH',
 		type: 'set',
-		count: 1,
+		id: '0011',
 	},
 	{
 		name: 'popular',
@@ -171,7 +171,7 @@ const productBase = [
 		text: '1260 грамм, 36 кусочков',
 		price: '400 UAH',
 		type: 'set',
-		count: 1,
+		id: '0012',
 	},
 ]
 let searchData = []
@@ -212,7 +212,7 @@ if (swiperSlide) {
 		swiperSlide.innerHTML = ''
 		item.map(function (element) {
 			swiperSlide.insertAdjacentHTML('beforeend', `<div class="slider-menu__slide swiper-slide">
-			<div class="slider-menu__body">
+			<div data-id="${element.id}" class="slider-menu__body">
 				<div class="slider-menu__img">
 					<div><img src="${element.img}" alt="картинка"></div>
 				</div>
@@ -324,7 +324,7 @@ function funcPrintPage(item) {
 	pageGrid.innerHTML = ''
 	item.map(function (element) {
 		pageGrid.insertAdjacentHTML('beforeend', `<div class="slider-menu__slide">
-		<div class="slider-menu__body">
+		<div data-id="${element.id}" class="slider-menu__body">
 			<div class="slider-menu__img">
 				<div><img src="${element.img}" alt="картинка"></div>
 			</div>
@@ -455,6 +455,7 @@ const cartBodyWrapper = document.querySelector('.cart-body__wrapper')
 const cartSubBodyItems = document.querySelector('.cart-sub-body__items')
 const cartSubBody = document.querySelector('.cart-sub-body')
 const cartSubBodyTotal = document.querySelector('.cart-sub-body__total')
+
 let stored2 = localStorage.getItem('Full')
 let priceTest = {}
 if (stored2)
@@ -505,7 +506,7 @@ const printCart = () => {
 		cartBodyWrapper.classList.remove('hidden')
 		cartSubBody.classList.add('hidden')
 		localStorage.clear()
-		// data = {}
+		data.length = 0;
 	} else if (price > 0) {
 		cartBodyWrapper.classList.add('hidden')
 		cartSubBody.classList.remove('hidden')
@@ -545,38 +546,41 @@ const generateCartProduct = (img, title, price, id, count) => {
 }
 
 const deleteProducts = (productParent) => {
-	const sliderMenuTitle = document.querySelectorAll('.slider-menu__title')
 	let id = productParent.dataset.id
 	let value = document.querySelector(`.cart-sub-body__item[data-id="${id}"]`).querySelector('.cart-sub-body__summa')
 	let sumProduct = --value.textContent
 	data.forEach(function (el) {
 		if (el.id == id) {
 			el.count = sumProduct
+			DataNewse = data.filter((el) => el.count !== 0);
 			if (el.count == 0) {
-				sliderMenuTitle.forEach(elem => {
-					if (elem.textContent == el.title) {
-						let body = elem.closest('.slider-menu__body')
-						btn = body.querySelector('.slider-menu__btn')
-						arr.forEach(element => {
-							if (element == el.title) {
-								arr.splice(0, 1)
-								localStorage.setItem('disabled', JSON.stringify(arr))
-							}
-						});
-						btn.classList.remove('disabled')
+				const sliderMenuBtn = document.querySelectorAll('.slider-menu__btn')
+				sliderMenuBtn.forEach(elem => {
+					let body = elem.closest('.slider-menu__body')
+					let idBtn = body.dataset.id
+					if (el.id == idBtn) {
+						elem.classList.remove('disabled')
 					}
-				});
+				})
 				productParent.remove()
-				data.splice(0, 1)
-			}
-			if (data.length === 0) {
-				delete data
+				// arr.forEach(function (element, index) {
+				// 	if (element.id == id) {
+				// 		arr.splice(index, 1)
+				// 		// const sliderMenuBtn = document.querySelectorAll('.slider-menu__btn')
+				// 		// sliderMenuBtn.forEach(elem => {
+				// 		// 	let body = elem.closest('.slider-menu__body')
+				// 		// 	let idBtn = body.dataset.id
+				// 		// 	if (element.id == idBtn) {
+				// 		// 		elem.classList.remove('disabled')
+				// 		// 	}
+				// 		// })
+				// 	}
+				// })
 			}
 		}
 	})
-
-	localStorage.setItem('Data', JSON.stringify(data))
-
+	localStorage.setItem('Data', JSON.stringify(DataNewse))
+	// localStorage.setItem('disabled', JSON.stringify(arr))
 	let currentPrice = parseInt(priceWithoutSpaces(productParent.querySelector('.cart-sub-body__price').textContent))
 	minusFullPrice(currentPrice)
 	printFullPrice()
@@ -590,47 +594,43 @@ function funcPlusCount(productParent) {
 	data.forEach(function (el) {
 		if (el.id == id) {
 			el.count = sumProduct
-			if (el.count === 0) {
-				el = {}
-				productParent.remove()
-				data.splice(0, 1)
-				if (data.length === 0) {
-					delete data
-				}
-			}
+			DataNewse = data.filter((el) => el.count !== 0);
 		}
 	});
-	localStorage.setItem('Data', JSON.stringify(data))
+	localStorage.setItem('Data', JSON.stringify(DataNewse))
 	let currentPrice = parseInt(priceWithoutSpaces(productParent.querySelector('.cart-sub-body__price').textContent))
 	plusFullPrice(currentPrice)
 	printFullPrice()
 }
 
 let stored = localStorage.getItem('Data')
-let storedTitle = localStorage.getItem('disabled')
+// let storedTitle = localStorage.getItem('disabled')
 let data = []
-let arr = []
+// let arr = []
 if (stored)
 	data = JSON.parse(stored)
-if (storedTitle) {
-	arr = JSON.parse(storedTitle)
-}
+// if (storedTitle) {
+// 	arr = JSON.parse(storedTitle)
+// }
 
 function funcSliderMenuBtn() {
 	const sliderMenuBtn = document.querySelectorAll('.slider-menu__btn')
 	sliderMenuBtn.forEach(elem => {
-		elem.closest('.slider-menu__body').setAttribute('data-id', randomId())
+		// elem.closest('.slider-menu__body').setAttribute('data-id', randomId())
+		elem.closest('.slider-menu__body').setAttribute('data-count', 1)
 		elem.addEventListener('click', (e) => {
 			let self = e.currentTarget
 			let parent = self.closest('.slider-menu__body')
+			// elem.classList.add('disabled')
 			let dataObj = {
 				id: parent.dataset.id,
 				title: parent.querySelector('.slider-menu__title').textContent,
 				img: parent.querySelector('.slider-menu__img img').getAttribute('src'),
 				priceString: priceWithoutSpaces(parent.querySelector('.slider-menu__price').textContent),
 				priceNumber: parseInt(priceWithoutSpaces(parent.querySelector('.slider-menu__price').textContent)),
-				count: 1,
+				count: parent.dataset.count,
 			}
+
 			data.push(dataObj)
 			localStorage.setItem('Data', JSON.stringify(data))
 			plusFullPrice(dataObj.priceNumber)
@@ -638,47 +638,32 @@ function funcSliderMenuBtn() {
 			cartSubBodyItems.insertAdjacentHTML('afterbegin', generateCartProduct(dataObj.img, dataObj.title, dataObj.priceString, dataObj.id, dataObj.count))
 			printCart()
 
-			title = parent.querySelector('.slider-menu__title').textContent
-			arr.push(title)
-			localStorage.setItem('disabled', JSON.stringify(arr))
+			// id = {
+			// 	id: parent.dataset.id,
+			// }
+			// arr.push(id)
+			// localStorage.setItem('disabled', JSON.stringify(arr))
 			funcDisabled()
 		})
 	})
 }
 
 function funcDisabled() {
-	const sliderMenuTitle = document.querySelectorAll('.slider-menu__title')
-	DataNews = JSON.parse(localStorage.getItem("disabled"))
+	const sliderMenuBtn = document.querySelectorAll('.slider-menu__btn')
+	DataNews = JSON.parse(localStorage.getItem("Data"))
 	if (DataNews) {
 		DataNews.forEach(element => {
-			sliderMenuTitle.forEach(el => {
-				if (el.textContent === element) {
-					let body = el.closest('.slider-menu__body')
-					btn = body.querySelector('.slider-menu__btn')
-					btn.classList.add('disabled')
+			sliderMenuBtn.forEach(elem => {
+				let body = elem.closest('.slider-menu__body')
+				let idBtn = body.dataset.id
+				if (element.id == idBtn) {
+					elem.classList.add('disabled')
 				}
 			})
-		});
+		})
 	}
 }
 funcDisabled()
-// removeItem(disabled)
-
-
-
-
-
-DataNew = JSON.parse(localStorage.getItem("Data"))
-const cartSubItems = document.querySelector('.cart-sub-body__items')
-
-// if (cartSubItems) {
-// 	DataNew.forEach(el => {
-// 		// localStorage.setItem('Data', JSON.stringify(data))
-// 		DataNew = JSON.parse(localStorage.getItem("Data"))
-
-// 	})
-// }
-
 funcSliderMenuBtn()
 
 const cart = document.querySelector('.cart-body')
@@ -689,7 +674,6 @@ if (cart) {
 		} else if (e.target.classList.contains('_plus')) {
 			funcPlusCount(e.target.closest('.cart-sub-body__item'))
 		}
-
 	})
 }
 
@@ -697,24 +681,22 @@ if (data.length > 0) {
 	cartBodyWrapper.classList.add('hidden')
 	cartSubBody.classList.remove('hidden')
 	DataNew = JSON.parse(localStorage.getItem("Data"))
-	DataNew.forEach(el => {
+	DataNew.forEach(function (el, index) {
 		cartSubBodyItems.insertAdjacentHTML('afterbegin', generateCartProduct(el.img, el.title, el.priceString, el.id, el.count))
 	});
-
 }
+
 
 const formBtn = document.querySelector('.form__btn')
 if (formBtn) {
 	formBtn.addEventListener('click', () => {
 		localStorage.clear()
 		cartSubBodyItems.remove()
-		data = null
+		data.length = 0
 	})
 
 }
 
-// document.cookie = 'name=Вася';
-// alert(document.cookie); //выведет 'name=Вася'
 
 
 
