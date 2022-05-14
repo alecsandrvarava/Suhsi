@@ -2,6 +2,9 @@
 	min-width: 0;
 	position: relative;
 	margin-bottom: 50px;
+	@media (max-width: 991px) {
+		display: none;
+	}
 	&__link {
 		display: flex;
 		margin-bottom: 30px;

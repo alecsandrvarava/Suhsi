@@ -423,6 +423,7 @@ const searchLink = document.getElementById('search-link')
 // closeBtn.addEventListener('click', funcSearch)
 
 
+const headerContacts = document.querySelector('.header__contacts')
 const svg = document.querySelector('.svg')
 const linkHidden = document.querySelectorAll('.link-hidden')
 svg.onclick = function () {
@@ -431,21 +432,33 @@ svg.onclick = function () {
 		setTimeout(() => {
 			search.classList.add('width')
 		}, 0);
+		// headerContacts.classList.add('opacity')
+		if (screen.width < 991) {
+			headerContacts.classList.add('hidden')
+			headerContacts.classList.add('opacity')
+			headerContacts.classList.remove('opacity-none')
+		}
+
 		search.classList.remove('hidden')
 		linkHidden.forEach(element => {
 			element.classList.add('hidden')
-			console.log(this)
 		});
 	} else {
-
 		setTimeout(() => {
 			linkHidden.forEach(element => {
 				element.classList.remove('hidden')
-				console.log(this)
 			});
 			search.classList.add('hidden')
+			if (screen.width < 991) {
+				// headerContacts.classList.remove('hidden')
+				headerContacts.classList.add('opacity-none')
+			}
 		}, 300);
 		search.classList.remove('width')
+		if (screen.width < 991) {
+			headerContacts.classList.remove('hidden')
+
+		}
 	}
 	search.value = ""
 }

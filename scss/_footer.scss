@@ -1,15 +1,16 @@
-@media (max-width: 992px) {
-}
-@media (max-width: 767px) {
-}
-
 .footer {
 	background-color: $color-bg-gray;
 	position: relative;
 	z-index: 10;
-	margin-bottom: 50px;
+	margin-bottom: 20px;
 	@media (max-width: 1400px) {
 		text-align: center;
+	}
+	@media (max-width: 991px) {
+		margin-bottom: 10px;
+	}
+	@media (max-width: 767px) {
+		margin-bottom: 10px;
 	}
 	&__items {
 		margin-bottom: 50px;
@@ -19,6 +20,9 @@
 		position: relative;
 		@media (max-width: 1400px) {
 			margin: 0 -10px;
+		}
+		@media (max-width: 991px) {
+			display: none;
 		}
 		&::after {
 			content: "";
@@ -77,15 +81,10 @@
 	}
 	&__links-feedback {
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-evenly;
 	}
 	&__link-feedback svg,
 	&__link-feedback img {
-		@media (max-width: 1400px) {
-			width: 35px;
-			height: 35px;
-			transition: 0.3s;
-		}
 		transition: 0.3s;
 		&:hover {
 			transform: scale(1.1);
@@ -120,4 +119,94 @@
 }
 
 .container-body {
+}
+.footer {
+	&__mobile {
+		display: none;
+		@media (max-width: 991px) {
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+			background-color: $color-white;
+			height: 90px;
+			position: relative;
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				bottom: 100%;
+				left: 0px;
+				right: 0;
+				// width: 100%;
+				// width: calc(100% + 30px);
+				// height: 5.5px;
+
+				// color: $color-gray;
+				border-top: 0.5px solid $color-gray;
+			}
+		}
+		@media (max-width: 768px) {
+			height: 70px;
+		}
+	}
+
+	&__mobile-link a {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		color: $color-black;
+		& svg {
+			margin-bottom: 5px;
+		}
+	}
+}
+.footer {
+	&__mobile-contacts {
+		display: none;
+		@media (max-width: 991px) {
+			max-width: 400px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			margin: auto;
+		}
+		@media (max-width: 768px) {
+			max-width: 300px;
+		}
+	}
+
+	&__mobile-item {
+		@media (max-width: 991px) {
+			text-align: center;
+		}
+	}
+
+	&__text-feedback {
+		@media (max-width: 991px) {
+			text-align: center;
+		}
+	}
+
+	&__links-feedback {
+		@media (max-width: 991px) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__link-feedback img,
+	&__link-feedback svg {
+		@media (max-width: 991px) {
+			width: 70px;
+			height: 70px;
+		}
+		@media (max-width: 768px) {
+			width: 60px;
+			height: 60px;
+		}
+	}
+
+	&__link-contacts {
+	}
 }

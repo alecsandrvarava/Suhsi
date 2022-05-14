@@ -95,6 +95,12 @@ h6 {
 	max-width: 1760px;
 	margin: auto;
 	padding: 0 15px;
+	@media (max-width: 991px) {
+		padding: 0;
+	}
+	@media (max-width: 768px) {
+		padding: 0;
+	}
 }
 .container-main {
 	max-width: 1170px;
@@ -107,8 +113,8 @@ h6 {
 	@media (max-width: 1400px) {
 		padding: 0px 50px 0 50px;
 	}
-	@media (max-width: 992px) {
-		// padding: 40px 0px 0 0px;
+	@media (max-width: 991px) {
+		padding: 0;
 	}
 	@media (max-width: 768px) {
 		// padding: 40px 0px 0 0px;
@@ -125,22 +131,28 @@ h6 {
 	background-color: $color-bg-gray;
 	min-width: 0;
 
-	@media (max-width: 992px) {
-		// padding: 40px 0px 0 0px;
+	@media (max-width: 991px) {
+		flex: 1 1 100%;
+		// width: calc(100% + 30px);
+		padding: 0 15px;
 	}
 	@media (max-width: 768px) {
 		// padding: 40px 0px 0 0px;
 	}
 }
-.cart {
-	flex: 0 0 20%;
-}
+
 .hidden {
 	display: none !important;
 }
 .opacity {
 	opacity: 0;
 	visibility: hidden;
+	transition: 0.3s;
+}
+.opacity-none {
+	opacity: 1;
+	visibility: visible;
+	transition: 0.3s;
 }
 /*------ Одна строка, сокращение(троеточие)-------
 display: -webkit-box;

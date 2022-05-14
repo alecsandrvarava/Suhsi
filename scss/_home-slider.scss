@@ -1,6 +1,16 @@
 .home-slider {
 	padding-top: 20px;
 	margin-bottom: 40px;
+	@media (max-width: 991px) {
+		padding-top: 100px;
+		margin-bottom: 20px;
+	}
+	@media (max-width: 768px) {
+		padding-top: 90px;
+		margin-bottom: 10px;
+	}
+	@media (max-width: 450px) {
+	}
 }
 .home-slider {
 	&__swiper {
@@ -10,6 +20,12 @@
 		position: relative;
 		@media (max-width: 1400px) {
 			height: 350px;
+		}
+		@media (max-width: 991px) {
+			height: 350px;
+		}
+		@media (max-width: 768px) {
+			height: 200px;
 		}
 	}
 
@@ -31,6 +47,13 @@
 			letter-spacing: 2px;
 			@media (max-width: 1400px) {
 				font-size: 30px;
+			}
+			@media (max-width: 991px) {
+			}
+			@media (max-width: 768px) {
+				top: 20px;
+				left: 20px;
+				font-size: 24px;
 			}
 		}
 		&::before {
@@ -69,6 +92,16 @@
 	z-index: 3;
 	@media (max-width: 1400px) {
 		padding: 10px 50px;
+	}
+	@media (max-width: 991px) {
+		padding: 10px 50px;
+		font-size: 30px;
+	}
+	@media (max-width: 768px) {
+		padding: 7px 20px;
+		font-size: 18px;
+		right: 20px;
+		bottom: 25px;
 	}
 	&:hover {
 		background-color: $color-orange-btn;
