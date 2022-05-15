@@ -863,10 +863,16 @@ display: -webkit-box;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .search.width {
     max-width: 175px;
-    margin-right: 53px;
+    margin-right: 60px;
+  }
+}
+
+@media (max-width: 400px) {
+  .search.width {
+    margin-right: 55px;
   }
 }
 

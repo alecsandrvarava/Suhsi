@@ -413,9 +413,13 @@
 	@media (max-width: 500px) {
 		max-width: 200px;
 	}
-	@media (max-width: 400px) {
+	@media (max-width: 450px) {
 		max-width: 175px;
-		margin-right: 53px;
+		margin-right: 60px;
+	}
+	@media (max-width: 400px) {
+		// max-width: 175px;
+		margin-right: 55px;
 	}
 	@media (max-width: 341px) {
 		margin-right: 45px;
