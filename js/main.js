@@ -348,18 +348,18 @@ const descriptionArrow = document.querySelector(".description__arrow")
 const descriptionTitle = document.querySelector(".description__title")
 if (linkSpoiler) {
 	linkSpoiler.onclick = function () {
-		if (contentSpoiler.classList.contains('opacity')) {
+		if (contentSpoiler.classList.contains('hidden')) {
 			descriptionArrow.classList.add('turn')
-			contentSpoiler.classList.remove('opacity')
+			contentSpoiler.classList.remove('hidden')
 			descriptionTitle.classList.add('margin-bottom')
 			setTimeout(() => {
 			}, 200);
 		} else {
 			descriptionTitle.classList.remove('margin-bottom')
+			descriptionArrow.classList.remove('turn')
 			setTimeout(() => {
-				descriptionArrow.classList.remove('turn')
-				contentSpoiler.classList.add('opacity')
-			}, 200);
+				contentSpoiler.classList.add('hidden')
+			}, 700);
 		}
 	}
 }
