@@ -406,11 +406,18 @@
 	}
 	@media (max-width: 768px) {
 		// background-color: $color-bg-gray;
-		max-width: 175px;
+		max-width: 250px;
 		margin-left: 0px;
 		margin-right: 60px;
 	}
-	@media (max-width: 360px) {
+	@media (max-width: 500px) {
+		max-width: 200px;
+	}
+	@media (max-width: 400px) {
+		max-width: 175px;
+		margin-right: 53px;
+	}
+	@media (max-width: 341px) {
 		margin-right: 45px;
 	}
 }
