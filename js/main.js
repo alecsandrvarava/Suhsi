@@ -326,16 +326,19 @@ function funcPrintPage(item) {
 		pageGrid.insertAdjacentHTML('beforeend', `<div class="slider-menu__slide">
 		<div data-id="${element.id}" class="slider-menu__body">
 			<div class="slider-menu__img">
-				<div><img src="${element.img}" alt="картинка"></div>
+				<img src="${element.img}" alt="картинка">
 			</div>
-			<h2 class="slider-menu__title">${element.title}</h2>
-			<div class="slider-menu__text">${element.text}</div>
-			<div class="slider-menu__items">
-				<div class="slider-menu__price">${element.price}</div>
-				<div class="slider-menu__btn">Хочу</div>
+			<div class="slider-menu__block">
+				<div class="slider-menu__sub-block">
+					<h2 class="slider-menu__title">${element.title}</h2>
+					<div class="slider-menu__text">${element.text}</div>
+				</div>
+				<div class="slider-menu__items">
+					<div class="slider-menu__price">${element.price}</div>
+					<div class="slider-menu__btn">Хочу</div>
+				</div>
 			</div>
-		</div>
-	</div>`)
+		</div>`)
 	})
 }
 if (pageGrid) {
