@@ -2708,6 +2708,7 @@ display: -webkit-box;
   .slider-menu__title {
     line-height: 20px;
     font-size: 18px;
+    margin: 10px 0 5px 0;
   }
 }
 
