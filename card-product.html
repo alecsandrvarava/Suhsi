@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/swiper-bundle.min.css">
+	<link rel="stylesheet" href="css/main.css">
+
+	<title></title>
+</head>
+
+<body>
+
+	<div class="wrapper">
+
+		<div class="container">
+
+			<header class="header">
+
+				<div class="header__logo">
+					<a href="index.html"><img src="img/logo.png" alt="логотип"></a>
+				</div>
+
+				<div class="header__body">
+
+					<div class="main-header">
+
+						<div class="header__items">
+
+							<div class="header__item">
+
+								<div class="header__contacts">
+									<div class="header__contacts-item">
+										<h3 class="header__title">Наш телефон</h3>
+										<div class="header__tel">
+											<a href="tel:380958479628""">+380 (95) 847-96-28</a>
+										</div>
+										<div class="header__tel">
+											<a href="tel:380958479628""">+380 (95) 847-96-28</a>
+										</div>
+									</div>
+									<div class="header__contacts-item">
+										<div class="header__work">
+											<svg width="15" height="15">
+												<use xlink:href="img/sprite-icon.svg#watch"></use>
+											</svg>
+											<p>работаем с 10:00 до 00:00</p>
+										</div>
+									</div>
+								</div>
+								<div class="header__city">
+									<p>Город:</p>
+									<h3 class="header__city-selected">Мариуполь</h3>
+								</div>
+
+							</div>
+
+							<div class="header__item">
+
+								<ul class="header__sub-menu">
+									<li class="link-hidden"><a href="#">Отзывы</a> </li>
+									<li class="link-hidden"><a href="#">Доставка и оплата</a></li>
+								</ul>
+								<a class="search-link" id="search-link" href="#">
+									<input type="text" maxlength="10" class="search hidden">
+									<svg class="svg" width="30" height="30">
+										<use xlink:href="img/sprite-icon.svg#search"></use>
+									</svg>
+									<!-- <a class="close hidden" href="#">X</a> -->
+								</a>
+
+
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="header__gag"></div>
+
+			</header>
+
+			<div class="flex-box">
+
+				<aside class="menu">
+
+					<nav class="menu__body ">
+
+						<ul class="menu__list">
+							<li><a href="#">
+									<svg width="30" height="28">
+										<use xlink:href="img/sprite-icon.svg#pizza"></use>
+									</svg>Пицца</a>
+							</li>
+							<li><a style="color: orange; font-weight: 700;" href="#">
+									<svg width="28" height="29">
+										<use xlink:href="img/sprite-icon.svg#set"></use>
+									</svg>Сеты</a>
+							</li>
+							<li><a href="#">
+									<svg width="30" height="30">
+										<use xlink:href="img/sprite-icon.svg#wok"></use>
+									</svg>WOK</a>
+							</li>
+							<li><a href="#">
+									<svg width="30" height="30">
+										<use xlink:href="img/sprite-icon.svg#rols"></use>
+									</svg>Роллы</a>
+							</li>
+							<li><a href="#">
+									<svg width="30" height="30">
+										<use xlink:href="img/sprite-icon.svg#sushi"></use>
+									</svg>Суши</a>
+							</li>
+							<li><a href="#">
+									<svg width="30" height="30">
+										<use xlink:href="img/sprite-icon.svg#salads"></use>
+									</svg>Салаты</a>
+							</li>
+							<li><a href="#">
+									<svg width="28" height="29">
+										<use xlink:href="img/sprite-icon.svg#sup"></use>
+									</svg>Супы</a>
+							</li>
+							<li><a href="#">
+									<svg width="27" height="27">
+										<use xlink:href="img/sprite-icon.svg#corn"></use>
+									</svg>Корн доги</a>
+							</li>
+							<li><a href="#">
+									<svg width="30" height="30">
+										<use xlink:href="img/sprite-icon.svg#drinks"></use>
+									</svg>Напитки</a>
+							</li>
+							<li><a href="#">
+									<svg width="30" height="30">
+										<use xlink:href="img/sprite-icon.svg#stock"></use>
+									</svg>Акции</a>
+							</li>
+						</ul>
+
+						<div class="menu__burger hidden">
+							<span></span>
+						</div>
+
+					</nav>
+
+				</aside>
+
+				<main class="main">
+
+					<section class="card-product">
+
+						<div class="card-product__buttons">
+							<div class=" swiper-button-next card-product__button-next"></div>
+							<div class=" swiper-button-prev card-product__button-prev"></div>
+						</div>
+
+						<div id="card-product" class="swiper card-product__swiper">
+
+							<div class="swiper-wrapper card-product__wrapper">
+
+								<div class="swiper-slide card-product__slide">
+									<div class="card-product__items">
+										<div class="card-product__item">
+											<div class="card-product__img">
+												<img src="img/set-ikudza.png" alt="img">
+											</div>
+										</div>
+										<div class="card-product__item">
+											<div class="card-product__title">Филадельфия и
+												лосось сет</div>
+											<div class="card-product__weight">290 грамм</div>
+											<div class="card-product__calc">
+												<div class="cart-sub-body__calc">
+													<div class="cart-sub-body__caunter">
+														<div class="cart-sub-body__minus card-product__minus">
+															<svg class="_minus" width="30" height="30">
+																<use xlink:href="img/sprite-icon.svg#minus"></use>
+															</svg>
+														</div>
+														<div class="cart-sub-body__summa">${count}</div>
+														<div class="cart-sub-body__plus card-product__plus">
+															<svg width="30" height="30">
+																<use class="_plus" xlink:href="img/sprite-icon.svg#amount"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="cart-sub-body__price">${normalPrice(price)}</div>
+												</div>
+
+											</div>
+											<div class="card-product__compound">
+												<div class="compound__title">Состав:</div>
+												<div class="compound__text">Лосось, сыр "Филадельфия", огурец, авокадо</div>
+											</div>
+											<div class="card-product__button">
+												<div class="btn card-product__btn">Хочу!</div>
+											</div>
+
+										</div>
+
+									</div>
+								</div>
+								<div class="swiper-slide card-product__slide">
+									<div class="card-product__items">
+										<div class="card-product__item">
+											<div class="card-product__img">
+												<img src="img/set-ikudza.png" alt="img">
+											</div>
+										</div>
+										<div class="card-product__item">
+											<div class="card-product__title">Филадельфия и
+												лосось сет</div>
+											<div class="card-product__weight">290 грамм</div>
+											<div class="card-product__calc">
+												<div class="cart-sub-body__calc">
+													<div class="cart-sub-body__caunter">
+														<div class="cart-sub-body__minus card-product__minus">
+															<svg class="_minus" width="30" height="30">
+																<use xlink:href="img/sprite-icon.svg#minus"></use>
+															</svg>
+														</div>
+														<div class="cart-sub-body__summa">${count}</div>
+														<div class="cart-sub-body__plus card-product__plus">
+															<svg width="30" height="30">
+																<use class="_plus" xlink:href="img/sprite-icon.svg#amount"></use>
+															</svg>
+														</div>
+													</div>
+													<div class="cart-sub-body__price">${normalPrice(price)}</div>
+												</div>
+
+											</div>
+											<div class="card-product__compound">
+												<div class="compound__title">Состав</div>
+												<div class="compound__text">Лосось, сыр "Филадельфия", огурец, авокадо</div>
+											</div>
+											<div class="card-product__button">
+												<a class="btn card-product__btn" href="#">Хочу!</a>
+											</div>
+
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+
+
+					</section>
+
+					<section class="description">
+
+						<h2 class="description__title">Замовити суші в Маріуполі</h2>
+						<div class="container-main">
+							<div class="description__container-body description__text  hidden" id="contentSpoiler">
+
+								<p>Ресторан “Суши и Лапша” предлагаем своим клиентам самые вкусные суши с доставкой на дом,
+									приготовленные по классическим и адаптированным к европейской аудитории рецептам, а также
+									собственным наработкам наших поваров. Мы ценим время наших клиентов, поэтому вы можете
+									заказать суши в Харькове с доставкой на дом или в офис.</p>
+								<p>В нашем меню более 20 видов суши:</p>
+								<ul>
+									<li>Классические с сырым лососем, тунцом, окунем.</li>
+									<li>Экзотические с тигровой креветкой, морским гребешком.</li>
+									<li>Пикантные с копченым лососем, угрем.</li>
+								</ul>
+								<p>В меню также представлены гунканы: с начинкой из красной икры и тобико, а также феликсы, где
+									японский майонез сочетается с рыбой, морепродуктами, угрем. Любители острых блюд могут купить
+									суши с соусом спайси. Популярные начинки — копченая курица, снежный краб, креветки, гребешки,
+									тунец, лосось и окунь.</p>
+							</div>
+						</div>
+						<div class="description__link" id="linkSpoiler">
+							<h3 class="description__btn">Детальніше</h3>
+							<img class="description__arrow" src="img/arrow-bottom.svg" alt="">
+						</div>
+
+					</section>
+
+
+
+					<div class="footer__mobile-contacts">
+						<div class="footer__mobile-item">
+							<div class="footer__text-feedback">Выберите удобный мессенджер для общения</div>
+							<div class="footer__links-feedback">
+								<div class="footer__link-feedback"><a href="#"><svg width="70" height="70">
+											<use xlink:href="img/sprite-icon.svg#telegram"></use>
+										</svg></a></div>
+								<div class="footer__link-feedback"><a href="#"><svg width="70" height="70">
+											<use xlink:href="img/sprite-icon.svg#whatsapp"></use>
+										</svg></a></div>
+								<div class="footer__link-feedback"><a href="#"><img src="img/instagram.png" alt=""></a>
+								</div>
+							</div>
+							<div class="footer__mobile-item">
+								<div class="footer__link-contacts"><a href="tel:380975703106">Тел: +380 97 570 31 06 </a>
+								</div>
+								<div class="footer__link-contacts"><a href="tel:380975703106">Тел: +380 97 570 31 06 </a>
+								</div>
+								<div class="footer__link-contacts">Пер.Кибальчича, дом 20</div>
+							</div>
+						</div>
+					</div>
+
+					<footer class="footer">
+
+						<div class="container-body">
+							<div class="footer__items">
+								<div class="footer__item">
+									<div class="footer__title-about">О компании</div>
+									<div class="footer__link-about"><a href="#">Доставка и оплата</a></div>
+									<div class="footer__link-about"><a href="#">Лента материалов</a></div>
+									<div class="footer__link-about"><a href="#">Политика возврата</a></div>
+								</div>
+								<div class="footer__item line">
+									<div class="footer__title-feedback">Введите номер</div>
+									<!-- <form>
+										<p>Телефон в формате 2xxx-xxx: <input type="tel" name="tel" pattern="[0-9]{7}">
+										</p>
+										<p><input type="submit" value="Отправить"></p>
+									</form> -->
+									<!-- <div class="footer__number-feedback"><input value="+380 (  ) " type="tel"></div> -->
+									<input class="footer__number-feedback" type=tel name=phone
+										placeholder="+38 ( ___ ) ___ __ __" required>
+									<div class="footer__text-feedback">Выберите удобный мессенджер для общения</div>
+									<div class="footer__links-feedback">
+										<div class="footer__link-feedback"><a href="#"><svg width="50" height="50">
+													<use xlink:href="img/sprite-icon.svg#telegram"></use>
+												</svg></a></div>
+										<div class="footer__link-feedback"><a href="#"><svg width="50" height="50">
+													<use xlink:href="img/sprite-icon.svg#whatsapp"></use>
+												</svg></a></div>
+										<div class="footer__link-feedback"><a href="#"><img src="img/instagram.png" alt=""></a>
+										</div>
+									</div>
+
+								</div>
+								<div class="footer__item line">
+									<div class="footer__link-contacts"><a href="tel:380975703106">Тел: +380 97 570 31 06 </a>
+									</div>
+									<div class="footer__link-contacts"><a href="tel:380975703106">Тел: +380 97 570 31 06 </a>
+									</div>
+									<div class="footer__link-contacts">Пер.Кибальчича, дом 20</div>
+								</div>
+							</div>
+						</div>
+
+					</footer>
+
+				</main>
+
+				<aside class="cart">
+
+					<section class="cart-body">
+						<section class="container-cart">
+							<div class="cart-body__wrapper ">
+								<div class="cart-body__title">
+									<h2>Ваш кошик порожній.</h2>
+								</div>
+								<!-- <div class="cart-body__hide "> -->
+								<p class="cart-body__text">Додайте ж швидше щось!</p>
+								<!-- <input type="text" placeholder=""> -->
+								<div class="cart-body__link">
+									<a href="#">Бесплатна доставка від 300грн.</a>
+								</div>
+								<div class="cart-body__map">
+									<!-- <a href="https://goo.gl/maps/Q6CrC4LYfXh6RKHV7"> -->
+									<img src="img/map.webp" alt="">
+									<!-- </a> -->
+								</div>
+								<div class="cart-body__svg">
+									<a href="#"><img src="img/address.svg" alt=""></a>
+								</div>
+								<div class="cart-body__sub-title">
+									<h2>Укажите адрес</h2>
+								</div>
+								<input class="cart-body__input" type="text" placeholder="И узнайте время доставки">
+								<!-- </div> -->
+							</div>
+							<div class="cart-sub-body hidden">
+								<div class="cart-body__title">
+									<h2>Кошик</h2>
+									<!-- <svg width="50" height="50">
+										<use xlink:href="img/sprite-icon.svg#cart"></use>
+									</svg> -->
+								</div>
+								<div class="cart-sub-body__items">
+								</div>
+								<div class="cart-sub-body__checkout">
+									<div class="cart-sub-body__total"></div>
+									<a href="checkout.html" class="cart-sub-body__btn">Оформить заказ</a>
+								</div>
+							</div>
+						</section>
+					</section>
+				</aside>
+
+
+			</div>
+
+
+		</div>
+
+	</div>
+
+	<div class="footer__mobile">
+		<div class="footer__mobile-link"><a href="#"><svg width="50" height="31">
+					<use xlink:href="img/sprite-icon.svg#menu"></use>
+				</svg>
+				<p>Меню</p>
+			</a>
+		</div>
+		<div class="footer__mobile-link"><a href="#"><svg width="34" height="30">
+					<use xlink:href="img/sprite-icon.svg#cart"></use>
+				</svg>
+				<p>Корзина</p>
+			</a>
+		</div>
+		<div class="footer__mobile-link"><a href="#"><svg width="32" height="30">
+					<use xlink:href="img/sprite-icon.svg#comment"></use>
+				</svg>
+				<p>Отзывы</p>
+			</a>
+		</div>
+	</div>
+
+
+	</div>
+
+	<script src="js/swiper-bundle.min.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+
+</html>

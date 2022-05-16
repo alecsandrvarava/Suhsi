@@ -232,7 +232,7 @@ display: -webkit-box;
     top: 100%;
     left: 0px;
     right: 0;
-    border-bottom: 0.5px solid #a4acad;
+    border-bottom: 1px solid #a4acad;
   }
 }
 
@@ -3478,5 +3478,258 @@ input[id="time"]:checked ~ .glider {
     -webkit-transform: scale(0.6);
             transform: scale(0.6);
   }
+}
+
+.card-product {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 991px) {
+  .card-product {
+    margin-top: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-product {
+    margin-top: 130px;
+  }
+}
+
+.card-product__swiper {
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+.card-product__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .card-product__items {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.card-product__item {
+  width: 50%;
+}
+
+@media (max-width: 768px) {
+  .card-product__item {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+    width: 100%;
+  }
+}
+
+.card-product__item:last-child {
+  padding: 20px 20px 20px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .card-product__item:last-child {
+    padding: 0px 20px 20px 30px;
+  }
+}
+
+.card-product__item:first-child {
+  padding-right: 10px;
+}
+
+.card-product__img {
+  padding: 5px 10px;
+}
+
+@media (max-width: 768px) {
+  .card-product__img {
+    padding: 5px;
+  }
+}
+
+.card-product__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.card-product__title {
+  font-size: 42px;
+  line-height: 40px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 1200px) {
+  .card-product__title {
+    font-size: 32px;
+    line-height: 30px;
+  }
+}
+
+.card-product__weight {
+  color: #ff9846;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  margin-bottom: 20px;
+}
+
+.card-product__calc {
+  margin-bottom: 30px;
+}
+
+.card-product__calc svg {
+  width: 30px;
+  height: 30px;
+}
+
+@media (max-width: 1200px) {
+  .card-product__calc {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 991px) {
+  .card-product__calc {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-product__calc {
+    margin-bottom: 10px;
+  }
+}
+
+.card-product__minus {
+  width: 30px;
+  height: 30px;
+}
+
+.card-product__plus {
+  width: 30px;
+  height: 30px;
+}
+
+.card-product__compound {
+  margin-bottom: 30px;
+}
+
+@media (max-width: 1200px) {
+  .card-product__compound {
+    margin-bottom: 10px;
+  }
+}
+
+.card-product__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.card-product__btn {
+  position: static;
+  padding: 10px 40px;
+  display: inline-block;
+}
+
+@media (max-width: 1200px) {
+  .card-product__btn {
+    font-size: 28px;
+  }
+}
+
+.card-product__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 1170px;
+  margin: auto;
+}
+
+.card-product__button-next {
+  position: static;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.card-product__button-next::after {
+  content: "назад";
+  font-size: 18px;
+  color: black;
+  margin-left: 20px;
+}
+
+.card-product__button-next::before {
+  content: "";
+  display: block;
+  background: url(../img/arrow-right.svg) no-repeat;
+  width: 20px;
+  height: 20px;
+  -webkit-transform: rotate(180deg) scale(2);
+          transform: rotate(180deg) scale(2);
+  padding-left: 20px;
+  margin-left: 100px;
+}
+
+.card-product__button-prev {
+  position: static;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  margin-bottom: 10px;
+}
+
+.card-product__button-prev::after {
+  content: "вперед";
+  font-size: 18px;
+  color: black;
+  margin-right: 20px;
+}
+
+.card-product__button-prev::before {
+  content: "";
+  display: block;
+  background: url(../img/arrow-right.svg) no-repeat;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+  width: 20px;
+  height: 20px;
+  padding-right: 20px;
+  margin-right: 100px;
+}
+
+.compound__title {
+  margin-bottom: 5px;
 }
 /*# sourceMappingURL=main.css.map */

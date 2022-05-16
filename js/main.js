@@ -8,36 +8,36 @@ const popup = document.querySelector('.popup')
 const body = document.querySelector('body')
 const formSubmission = document.getElementById('formSubmission')
 
-if (headerMenu) {
-	if (screen.width < 991) {
-		headerMenu.classList.add('opacity')
-		headerMenu.classList.add('hidden')
-	} else {
-		headerMenu.classList.remove('opacity')
-	}
-}
+// if (headerMenu) {
+// 	if (screen.width < 991) {
+// 		headerMenu.classList.add('opacity')
+// 		headerMenu.classList.add('hidden')
+// 	} else {
+// 		headerMenu.classList.remove('opacity')
+// 	}
+// }
 
-if (menuBurger) {
-	menuBurger.onclick = function () {
-		if (headerMenu.classList.contains('opacity')) {
-			console.log('!')
-			this.classList.add('animation')
-			headerMenu.classList.remove('opacity')
-			setTimeout(() => {
-				headerMenu.classList.remove('hidden')
-			}, 200)
-			body.classList.add('lock')
-		} else {
-			console.log('!!')
-			this.classList.remove('animation')
-			headerMenu.classList.add('opacity')
-			setTimeout(() => {
-				headerMenu.classList.add('hidden')
-			}, 200)
-			body.classList.remove('lock')
-		}
-	}
-}
+// if (menuBurger) {
+// 	menuBurger.onclick = function () {
+// 		if (headerMenu.classList.contains('opacity')) {
+// 			console.log('!')
+// 			this.classList.add('animation')
+// 			headerMenu.classList.remove('opacity')
+// 			setTimeout(() => {
+// 				headerMenu.classList.remove('hidden')
+// 			}, 200)
+// 			body.classList.add('lock')
+// 		} else {
+// 			console.log('!!')
+// 			this.classList.remove('animation')
+// 			headerMenu.classList.add('opacity')
+// 			setTimeout(() => {
+// 				headerMenu.classList.add('hidden')
+// 			}, 200)
+// 			body.classList.remove('lock')
+// 		}
+// 	}
+// }
 
 const swiper = document.getElementById('swiper')
 if (swiper) {
@@ -50,6 +50,17 @@ if (swiper) {
 			delay: 4000,
 		},
 		speed: 1500,
+		slideToClikedSlide: true,
+	})
+}
+
+const swiperProduct = document.getElementById('card-product')
+if (swiperProduct) {
+	new Swiper('.card-product__swiper', {
+		navigation: {
+			nextEl: ".card-product__button-next ",
+			prevEl: ".card-product__button-prev ",
+		},
 		slideToClikedSlide: true,
 	})
 }
@@ -327,9 +338,9 @@ function funcPrintPage(item) {
 	item.map(function (element) {
 		pageGrid.insertAdjacentHTML('beforeend', `<div class="slider-menu__slide">
 		<div data-id="${element.id}" class="slider-menu__body">
-			<div class="slider-menu__img">
+			<a href="card-product.html" class="slider-menu__img">
 				<img src="${element.img}" alt="картинка">
-			</div>
+			</a>
 			<div class="slider-menu__block">
 				<div class="slider-menu__sub-block">
 					<h2 class="slider-menu__title">${element.title}</h2>
