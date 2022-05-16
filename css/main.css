@@ -294,7 +294,7 @@ display: -webkit-box;
 
 @media (max-width: 450px) {
   .header__logo {
-    width: 27%;
+    width: 30%;
   }
 }
 
@@ -311,7 +311,14 @@ display: -webkit-box;
   }
 }
 
-@media (max-width: 370px) {
+@media (max-width: 410px) {
+  .header__logo a {
+    height: 90px;
+    width: 90px;
+  }
+}
+
+@media (max-width: 360px) {
   .header__logo a {
     height: 85px;
     width: 85px;
@@ -399,16 +406,10 @@ display: -webkit-box;
   }
 }
 
-@media (max-width: 430px) {
-  .header__contacts {
-    margin-right: 40px;
-  }
-}
-
 @media (max-width: 390px) {
   .header__contacts {
     max-width: 240px;
-    margin-right: 38px;
+    margin-right: 35px;
   }
 }
 
@@ -437,13 +438,13 @@ display: -webkit-box;
 
 @media (max-width: 768px) {
   .header__contacts-item:first-child {
-    padding-right: 15px;
+    padding-right: 5px;
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 370px) {
   .header__contacts-item:first-child {
-    padding-right: 5px;
+    padding-right: 2px;
   }
 }
 
@@ -476,20 +477,20 @@ display: -webkit-box;
 
 @media (max-width: 480px) {
   .header__contacts-item:last-child {
-    padding-left: 5px;
-    max-width: 110px;
+    padding-left: 0px;
+    max-width: 90px;
   }
 }
 
 @media (max-width: 400px) {
   .header__contacts-item:last-child {
-    max-width: 95px;
+    max-width: 85px;
   }
 }
 
-@media (max-width: 370px) {
+@media (max-width: 380px) {
   .header__contacts-item:last-child {
-    max-width: 87px;
+    max-width: 85px;
   }
 }
 
@@ -524,7 +525,7 @@ display: -webkit-box;
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 360px) {
   .header__title {
     font-size: 12px;
   }
@@ -570,7 +571,7 @@ display: -webkit-box;
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 360px) {
   .header__tel {
     font-size: 12px;
   }
@@ -617,7 +618,7 @@ display: -webkit-box;
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 390px) {
   .header__work p {
     font-size: 12px;
   }
@@ -653,6 +654,13 @@ display: -webkit-box;
   .header__work svg {
     width: 25px;
     height: 25px;
+  }
+}
+
+@media (max-width: 360px) {
+  .header__work svg {
+    width: 22px;
+    height: 22px;
   }
 }
 
@@ -829,7 +837,21 @@ display: -webkit-box;
   }
 }
 
-@media (max-width: 340px) {
+@media (max-width: 470px) {
+  .svg {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 380px) {
+  .svg {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 360px) {
   .svg {
     width: 40px;
     height: 40px;
