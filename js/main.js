@@ -282,11 +282,12 @@ const searchArrow = document.querySelector('.sectionsets__arrow')
 const searchLinkList = document.querySelectorAll('.sectionsets__search-link')
 if (searchBtn) {
 	searchBtn.addEventListener('click', () => {
-		searchArrow.classList.toggle('turn')
-		searchList.classList.toggle('hidden')
+		searchArrow.classList.remove('turn')
+		searchList.classList.remove('hidden')
 		searchLinkList.forEach(element => {
 			element.onclick = (e) => {
-				searchArrow.classList.toggle('turn')
+				searchList.classList.add('hidden')
+				searchArrow.classList.add('turn')
 				let elem = e.currentTarget.textContent
 				let sorting = e.currentTarget.dataset.sorting
 				if (sorting == 'cheap') {
@@ -311,7 +312,6 @@ if (searchBtn) {
 						// funcDisabled()
 					})
 					funcPrintPage(setData)
-					console.log(setData)
 				}
 				searchBtn.innerHTML = elem
 				searchList.classList.add('hidden')
