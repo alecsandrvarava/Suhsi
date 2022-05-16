@@ -3,7 +3,7 @@
 		margin-top: 140px;
 	}
 	@media (max-width: 768px) {
-		margin-top: 110px;
+		margin-top: 120px;
 	}
 
 	&__block {
@@ -20,6 +20,15 @@
 		line-height: 45px;
 		& svg {
 			margin-right: 10px;
+		}
+		& h3 {
+			@media (max-width: 768px) {
+				display: flex;
+				align-items: center;
+				font-size: 30px;
+				padding-bottom: 6px;
+				padding-left: 10px;
+			}
 		}
 	}
 
@@ -56,6 +65,9 @@
 		// align-items: center;
 	}
 	&__search-btn {
+		@media (max-width: 768px) {
+			font-size: 20px;
+		}
 	}
 
 	&__search-list {

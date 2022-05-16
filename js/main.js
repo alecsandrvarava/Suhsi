@@ -277,17 +277,17 @@ function compareNumericQuantity(a, b) {
 	if (numb1 < numb2) return -1;
 }
 const searchBtn = document.querySelector('.sectionsets__search-btn')
-const searchList = document.querySelector('.sectionsets__search-list')
-const searchArrow = document.querySelector('.sectionsets__arrow')
+const search = document.querySelector('.sectionsets__search')
 const searchLinkList = document.querySelectorAll('.sectionsets__search-link')
-if (searchBtn) {
-	searchBtn.addEventListener('click', () => {
-		searchArrow.classList.remove('turn')
-		searchList.classList.remove('hidden')
+if (search) {
+	search.addEventListener('click', (e) => {
+		let list = e.currentTarget.querySelector('.sectionsets__search-list')
+		let arrow = e.currentTarget.querySelector('.sectionsets__arrow')
+		arrow.classList.toggle('turn')
+		list.classList.toggle('hidden')
 		searchLinkList.forEach(element => {
 			element.onclick = (e) => {
-				searchList.classList.add('hidden')
-				searchArrow.classList.add('turn')
+				list.classList.toggle('hidden')
 				let elem = e.currentTarget.textContent
 				let sorting = e.currentTarget.dataset.sorting
 				if (sorting == 'cheap') {
@@ -314,10 +314,12 @@ if (searchBtn) {
 					funcPrintPage(setData)
 				}
 				searchBtn.innerHTML = elem
-				searchList.classList.add('hidden')
+				list.classList.toggle('hidden')
+				arrow.classList.toggle('turn')
 			}
 		});
 	})
+
 }
 
 function funcPrintPage(item) {
