@@ -297,10 +297,11 @@ if (search) {
 		arrow.classList.toggle('turn')
 		list.classList.toggle('hidden')
 		searchLinkList.forEach(element => {
-			element.onclick = (e) => {
-				list.classList.toggle('hidden')
+			element.addEventListener('click', (e) => {
+				// list.classList.toggle('hidden')
 				let elem = e.currentTarget.textContent
 				let sorting = e.currentTarget.dataset.sorting
+				searchBtn.innerHTML = elem
 				if (sorting == 'cheap') {
 					setData.sort(compareNumeric)
 					funcPrintPage(setData)
@@ -319,15 +320,19 @@ if (search) {
 				} else if (sorting == 'default') {
 					setData = productBase.filter((item) => {
 						return item.type === 'set'
+
 						// funcSliderMenuBtn()
 						// funcDisabled()
 					})
 					funcPrintPage(setData)
+					funcSliderMenuBtn()
+					funcDisabled()
+					// funcPrintPage(setData)
 				}
-				searchBtn.innerHTML = elem
-				// list.classList.toggle('hidden')
+
+				list.classList.toggle('hidden')
 				arrow.classList.toggle('turn')
-			}
+			})
 		});
 	})
 
