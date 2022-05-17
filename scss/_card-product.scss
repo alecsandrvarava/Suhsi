@@ -19,6 +19,8 @@
 
 	&__items {
 		display: flex;
+		flex-direction: row;
+		height: auto;
 		@media (max-width: 991px) {
 		}
 		@media (max-width: 767px) {
@@ -47,6 +49,13 @@
 
 	&__img {
 		padding: 5px 10px;
+		height: auto;
+		margin-bottom: 0px;
+		@media (max-width: 991px) {
+			&::after {
+				display: none;
+			}
+		}
 		@media (max-width: 768px) {
 			padding: 5px;
 		}
@@ -119,14 +128,17 @@
 	&__button {
 		display: flex;
 		justify-content: flex-end;
+		padding: 0;
+		padding: 10px 40px;
+		@media (max-width: 1200px) {
+			font-size: 28px;
+		}
 	}
 	&__btn {
 		position: static;
 		padding: 10px 40px;
 		display: inline-block;
-		@media (max-width: 1200px) {
-			font-size: 28px;
-		}
+
 		@media (max-width: 991px) {
 		}
 		@media (max-width: 768px) {
@@ -214,7 +226,7 @@
 
 .cart-mobile {
 	display: none;
-	@media (max-width: 1991px) {
+	@media (max-width: 991px) {
 		position: fixed;
 		z-index: 50;
 		background-color: $color-bg-gray;

@@ -224,9 +224,9 @@ if (swiperSlide) {
 		item.map(function (element) {
 			swiperSlide.insertAdjacentHTML('beforeend', `<div class="slider-menu__slide swiper-slide">
 			<div data-id="${element.id}" class="slider-menu__body">
-				<div class="slider-menu__img">
+				<a href="card-product.html" class="slider-menu__img">
 					<div><img src="${element.img}" alt="картинка"></div>
-				</div>
+				</a>
 				<h2 class="slider-menu__title">${element.title}</h2>
 				<div class="slider-menu__text">${element.text}</div>
 				<div class="slider-menu__items">
@@ -316,11 +316,13 @@ if (search) {
 				} else if (sorting == 'expensive') {
 					setData.sort(compareNumericBig)
 					funcPrintPage(setData)
+					funcCartProduct(setData)
 					funcSliderMenuBtn()
 					funcDisabled()
 				} else if (sorting == 'quantity') {
 					setData.sort(compareNumericQuantity)
 					funcPrintPage(setData)
+					funcCartProduct(setData)
 					funcSliderMenuBtn()
 					funcDisabled()
 				} else if (sorting == 'default') {
@@ -331,6 +333,7 @@ if (search) {
 						// funcDisabled()
 					})
 					funcPrintPage(setData)
+					funcCartProduct(setData)
 					funcSliderMenuBtn()
 					funcDisabled()
 
@@ -347,6 +350,7 @@ if (search) {
 function funcPrintPage(item) {
 	pageGrid.innerHTML = ''
 	item.map(function (element) {
+		console.log(element)
 		pageGrid.insertAdjacentHTML('beforeend', `<div class="slider-menu__slide">
 		<div data-id="${element.id}" class="slider-menu__body">
 			<a href="card-product.html" class="slider-menu__img">
@@ -368,6 +372,9 @@ function funcPrintPage(item) {
 if (pageGrid) {
 	funcPrintPage(setData)
 }
+// else if (cardProduct) {
+// 	funcPrintPage(setData)
+// }
 
 const cardProduct = document.querySelector('.card-product__wrapper')
 function funcCartProduct(item) {
@@ -375,15 +382,15 @@ function funcCartProduct(item) {
 	// console.log(item)
 	item.map(function (element) {
 		// console.log(element)
-		cardProduct.insertAdjacentHTML('beforeend', `	<div class="swiper-slide card-product__slide">
-		<div class="card-product__items">
+		cardProduct.insertAdjacentHTML('beforeend', `<div class="swiper-slide card-product__slide">
+		<div data-id="${element.id}" class="slider-menu__body card-product__items">
 			<div class="card-product__item">
-				<div class="card-product__img">
+				<div class="slider-menu__img card-product__img">
 					<img src="${element.img}" alt="img">
 				</div>
 			</div>
 			<div class="card-product__item">
-				<div class="card-product__title">${element.title}</div>
+				<div class="slider-menu__title card-product__title">${element.title}</div>
 				<div class="card-product__weight">290 грамм</div>
 				<div class="card-product__calc">
 					<div class="cart-sub-body__calc">
@@ -400,28 +407,73 @@ function funcCartProduct(item) {
 								</svg>
 							</div>
 						</div>
-						<div class="cart-sub-body__price card-product__price">${element.price}</div>
+						<div class="slider-menu__price cart-sub-body__price card-product__price">${element.price}</div>
 					</div>
-
+	
 				</div>
-				<div class="card-product__compound">
-					<div class="compound__title">Состав:</div>
-					<div class="compound__text">Лосось, сыр "Филадельфия", огурец, авокадо</div>
+					<div class="card-product__compound">
+						<div class="compound__title">Состав:</div>
+						<div class="compound__text">Лосось, сыр "Филадельфия", огурец, авокадо</div>
+					</div>
+					<div class="card-product__button slider-menu__btn">
+						<div class="btn card-product__btn ">Хочу!</div>
+					</div>
 				</div>
-				<div class="card-product__button">
-					<div class="btn card-product__btn">Хочу!</div>
-				</div>
-
-			</div>
-
 		</div>
 	</div>`)
 	})
 }
 if (cardProduct) {
-	funcCartProduct(productBase)
+	funcCartProduct(setData)
 
 }
+
+
+{/* <div class="slider-menu__slide swiper-slide card-product__slide">
+<div data-id="${element.id}" class="slider-menu__body card-product__items">
+	<div class="card-product__item">
+		<div class="slider-menu__img card-product__img">
+			<img src="${element.img}" alt="img">
+		</div>
+	</div>
+	<div class="slider-menu__block card-product__item">
+		<div class="slider-menu__sub-block">
+			<h2 class="slider-menu__title card-product__title">${element.title}</h2>
+			<div class="card-product__weight">290 грамм</div>
+			<div class="slider-menu__text">${element.text}</div>
+		</div>
+		<div class="slider-menu__items">
+		</div>
+
+		<div class="cart-sub-body__calc">
+			<div class="cart-sub-body__caunter">
+				<div class="cart-sub-body__minus card-product__minus">
+					<svg class="_minus" width="30" height="30">
+						<use xlink:href="img/sprite-icon.svg#minus"></use>
+					</svg>
+				</div>
+				<div class="cart-sub-body__summa"></div>
+				<div class="cart-sub-body__plus card-product__plus">
+					<svg width="30" height="30">
+						<use class="_plus" xlink:href="img/sprite-icon.svg#amount"></use>
+					</svg>
+				</div>
+			</div>
+			<div class="cart-sub-body__price card-product__price">${element.price}</div>
+		</div>
+
+		<div class="card-product__compound">
+			<div class="compound__title">Состав:</div>
+			<div class="compound__text">Лосось, сыр "Филадельфия", огурец, авокадо</div>
+		</div>
+		<div class="card-product__button slider-menu__btn">
+			<div class="btn card-product__btn ">Хочу!</div>
+		</div>
+	</div>
+	<div class="slider-menu__btn">Хочу</div>
+</div>
+</div> */}
+
 
 
 const contentSpoiler = document.getElementById("contentSpoiler")

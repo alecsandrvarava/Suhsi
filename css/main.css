@@ -2606,6 +2606,29 @@ display: -webkit-box;
   position: relative;
 }
 
+.slider-menu__img::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #a4acad;
+  position: absolute;
+  bottom: -120px;
+  left: 0;
+}
+
+@media (max-width: 991px) {
+  .slider-menu__img::after {
+    bottom: -85px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-menu__img::after {
+    display: none;
+  }
+}
+
 @media (max-width: 1400px) {
   .slider-menu__img {
     height: 120px;
@@ -2654,29 +2677,6 @@ display: -webkit-box;
 @media (max-width: 360px) {
   .slider-menu__img {
     height: 100px;
-  }
-}
-
-.slider-menu__img::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  background-color: #a4acad;
-  position: absolute;
-  bottom: -120px;
-  left: 0;
-}
-
-@media (max-width: 991px) {
-  .slider-menu__img::after {
-    bottom: -85px;
-  }
-}
-
-@media (max-width: 768px) {
-  .slider-menu__img::after {
-    display: none;
   }
 }
 
@@ -3505,6 +3505,11 @@ input[id="time"]:checked ~ .glider {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: auto;
 }
 
 @media (max-width: 767px) {
@@ -3552,6 +3557,14 @@ input[id="time"]:checked ~ .glider {
 
 .card-product__img {
   padding: 5px 10px;
+  height: auto;
+  margin-bottom: 0px;
+}
+
+@media (max-width: 991px) {
+  .card-product__img::after {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -3647,18 +3660,20 @@ input[id="time"]:checked ~ .glider {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  padding: 0;
+  padding: 10px 40px;
+}
+
+@media (max-width: 1200px) {
+  .card-product__button {
+    font-size: 28px;
+  }
 }
 
 .card-product__btn {
   position: static;
   padding: 10px 40px;
   display: inline-block;
-}
-
-@media (max-width: 1200px) {
-  .card-product__btn {
-    font-size: 28px;
-  }
 }
 
 .card-product__buttons {
@@ -3743,7 +3758,7 @@ input[id="time"]:checked ~ .glider {
   display: none;
 }
 
-@media (max-width: 1991px) {
+@media (max-width: 991px) {
   .cart-mobile {
     position: fixed;
     z-index: 50;
