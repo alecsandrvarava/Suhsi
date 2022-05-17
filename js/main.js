@@ -325,7 +325,7 @@ if (search) {
 					funcPrintPage(setData)
 				}
 				searchBtn.innerHTML = elem
-				list.classList.toggle('hidden')
+				// list.classList.toggle('hidden')
 				arrow.classList.toggle('turn')
 			}
 		});
