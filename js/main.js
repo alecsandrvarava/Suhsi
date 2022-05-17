@@ -260,8 +260,14 @@ if (swiperSlide) {
 }
 
 const pageGrid = document.querySelector('.sectionsets__grid')
+const set = document.querySelector('.set')
 let setData = []
 if (pageGrid) {
+	setData = productBase.filter((item) => {
+		return item.type === 'set'
+	})
+}
+if (set) {
 	setData = productBase.filter((item) => {
 		return item.type === 'set'
 	})
@@ -327,16 +333,16 @@ if (search) {
 					funcPrintPage(setData)
 					funcSliderMenuBtn()
 					funcDisabled()
+
 					// funcPrintPage(setData)
 				}
-
 				list.classList.toggle('hidden')
 				arrow.classList.toggle('turn')
 			})
 		});
 	})
-
 }
+
 
 function funcPrintPage(item) {
 	pageGrid.innerHTML = ''
@@ -362,6 +368,61 @@ function funcPrintPage(item) {
 if (pageGrid) {
 	funcPrintPage(setData)
 }
+
+const cardProduct = document.querySelector('.card-product__wrapper')
+function funcCartProduct(item) {
+	// cardProduct.innerHTML = ''
+	// console.log(item)
+	item.map(function (element) {
+		// console.log(element)
+		cardProduct.insertAdjacentHTML('beforeend', `	<div class="swiper-slide card-product__slide">
+		<div class="card-product__items">
+			<div class="card-product__item">
+				<div class="card-product__img">
+					<img src="${element.img}" alt="img">
+				</div>
+			</div>
+			<div class="card-product__item">
+				<div class="card-product__title">${element.title}</div>
+				<div class="card-product__weight">290 грамм</div>
+				<div class="card-product__calc">
+					<div class="cart-sub-body__calc">
+						<div class="cart-sub-body__caunter">
+							<div class="cart-sub-body__minus card-product__minus">
+								<svg class="_minus" width="30" height="30">
+									<use xlink:href="img/sprite-icon.svg#minus"></use>
+								</svg>
+							</div>
+							<div class="cart-sub-body__summa"></div>
+							<div class="cart-sub-body__plus card-product__plus">
+								<svg width="30" height="30">
+									<use class="_plus" xlink:href="img/sprite-icon.svg#amount"></use>
+								</svg>
+							</div>
+						</div>
+						<div class="cart-sub-body__price card-product__price">${element.price}</div>
+					</div>
+
+				</div>
+				<div class="card-product__compound">
+					<div class="compound__title">Состав:</div>
+					<div class="compound__text">Лосось, сыр "Филадельфия", огурец, авокадо</div>
+				</div>
+				<div class="card-product__button">
+					<div class="btn card-product__btn">Хочу!</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>`)
+	})
+}
+if (cardProduct) {
+	funcCartProduct(productBase)
+
+}
+
 
 const contentSpoiler = document.getElementById("contentSpoiler")
 const linkSpoiler = document.getElementById("linkSpoiler")
@@ -522,18 +583,27 @@ const multFullPrice = (currentPrice) => {
 }
 
 const printFullPrice = () => {
-	priceTest = `${normalPrice(price)} UAH`
+	priceTest = {
+		fullPrice: `${normalPrice(price)} UAH`,
+		fullCount: cartNumb,
+	}
 	localStorage.setItem('Full', JSON.stringify(priceTest))
 	FullPrice = JSON.parse(localStorage.getItem("Data"))
-	cartSubBodyTotal.textContent = priceTest
+	cartSubBodyTotal.textContent = priceTest.fullPrice
 	cartSubBodyTotal.textContent = `${normalPrice(price)} UAH`
 
 }
 
-if (priceTest.length > 1) {
-	cartSubBodyTotal.textContent = priceTest
-	price = parseInt(priceWithoutSpaces(priceTest))
+let stored = localStorage.getItem('Data')
+let data = []
+if (stored)
+	data = JSON.parse(stored)
+if (priceTest.fullCount > 0) {
+	cartSubBodyTotal.textContent = priceTest.fullPrice
+	price = parseInt(priceWithoutSpaces(priceTest.fullPrice))
 }
+
+
 
 const printCart = () => {
 	if (price <= 0) {
@@ -552,8 +622,7 @@ const printCart = () => {
 };
 
 const generateCartProduct = (img, title, price, id, count) => {
-	return `
-	<div class="cart-sub-body__item" data-id="${id}">
+	return `<div class="cart-sub-body__item" data-id="${id}" >
 		<div class="cart-sub-body__img">
 			<img src="${img}" alt="">
 		</div>
@@ -575,10 +644,9 @@ const generateCartProduct = (img, title, price, id, count) => {
 			</div>
 			<div class="cart-sub-body__price">${normalPrice(price)}</div>
 		</div>
-	</div>
-	`
+	</div>`
 }
-
+let cartNumb = 1
 const deleteProducts = (productParent) => {
 	let id = productParent.dataset.id
 	let value = document.querySelector(`.cart-sub-body__item[data-id="${id}"]`).querySelector('.cart-sub-body__summa')
@@ -588,6 +656,9 @@ const deleteProducts = (productParent) => {
 			el.count = sumProduct
 			DataNewse = data.filter((el) => el.count !== 0);
 			if (el.count == 0) {
+				cartNumb = --cartSubBodyItems.children.length
+				localStorage.setItem('Full', JSON.stringify(priceTest))
+				funcCartMobile(cartNumb)
 				const sliderMenuBtn = document.querySelectorAll('.slider-menu__btn')
 				sliderMenuBtn.forEach(elem => {
 					let body = elem.closest('.slider-menu__body')
@@ -624,10 +695,10 @@ const deleteProducts = (productParent) => {
 function funcPlusCount(productParent) {
 	let id = productParent.dataset.id
 	let value = document.querySelector(`.cart-sub-body__item[data-id="${id}"]`).querySelector('.cart-sub-body__summa')
-	let sumProduct = ++value.textContent
+	let sumProduct = value.textContent++
 	data.forEach(function (el) {
 		if (el.id == id) {
-			el.count = sumProduct
+			el.count = ++sumProduct
 			DataNewse = data.filter((el) => el.count !== 0);
 		}
 	});
@@ -637,15 +708,8 @@ function funcPlusCount(productParent) {
 	printFullPrice()
 }
 
-let stored = localStorage.getItem('Data')
-// let storedTitle = localStorage.getItem('disabled')
-let data = []
-// let arr = []
-if (stored)
-	data = JSON.parse(stored)
-// if (storedTitle) {
-// 	arr = JSON.parse(storedTitle)
-// }
+
+
 
 function funcSliderMenuBtn() {
 	const sliderMenuBtn = document.querySelectorAll('.slider-menu__btn')
@@ -664,23 +728,31 @@ function funcSliderMenuBtn() {
 				priceNumber: parseInt(priceWithoutSpaces(parent.querySelector('.slider-menu__price').textContent)),
 				count: parent.dataset.count,
 			}
-
 			data.push(dataObj)
 			localStorage.setItem('Data', JSON.stringify(data))
 			plusFullPrice(dataObj.priceNumber)
 			printFullPrice()
 			cartSubBodyItems.insertAdjacentHTML('afterbegin', generateCartProduct(dataObj.img, dataObj.title, dataObj.priceString, dataObj.id, dataObj.count))
 			printCart()
-
-			// id = {
-			// 	id: parent.dataset.id,
-			// }
-			// arr.push(id)
-			// localStorage.setItem('disabled', JSON.stringify(arr))
+			cartNumb = cartSubBodyItems.children.length
+			priceTest.fullCount = cartNumb
+			localStorage.setItem('Full', JSON.stringify(priceTest))
+			funcCartMobile(cartNumb)
 			funcDisabled()
 		})
 	})
 }
+const cartMobileNumb = document.querySelector('.cart-mobile__numb')
+function funcCartMobile(item) {
+	FullCount = JSON.parse(localStorage.getItem("Full"))
+	cartMobileNumb.innerHTML = item
+}
+
+if (priceTest.fullCount > 0 && cartMobileNumb) {
+	FullCount = JSON.parse(localStorage.getItem("Full"))
+	cartMobileNumb.innerHTML = FullCount.fullCount
+}
+
 
 function funcDisabled() {
 	const sliderMenuBtn = document.querySelectorAll('.slider-menu__btn')
@@ -730,11 +802,6 @@ if (formBtn) {
 	})
 
 }
-
-
-
-
-
 
 
 

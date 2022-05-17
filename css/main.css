@@ -3625,6 +3625,11 @@ input[id="time"]:checked ~ .glider {
   height: 30px;
 }
 
+.card-product__price {
+  font-size: 28px;
+  font-weight: 700;
+}
+
 .card-product__compound {
   margin-bottom: 30px;
 }
@@ -3665,6 +3670,10 @@ input[id="time"]:checked ~ .glider {
           justify-content: space-between;
   max-width: 1170px;
   margin: auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
 }
 
 .card-product__button-next {
@@ -3679,23 +3688,23 @@ input[id="time"]:checked ~ .glider {
   margin-bottom: 10px;
 }
 
-.card-product__button-next::after {
-  content: "назад";
+.card-product__button-next::before {
+  content: "вперед";
   font-size: 18px;
   color: black;
-  margin-left: 20px;
+  margin-left: -100px;
+  margin-right: 20px;
 }
 
-.card-product__button-next::before {
+.card-product__button-next::after {
   content: "";
   display: block;
   background: url(../img/arrow-right.svg) no-repeat;
   width: 20px;
   height: 20px;
-  -webkit-transform: rotate(180deg) scale(2);
-          transform: rotate(180deg) scale(2);
+  -webkit-transform: scale(2);
+          transform: scale(2);
   padding-left: 20px;
-  margin-left: 100px;
 }
 
 .card-product__button-prev {
@@ -3703,30 +3712,27 @@ input[id="time"]:checked ~ .glider {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
   margin-bottom: 10px;
 }
 
-.card-product__button-prev::after {
-  content: "вперед";
+.card-product__button-prev::before {
+  content: "назад";
   font-size: 18px;
   color: black;
-  margin-right: 20px;
+  margin-right: -83px;
+  margin-left: 100px;
 }
 
-.card-product__button-prev::before {
+.card-product__button-prev::after {
   content: "";
   display: block;
   background: url(../img/arrow-right.svg) no-repeat;
-  -webkit-transform: scale(2);
-          transform: scale(2);
+  -webkit-transform: rotate(180deg) scale(2);
+          transform: rotate(180deg) scale(2);
   width: 20px;
   height: 20px;
   padding-right: 20px;
-  margin-right: 100px;
+  margin-right: 40px;
 }
 
 .compound__title {
@@ -3737,7 +3743,7 @@ input[id="time"]:checked ~ .glider {
   display: none;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1991px) {
   .cart-mobile {
     position: fixed;
     z-index: 50;
