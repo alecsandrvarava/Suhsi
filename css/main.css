@@ -3178,7 +3178,7 @@ display: -webkit-box;
 
 @media (max-width: 768px) {
   .sectionsets__search-btn {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
@@ -3507,7 +3507,7 @@ input[id="time"]:checked ~ .glider {
   display: flex;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .card-product__items {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -3731,5 +3731,53 @@ input[id="time"]:checked ~ .glider {
 
 .compound__title {
   margin-bottom: 5px;
+}
+
+.cart-mobile {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .cart-mobile {
+    position: fixed;
+    z-index: 50;
+    background-color: #ffffff;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-right: 30px;
+    right: 0;
+    bottom: 5%;
+  }
+}
+
+.cart-mobile__numb {
+  position: absolute;
+  top: 0px;
+  left: -5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ff9846;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #ffffff;
+  font-size: 24px;
 }
 /*# sourceMappingURL=main.css.map */
