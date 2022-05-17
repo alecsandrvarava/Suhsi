@@ -3747,7 +3747,7 @@ input[id="time"]:checked ~ .glider {
   .cart-mobile {
     position: fixed;
     z-index: 50;
-    background-color: #ffffff;
+    background-color: #f2f2f2;
     width: 90px;
     height: 90px;
     border-radius: 50%;
