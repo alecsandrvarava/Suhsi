@@ -716,9 +716,11 @@ const header = document.querySelector('.header__body')
 
 const sliderMenuBtn = document.querySelectorAll('.slider-menu__btn')
 if (sliderMenuBtn) {
-	sliderMenuBtn.onclick = function () {
-		header.style.backgroundColor = "red"
-	}
+	sliderMenuBtn.forEach(elem => {
+		elem.addEventListener('click', () => {
+			header.style.backgroundColor = "red"
+		})
+	})
 }
 
 function funcSliderMenuBtn() {
