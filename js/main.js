@@ -714,7 +714,12 @@ function funcPlusCount(productParent) {
 }
 const header = document.querySelector('.header__body')
 
-
+const sliderMenuBtn = document.querySelectorAll('.slider-menu__btn')
+if (sliderMenuBtn) {
+	sliderMenuBtn.onclick = function () {
+		header.style.backgroundColor = "red"
+	}
+}
 
 function funcSliderMenuBtn() {
 	const sliderMenuBtn = document.querySelectorAll('.slider-menu__btn')
@@ -723,7 +728,7 @@ function funcSliderMenuBtn() {
 		// elem.closest('.slider-menu__body').setAttribute('data-id', randomId())
 		elem.closest('.slider-menu__body').setAttribute('data-count', 1)
 		elem.addEventListener('click', (e) => {
-			header.style.backgroundColor = "red"
+
 			let self = e.currentTarget
 			let parent = self.closest('.slider-menu__body')
 			// elem.classList.add('disabled')
