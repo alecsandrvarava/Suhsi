@@ -316,13 +316,11 @@ if (search) {
 				} else if (sorting == 'expensive') {
 					setData.sort(compareNumericBig)
 					funcPrintPage(setData)
-					funcCartProduct(setData)
 					funcSliderMenuBtn()
 					funcDisabled()
 				} else if (sorting == 'quantity') {
 					setData.sort(compareNumericQuantity)
 					funcPrintPage(setData)
-					funcCartProduct(setData)
 					funcSliderMenuBtn()
 					funcDisabled()
 				} else if (sorting == 'default') {
@@ -333,7 +331,6 @@ if (search) {
 						// funcDisabled()
 					})
 					funcPrintPage(setData)
-					funcCartProduct(setData)
 					funcSliderMenuBtn()
 					funcDisabled()
 
@@ -345,14 +342,14 @@ if (search) {
 		});
 	})
 }
-
+// card-product.html
 
 function funcPrintPage(item) {
 	pageGrid.innerHTML = ''
 	item.map(function (element) {
 		pageGrid.insertAdjacentHTML('beforeend', `<div class="slider-menu__slide">
 		<div data-id="${element.id}" class="slider-menu__body">
-			<a href="card-product.html" class="slider-menu__img">
+			<a href="#" class="slider-menu__img">
 				<img src="${element.img}" alt="картинка">
 			</a>
 			<div class="slider-menu__block">
@@ -375,17 +372,55 @@ if (pageGrid) {
 // 	funcPrintPage(setData)
 // }
 
+function compareNumericTest(a, b) {
+	let numb1 = parseInt(priceWithoutSpaces(a.id))
+	let numb2 = parseInt(priceWithoutSpaces(b.id))
+	if (numb1 > numb2) return 1;
+	if (numb1 == numb2) return 0;
+	if (numb1 < numb2) return -1;
+}
+
+function funcMenuImg() {
+	const menuImg = document.querySelectorAll('.slider-menu__img img')
+	menuImg.forEach(el => {
+		el.addEventListener('click', (e) => {
+
+			let self = e.currentTarget
+			let parent = self.closest('.slider-menu__body')
+			let id = parent.dataset.id
+
+
+			setData.forEach(element => {
+				// console.log(element.id)
+				if (id == element.id) {
+					element.id = '0000'
+					// console.log(setData)
+				}
+			});
+
+			// id = 0
+			// console.log(id)
+			setData.sort(compareNumericTest)
+			// console.log(setData)
+			funcCartProduct(setData)
+		})
+	});
+}
+funcMenuImg()
+
 const cardProduct = document.querySelector('.card-product__wrapper')
 function funcCartProduct(item) {
-	// cardProduct.innerHTML = ''
+
 	// console.log(item)
 	item.map(function (element) {
-		// console.log(element)
-		cardProduct.insertAdjacentHTML('beforeend', `		<div class="swiper-slide card-product__slide">
+		const test = document.getElementById('test')
+		console.log(test)
+		// cardProduct.innerHTML = ''
+		test.insertAdjacentHTML('beforeend', `<div class="swiper-slide card-product__slide">
 		<div data-id="${element.id}" class="slider-menu__body card-product__items">
 			<div class="card-product__item">
 				<div class="slider-menu__img card-product__img">
-					<img src="img/set-ikudza.png" alt="img">
+					<img src="${element.img}" alt="img">
 				</div>
 			</div>
 			<div class="card-product__item">
@@ -427,7 +462,7 @@ function funcCartProduct(item) {
 if (cardProduct) {
 	funcCartProduct(setData)
 }
-
+funcCartProduct(setData)
 
 const contentSpoiler = document.getElementById("contentSpoiler")
 const linkSpoiler = document.getElementById("linkSpoiler")
@@ -544,7 +579,6 @@ svg.onclick = function () {
 		search.classList.remove('width')
 		if (screen.width < 991) {
 			headerContacts.classList.remove('hidden')
-
 		}
 	}
 	search.value = ""
@@ -722,6 +756,8 @@ if (sliderMenuBtn) {
 		})
 	})
 }
+
+
 
 function funcSliderMenuBtn() {
 	const sliderMenuBtn = document.querySelectorAll('.slider-menu__btn')
