@@ -73,7 +73,9 @@ const [productPopularStyle] = document.querySelectorAll('.product-popular')
 const product = document.querySelectorAll('.product')
 const productPopular = document.getElementById('productPopular')
 
-
+const pageGrid = document.querySelector('.sectionsets__grid')
+const set = document.querySelector('.set')
+let setData = []
 
 const productBase = [
 	{
@@ -192,6 +194,8 @@ if (swiperSlide) {
 	})
 	switcFunc(searchData)
 	activeSwiper()
+	funcMenuImg()
+	// funcCartProduct(searchData)
 	product.forEach(el => {
 		el.addEventListener('click', (e) => {
 			const item = e.currentTarget
@@ -201,31 +205,32 @@ if (swiperSlide) {
 				let searchData = productBase.filter(function (item) {
 					return item.name === 'new'
 				})
+				// funcCartProduct(searchData)
 				switcFunc(searchData)
 				activeSwiper()
 				funcSliderMenuBtn()
 				funcDisabled()
+				funcMenuImg()
 			} else if (item.id = 'popular') {
 				productNew.classList.remove('_active')
 				productPopular.classList.add('_active')
-
+				// funcCartProduct(searchData)
 				switcFunc(searchData)
 				activeSwiper()
 				funcSliderMenuBtn()
 				funcDisabled()
+				funcMenuImg()
 			}
 		})
 	});
-
-
-
+	// card-product.html
 	function switcFunc(item) {
 		swiperSlide.innerHTML = ''
 		item.map(function (element) {
 			swiperSlide.insertAdjacentHTML('beforeend', `<div class="slider-menu__slide swiper-slide">
 			<div data-id="${element.id}" class="slider-menu__body">
 				<a href="card-product.html" class="slider-menu__img">
-					<div><img src="${element.img}" alt="картинка"></div>
+					<img src="${element.img}" alt="картинка">
 				</a>
 				<h2 class="slider-menu__title">${element.title}</h2>
 				<div class="slider-menu__text">${element.text}</div>
@@ -244,24 +249,25 @@ if (swiperSlide) {
 			loopedSlides: 3,
 			spaceBetween: 30,
 			slidesPerGroup: 1,
+			loopAdditionalSlides: 3,
+			paginationClickable: true,
 			loop: true,
 			navigation: {
 				nextEl: ".swiper-button-next",
 				prevEl: ".swiper-button-prev",
 			},
-			autoplay: {
-				delay: 6000,
-				disableOnInteraction: false,
-			},
-			speed: 1500,
-			slideToClickedSlide: false,
+			// autoplay: {
+			// 	delay: 6000,
+			// 	disableOnInteraction: false,
+			// },
+			// speed: 1500,
+			// slideToClickedSlide: true,
+
 		})
 	}
 }
 
-const pageGrid = document.querySelector('.sectionsets__grid')
-const set = document.querySelector('.set')
-let setData = []
+
 if (pageGrid) {
 	setData = productBase.filter((item) => {
 		return item.type === 'set'
@@ -270,6 +276,18 @@ if (pageGrid) {
 if (set) {
 	setData = productBase.filter((item) => {
 		return item.type === 'set'
+	})
+}
+if (swiperSlide) {
+	setData = productBase.filter((item) => {
+		funcMenuImg()
+		// return item.type === 'set'
+		// localStorage.removeItem("set")
+		if (item.name === 'popular') {
+			return item.name === 'popular'
+		} else if (item.name === 'new') {
+			return item.name === 'new'
+		}
 	})
 }
 function compareNumeric(a, b) {
@@ -313,16 +331,19 @@ if (search) {
 					funcPrintPage(setData)
 					funcSliderMenuBtn()
 					funcDisabled()
+					funcMenuImg()
 				} else if (sorting == 'expensive') {
 					setData.sort(compareNumericBig)
 					funcPrintPage(setData)
 					funcSliderMenuBtn()
 					funcDisabled()
+					funcMenuImg()
 				} else if (sorting == 'quantity') {
 					setData.sort(compareNumericQuantity)
 					funcPrintPage(setData)
 					funcSliderMenuBtn()
 					funcDisabled()
+					funcMenuImg()
 				} else if (sorting == 'default') {
 					setData = productBase.filter((item) => {
 						return item.type === 'set'
@@ -333,7 +354,7 @@ if (search) {
 					funcPrintPage(setData)
 					funcSliderMenuBtn()
 					funcDisabled()
-
+					funcMenuImg()
 					// funcPrintPage(setData)
 				}
 				list.classList.toggle('hidden')
@@ -349,7 +370,7 @@ function funcPrintPage(item) {
 	item.map(function (element) {
 		pageGrid.insertAdjacentHTML('beforeend', `<div class="slider-menu__slide">
 		<div data-id="${element.id}" class="slider-menu__body">
-			<a href="#" class="slider-menu__img">
+			<a href="card-product.html" class="slider-menu__img">
 				<img src="${element.img}" alt="картинка">
 			</a>
 			<div class="slider-menu__block">
@@ -373,50 +394,61 @@ if (pageGrid) {
 // }
 
 function compareNumericTest(a, b) {
-	let numb1 = parseInt(priceWithoutSpaces(a.id))
-	let numb2 = parseInt(priceWithoutSpaces(b.id))
-	if (numb1 > numb2) return 1;
-	if (numb1 == numb2) return 0;
-	if (numb1 < numb2) return -1;
+	let numb1 = parseInt(a.numb)
+	let numb2 = parseInt(b.numb)
+	// let numb1 = parseInt(priceWithoutSpaces(a.numb))
+	// let numb2 = parseInt(priceWithoutSpaces(b.numb))
+	if (numb2 > numb1) return 1;
+	if (numb2 == numb1) return 0;
+	if (numb2 < numb1) return -1;
+	// if (numb1 > numb2) return 1;
+	// if (numb1 == numb2) return 0;
+	// if (numb1 < numb2) return -1;
 }
 
 function funcMenuImg() {
-	const menuImg = document.querySelectorAll('.slider-menu__img img')
+	const menuImg = document.querySelectorAll('.slider-menu__img')
 	menuImg.forEach(el => {
+		el.closest('.slider-menu__body').setAttribute('data-numb', 1)
 		el.addEventListener('click', (e) => {
-
 			let self = e.currentTarget
 			let parent = self.closest('.slider-menu__body')
+			let numb = +parent.dataset.numb
 			let id = parent.dataset.id
-
-
+			console.log(parent)
 			setData.forEach(element => {
-				// console.log(element.id)
+				element.numb = numb
 				if (id == element.id) {
-					element.id = '0000'
-					// console.log(setData)
+					element.numb = 2
 				}
 			});
+
+			// console.log(setData)
+			// setData.forEach(el => {
+
+			// 	el.numb = numb++
+			// 	console.log(setData)
+			// });
 
 			// id = 0
 			// console.log(id)
 			setData.sort(compareNumericTest)
-			// console.log(setData)
-			funcCartProduct(setData)
+			// funcCartProduct(setData)
+			localStorage.setItem('set', JSON.stringify(setData));
 		})
 	});
 }
 funcMenuImg()
 
+
+
+
+
+
 const cardProduct = document.querySelector('.card-product__wrapper')
 function funcCartProduct(item) {
-
-	// console.log(item)
-	item.map(function (element) {
-		const test = document.getElementById('test')
-		console.log(test)
-		// cardProduct.innerHTML = ''
-		test.insertAdjacentHTML('beforeend', `<div class="swiper-slide card-product__slide">
+	item.forEach(function (element) {
+		cardProduct.insertAdjacentHTML('beforeend', `<div class="swiper-slide card-product__slide">
 		<div data-id="${element.id}" class="slider-menu__body card-product__items">
 			<div class="card-product__item">
 				<div class="slider-menu__img card-product__img">
@@ -425,7 +457,7 @@ function funcCartProduct(item) {
 			</div>
 			<div class="card-product__item">
 				<div class="slider-menu__title card-product__title">${element.title}</div>
-				<div class="card-product__weight">290 грамм</div>
+				<div class="card-product__weight">${element.text}</div>
 				<div class="card-product__calc">
 					<div class="cart-sub-body__calc">
 						<!-- <div class="cart-sub-body__caunter">
@@ -444,7 +476,6 @@ function funcCartProduct(item) {
 						<div class="slider-menu__price cart-sub-body__price card-product__price">${element.price}
 						</div>
 					</div>
-
 				</div>
 				<div class="card-product__compound">
 					<div class="compound__title">Состав:</div>
@@ -459,10 +490,14 @@ function funcCartProduct(item) {
 	</div>`)
 	})
 }
+
 if (cardProduct) {
+	setData = JSON.parse(localStorage.getItem("set"))
+	// console.log(setData)
 	funcCartProduct(setData)
+	// setData = []
+	// localStorage.setItem('set', JSON.stringify(setData));
 }
-funcCartProduct(setData)
 
 const contentSpoiler = document.getElementById("contentSpoiler")
 const linkSpoiler = document.getElementById("linkSpoiler")

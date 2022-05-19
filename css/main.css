@@ -3196,7 +3196,8 @@ display: -webkit-box;
 }
 
 .sectionsets__search-list li:not(:last-child) {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  padding: 10px 0;
 }
 
 .sectionsets__grid {
@@ -3531,7 +3532,6 @@ input[id="time"]:checked ~ .glider {
         -ms-flex: 1 1 100%;
             flex: 1 1 100%;
     width: 100%;
-    height: 50%;
   }
 }
 
@@ -3682,13 +3682,8 @@ input[id="time"]:checked ~ .glider {
 
 @media (max-width: 1200px) {
   .card-product__btn {
-    font-size: 36px;
-  }
-}
-
-@media (max-width: 991px) {
-  .card-product__btn {
     font-size: 30px;
+    padding: 15px 30px;
   }
 }
 
