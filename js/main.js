@@ -313,56 +313,60 @@ function compareNumericQuantity(a, b) {
 }
 const searchBtn = document.querySelector('.sectionsets__search-btn')
 const search = document.querySelector('.sectionsets__search')
+// const searchList = document.querySelector('.sectionsets__search-list')
 const searchLinkList = document.querySelectorAll('.sectionsets__search-link')
 if (search) {
 	search.addEventListener('click', (e) => {
+		funcMenuImg()
 		let list = e.currentTarget.querySelector('.sectionsets__search-list')
 		let arrow = e.currentTarget.querySelector('.sectionsets__arrow')
 		arrow.classList.toggle('turn')
 		list.classList.toggle('hidden')
-		searchLinkList.forEach(element => {
-			element.addEventListener('click', (e) => {
-				// list.classList.toggle('hidden')
-				let elem = e.currentTarget.textContent
-				let sorting = e.currentTarget.dataset.sorting
-				searchBtn.innerHTML = elem
-				if (sorting == 'cheap') {
-					setData.sort(compareNumeric)
-					funcPrintPage(setData)
-					funcSliderMenuBtn()
-					funcDisabled()
-					funcMenuImg()
-				} else if (sorting == 'expensive') {
-					setData.sort(compareNumericBig)
-					funcPrintPage(setData)
-					funcSliderMenuBtn()
-					funcDisabled()
-					funcMenuImg()
-				} else if (sorting == 'quantity') {
-					setData.sort(compareNumericQuantity)
-					funcPrintPage(setData)
-					funcSliderMenuBtn()
-					funcDisabled()
-					funcMenuImg()
-				} else if (sorting == 'default') {
-					setData = productBase.filter((item) => {
-						return item.type === 'set'
 
-						// funcSliderMenuBtn()
-						// funcDisabled()
-					})
-					funcPrintPage(setData)
-					funcSliderMenuBtn()
-					funcDisabled()
-					funcMenuImg()
-					// funcPrintPage(setData)
-				}
-				list.classList.toggle('hidden')
-				arrow.classList.toggle('turn')
-			})
-		});
 	})
 }
+searchLinkList.forEach(element => {
+	element.addEventListener('click', (e) => {
+		console.log(e.currentTarget)
+		// list.classList.toggle('hidden')
+		let elem = e.currentTarget.textContent
+		let sorting = e.currentTarget.dataset.sorting
+		searchBtn.innerHTML = elem
+		if (sorting == 'cheap') {
+			setData.sort(compareNumeric)
+			funcPrintPage(setData)
+			funcSliderMenuBtn()
+			funcDisabled()
+			// funcMenuImg()
+		} else if (sorting == 'expensive') {
+			setData.sort(compareNumericBig)
+			funcPrintPage(setData)
+			funcSliderMenuBtn()
+			funcDisabled()
+			// funcMenuImg()
+		} else if (sorting == 'quantity') {
+			setData.sort(compareNumericQuantity)
+			funcPrintPage(setData)
+			funcSliderMenuBtn()
+			funcDisabled()
+			// funcMenuImg()
+		} else if (sorting == 'default') {
+			setData = productBase.filter((item) => {
+				return item.type === 'set'
+
+				// funcSliderMenuBtn()
+				// funcDisabled()
+			})
+			funcPrintPage(setData)
+			funcSliderMenuBtn()
+			funcDisabled()
+			// funcMenuImg()
+			// funcPrintPage(setData)
+		}
+		// searchList.classList.toggle('hidden')
+		// arrow.classList.toggle('turn')
+	})
+});
 // card-product.html
 
 function funcPrintPage(item) {
