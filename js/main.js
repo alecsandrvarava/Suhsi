@@ -800,7 +800,7 @@ if (sliderMenuBtn) {
 	sliderMenuBtn.forEach(elem => {
 		elem.closest('.slider-menu__body').setAttribute('data-count', 1)
 		elem.addEventListener('click', (e) => {
-			header.style.backgroundColor = "yellow"
+			header.style.backgroundColor = "red"
 			let self = e.currentTarget
 			let parent = self.closest('.slider-menu__body')
 			// elem.classList.add('disabled')
