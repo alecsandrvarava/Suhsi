@@ -337,18 +337,21 @@ searchLinkList.forEach(element => {
 			funcPrintPage(setData)
 			funcSliderMenuBtn()
 			funcDisabled()
+			setData = JSON.parse(localStorage.getItem("set"))
 			// funcMenuImg()
 		} else if (sorting == 'expensive') {
 			setData.sort(compareNumericBig)
 			funcPrintPage(setData)
 			funcSliderMenuBtn()
 			funcDisabled()
+			setData = JSON.parse(localStorage.getItem("set"))
 			// funcMenuImg()
 		} else if (sorting == 'quantity') {
 			setData.sort(compareNumericQuantity)
 			funcPrintPage(setData)
 			funcSliderMenuBtn()
 			funcDisabled()
+			setData = JSON.parse(localStorage.getItem("set"))
 			// funcMenuImg()
 		} else if (sorting == 'default') {
 			setData = productBase.filter((item) => {
@@ -360,6 +363,7 @@ searchLinkList.forEach(element => {
 			funcPrintPage(setData)
 			funcSliderMenuBtn()
 			funcDisabled()
+			setData = JSON.parse(localStorage.getItem("set"))
 			// funcMenuImg()
 			// funcPrintPage(setData)
 		}
@@ -409,7 +413,7 @@ function compareNumericTest(a, b) {
 	// if (numb1 == numb2) return 0;
 	// if (numb1 < numb2) return -1;
 }
-
+let menuImgId = ''
 function funcMenuImg() {
 	const menuImg = document.querySelectorAll('.slider-menu__img')
 	menuImg.forEach(el => {
@@ -418,11 +422,11 @@ function funcMenuImg() {
 			let self = e.currentTarget
 			let parent = self.closest('.slider-menu__body')
 			let numb = +parent.dataset.numb
-			let id = parent.dataset.id
+			let menuImgId = parent.dataset.id
 			console.log(parent)
 			setData.forEach(element => {
 				element.numb = numb
-				if (id == element.id) {
+				if (menuImgId == element.id) {
 					element.numb = 2
 				}
 			});
@@ -789,9 +793,23 @@ const header = document.querySelector('.header__body')
 
 const sliderMenuBtn = document.querySelectorAll('.slider-menu__btn')
 if (sliderMenuBtn) {
+
 	sliderMenuBtn.forEach(elem => {
-		elem.addEventListener('click', () => {
+		elem.closest('.slider-menu__body').setAttribute('data-count', 1)
+		elem.addEventListener('click', (e) => {
 			header.style.backgroundColor = "red"
+			let self = e.currentTarget
+			let parent = self.closest('.slider-menu__body')
+			// elem.classList.add('disabled')
+			let dataObj = {
+				id: parent.dataset.id,
+				title: parent.querySelector('.slider-menu__title').textContent,
+				img: parent.querySelector('.slider-menu__img img').getAttribute('src'),
+				priceString: priceWithoutSpaces(parent.querySelector('.slider-menu__price').textContent),
+				priceNumber: parseInt(priceWithoutSpaces(parent.querySelector('.slider-menu__price').textContent)),
+				count: parent.dataset.count,
+			}
+			console.log(dataObj)
 		})
 	})
 }
@@ -831,6 +849,7 @@ function funcSliderMenuBtn() {
 		})
 	})
 }
+funcSliderMenuBtn()
 const cartMobileNumb = document.querySelector('.cart-mobile__numb')
 function funcCartMobile(item) {
 	FullCount = JSON.parse(localStorage.getItem("Full"))
@@ -859,7 +878,7 @@ function funcDisabled() {
 	}
 }
 funcDisabled()
-funcSliderMenuBtn()
+
 
 const cart = document.querySelector('.cart-body')
 if (cart) {
