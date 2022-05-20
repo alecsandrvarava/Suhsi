@@ -396,21 +396,16 @@ function funcPrintPage(item) {
 if (pageGrid) {
 	funcPrintPage(setData)
 }
-// else if (cardProduct) {
-// 	funcPrintPage(setData)
-// }
+else if (cardProduct) {
+	funcPrintPage(setData)
+}
 
 function compareNumericTest(a, b) {
 	let numb1 = parseInt(a.numb)
 	let numb2 = parseInt(b.numb)
-	// let numb1 = parseInt(priceWithoutSpaces(a.numb))
-	// let numb2 = parseInt(priceWithoutSpaces(b.numb))
 	if (numb2 > numb1) return 1;
 	if (numb2 == numb1) return 0;
 	if (numb2 < numb1) return -1;
-	// if (numb1 > numb2) return 1;
-	// if (numb1 == numb2) return 0;
-	// if (numb1 < numb2) return -1;
 }
 let menuImgId = ''
 function funcMenuImg() {
