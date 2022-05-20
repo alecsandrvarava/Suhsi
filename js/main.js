@@ -337,21 +337,21 @@ searchLinkList.forEach(element => {
 			funcPrintPage(setData)
 			funcSliderMenuBtn()
 			funcDisabled()
-			setData = JSON.parse(localStorage.getItem("set"))
+			// setData = JSON.parse(localStorage.getItem("set"))
 			// funcMenuImg()
 		} else if (sorting == 'expensive') {
 			setData.sort(compareNumericBig)
 			funcPrintPage(setData)
 			funcSliderMenuBtn()
 			funcDisabled()
-			setData = JSON.parse(localStorage.getItem("set"))
+			// setData = JSON.parse(localStorage.getItem("set"))
 			// funcMenuImg()
 		} else if (sorting == 'quantity') {
 			setData.sort(compareNumericQuantity)
 			funcPrintPage(setData)
 			funcSliderMenuBtn()
 			funcDisabled()
-			setData = JSON.parse(localStorage.getItem("set"))
+			// setData = JSON.parse(localStorage.getItem("set"))
 			// funcMenuImg()
 		} else if (sorting == 'default') {
 			setData = productBase.filter((item) => {
@@ -363,7 +363,7 @@ searchLinkList.forEach(element => {
 			funcPrintPage(setData)
 			funcSliderMenuBtn()
 			funcDisabled()
-			setData = JSON.parse(localStorage.getItem("set"))
+			// setData = JSON.parse(localStorage.getItem("set"))
 			// funcMenuImg()
 			// funcPrintPage(setData)
 		}
@@ -429,6 +429,9 @@ function funcMenuImg() {
 				if (menuImgId == element.id) {
 					element.numb = 2
 				}
+				setData.sort(compareNumericTest)
+				// funcCartProduct(setData)
+				localStorage.setItem('set', JSON.stringify(setData));
 			});
 
 			// console.log(setData)
@@ -440,9 +443,9 @@ function funcMenuImg() {
 
 			// id = 0
 			// console.log(id)
-			setData.sort(compareNumericTest)
-			// funcCartProduct(setData)
-			localStorage.setItem('set', JSON.stringify(setData));
+			// setData.sort(compareNumericTest)
+			// // funcCartProduct(setData)
+			// localStorage.setItem('set', JSON.stringify(setData));
 		})
 	});
 }
