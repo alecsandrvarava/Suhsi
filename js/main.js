@@ -799,32 +799,31 @@ if (sliderMenuBtn) {
 	sliderMenuBtn.forEach(elem => {
 		elem.closest('.slider-menu__body').setAttribute('data-count', 1)
 		elem.addEventListener('click', (e) => {
-			localStorage.clear()
-			// header.style.backgroundColor = "red"
-			// let self = e.currentTarget
-			// let parent = self.closest('.slider-menu__body')
-			// // elem.classList.add('disabled')
-			// let dataObj = {
-			// 	id: parent.dataset.id,
-			// 	title: parent.querySelector('.slider-menu__title').textContent,
-			// 	img: parent.querySelector('.slider-menu__img img').getAttribute('src'),
-			// 	priceString: priceWithoutSpaces(parent.querySelector('.slider-menu__price').textContent),
-			// 	priceNumber: parseInt(priceWithoutSpaces(parent.querySelector('.slider-menu__price').textContent)),
-			// 	count: parent.dataset.count,
-			// }
-			// const cartMobile = document.querySelector('.cart-mobile')
-			// data.push(dataObj)
-			// localStorage.setItem('Data', JSON.stringify(data))
-			// plusFullPrice(dataObj.priceNumber)
-			// printFullPrice()
-			// cartSubBodyItems.insertAdjacentHTML('afterbegin', generateCartProduct(dataObj.img, dataObj.title, dataObj.priceString, dataObj.id, dataObj.count))
-			// printCart()
-			// cartNumb = cartSubBodyItems.children.length
-			// priceTest.fullCount = cartNumb
-			// localStorage.setItem('Full', JSON.stringify(priceTest))
-			// cartMobileNumb.innerHTML = cartNumb
-			// // funcCartMobile(cartNumb)
-			// funcDisabled()
+			header.style.backgroundColor = "red"
+			let self = e.currentTarget
+			let parent = self.closest('.slider-menu__body')
+			// elem.classList.add('disabled')
+			let dataObj = {
+				id: parent.dataset.id,
+				title: parent.querySelector('.slider-menu__title').textContent,
+				img: parent.querySelector('.slider-menu__img img').getAttribute('src'),
+				priceString: priceWithoutSpaces(parent.querySelector('.slider-menu__price').textContent),
+				priceNumber: parseInt(priceWithoutSpaces(parent.querySelector('.slider-menu__price').textContent)),
+				count: parent.dataset.count,
+			}
+			const cartMobile = document.querySelector('.cart-mobile')
+			data.push(dataObj)
+			localStorage.setItem('Data', JSON.stringify(data))
+			plusFullPrice(dataObj.priceNumber)
+			printFullPrice()
+			cartSubBodyItems.insertAdjacentHTML('afterbegin', generateCartProduct(dataObj.img, dataObj.title, dataObj.priceString, dataObj.id, dataObj.count))
+			printCart()
+			cartNumb = cartSubBodyItems.children.length
+			priceTest.fullCount = cartNumb
+			localStorage.setItem('Full', JSON.stringify(priceTest))
+			cartMobileNumb.innerHTML = cartNumb
+			// funcCartMobile(cartNumb)
+			funcDisabled()
 		})
 	})
 }
@@ -929,20 +928,22 @@ if (formBtn) {
 }
 
 // const searcher = document.getElementById('searсher')
-
+svg.addEventListener('click', () => {
+	homeSlider.classList.toggle('searher')
+})
 
 const homeSlider = document.querySelector('.home-slider')
 // console.log(searсherBody)
 searcher.oninput = function (e) {
-	const searсherBody = document.querySelector('.searher')
-	if (!e.target.value.length == 0) {
-		// searсherBody.remove()
-		homeSlider.classList.add('searher')
-		console.log('remove')
-	} else {
-		homeSlider.classList.remove('searher')
-	}
-	console.log(e.target.value.length)
+	// const searсherBody = document.querySelector('.searher')
+	// if (!e.target.value.length == 0) {
+	// 	// searсherBody.remove()
+	// 	homeSlider.classList.add('searher')
+	// 	console.log('remove')
+	// } else {
+	// 	homeSlider.classList.remove('searher')
+	// }
+	// console.log(e.target.value.length)
 	let searchData = [];
 	productBase.map(function (elem) {
 		const textTest = elem.title.toLowerCase()
@@ -974,6 +975,7 @@ searcher.oninput = function (e) {
 	})
 	// funcPrintPage(searchData)
 }
+
 
 
 const checkboxCars = document.querySelectorAll('input[name="news"]')
