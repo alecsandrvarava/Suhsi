@@ -812,6 +812,8 @@ if (sliderMenuBtn) {
 				priceNumber: parseInt(priceWithoutSpaces(parent.querySelector('.slider-menu__price').textContent)),
 				count: parent.dataset.count,
 			}
+			const cartMobile = document.querySelector('.cart-mobile')
+			cartMobile.innerHTML = dataObj.priceString
 			data.push(dataObj)
 			localStorage.setItem('Data', JSON.stringify(data))
 			plusFullPrice(dataObj.priceNumber)
@@ -823,7 +825,6 @@ if (sliderMenuBtn) {
 			localStorage.setItem('Full', JSON.stringify(priceTest))
 			funcCartMobile(cartNumb)
 			funcDisabled()
-			console.log(dataObj)
 		})
 	})
 }
