@@ -812,32 +812,6 @@ if (sliderMenuBtn) {
 				priceNumber: parseInt(priceWithoutSpaces(parent.querySelector('.slider-menu__price').textContent)),
 				count: parent.dataset.count,
 			}
-			console.log(dataObj)
-		})
-	})
-}
-
-
-
-function funcSliderMenuBtn() {
-	const sliderMenuBtn = document.querySelectorAll('.slider-menu__btn')
-	sliderMenuBtn.forEach(elem => {
-
-		// elem.closest('.slider-menu__body').setAttribute('data-id', randomId())
-		elem.closest('.slider-menu__body').setAttribute('data-count', 1)
-		elem.addEventListener('click', (e) => {
-
-			let self = e.currentTarget
-			let parent = self.closest('.slider-menu__body')
-			// elem.classList.add('disabled')
-			let dataObj = {
-				id: parent.dataset.id,
-				title: parent.querySelector('.slider-menu__title').textContent,
-				img: parent.querySelector('.slider-menu__img img').getAttribute('src'),
-				priceString: priceWithoutSpaces(parent.querySelector('.slider-menu__price').textContent),
-				priceNumber: parseInt(priceWithoutSpaces(parent.querySelector('.slider-menu__price').textContent)),
-				count: parent.dataset.count,
-			}
 			data.push(dataObj)
 			localStorage.setItem('Data', JSON.stringify(data))
 			plusFullPrice(dataObj.priceNumber)
@@ -849,10 +823,47 @@ function funcSliderMenuBtn() {
 			localStorage.setItem('Full', JSON.stringify(priceTest))
 			funcCartMobile(cartNumb)
 			funcDisabled()
+			console.log(dataObj)
 		})
 	})
 }
-funcSliderMenuBtn()
+
+
+
+// function funcSliderMenuBtn() {
+// 	const sliderMenuBtn = document.querySelectorAll('.slider-menu__btn')
+// 	sliderMenuBtn.forEach(elem => {
+
+// 		// elem.closest('.slider-menu__body').setAttribute('data-id', randomId())
+// 		elem.closest('.slider-menu__body').setAttribute('data-count', 1)
+// 		elem.addEventListener('click', (e) => {
+
+// 			let self = e.currentTarget
+// 			let parent = self.closest('.slider-menu__body')
+// 			// elem.classList.add('disabled')
+// 			let dataObj = {
+// 				id: parent.dataset.id,
+// 				title: parent.querySelector('.slider-menu__title').textContent,
+// 				img: parent.querySelector('.slider-menu__img img').getAttribute('src'),
+// 				priceString: priceWithoutSpaces(parent.querySelector('.slider-menu__price').textContent),
+// 				priceNumber: parseInt(priceWithoutSpaces(parent.querySelector('.slider-menu__price').textContent)),
+// 				count: parent.dataset.count,
+// 			}
+// 			data.push(dataObj)
+// 			localStorage.setItem('Data', JSON.stringify(data))
+// 			plusFullPrice(dataObj.priceNumber)
+// 			printFullPrice()
+// 			cartSubBodyItems.insertAdjacentHTML('afterbegin', generateCartProduct(dataObj.img, dataObj.title, dataObj.priceString, dataObj.id, dataObj.count))
+// 			printCart()
+// 			cartNumb = cartSubBodyItems.children.length
+// 			priceTest.fullCount = cartNumb
+// 			localStorage.setItem('Full', JSON.stringify(priceTest))
+// 			funcCartMobile(cartNumb)
+// 			funcDisabled()
+// 		})
+// 	})
+// }
+// funcSliderMenuBtn()
 const cartMobileNumb = document.querySelector('.cart-mobile__numb')
 function funcCartMobile(item) {
 	FullCount = JSON.parse(localStorage.getItem("Full"))
