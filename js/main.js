@@ -337,21 +337,21 @@ searchLinkList.forEach(element => {
 			funcPrintPage(setData)
 			funcSliderMenuBtn()
 			funcDisabled()
-			// setData = JSON.parse(localStorage.getItem("set"))
+			setData = JSON.parse(localStorage.getItem("set"))
 			// funcMenuImg()
 		} else if (sorting == 'expensive') {
 			setData.sort(compareNumericBig)
 			funcPrintPage(setData)
 			funcSliderMenuBtn()
 			funcDisabled()
-			// setData = JSON.parse(localStorage.getItem("set"))
+			setData = JSON.parse(localStorage.getItem("set"))
 			// funcMenuImg()
 		} else if (sorting == 'quantity') {
 			setData.sort(compareNumericQuantity)
 			funcPrintPage(setData)
 			funcSliderMenuBtn()
 			funcDisabled()
-			// setData = JSON.parse(localStorage.getItem("set"))
+			setData = JSON.parse(localStorage.getItem("set"))
 			// funcMenuImg()
 		} else if (sorting == 'default') {
 			setData = productBase.filter((item) => {
@@ -363,7 +363,7 @@ searchLinkList.forEach(element => {
 			funcPrintPage(setData)
 			funcSliderMenuBtn()
 			funcDisabled()
-			// setData = JSON.parse(localStorage.getItem("set"))
+			setData = JSON.parse(localStorage.getItem("set"))
 			// funcMenuImg()
 			// funcPrintPage(setData)
 		}
@@ -396,9 +396,9 @@ function funcPrintPage(item) {
 if (pageGrid) {
 	funcPrintPage(setData)
 }
-else if (cardProduct) {
-	funcPrintPage(setData)
-}
+// else if (cardProduct) {
+// 	funcPrintPage(setData)
+// }
 
 function compareNumericTest(a, b) {
 	let numb1 = parseInt(a.numb)
