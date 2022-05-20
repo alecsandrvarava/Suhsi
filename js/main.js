@@ -878,18 +878,20 @@ if (priceTest.fullCount > 0 && cartMobileNumb) {
 
 function funcDisabled() {
 	const sliderMenuBtn = document.querySelectorAll('.slider-menu__btn')
+	let id = ''
 	DataNews = JSON.parse(localStorage.getItem("Data"))
 	if (DataNews) {
 		DataNews.forEach(element => {
-			sliderMenuBtn.forEach(elem => {
-				let body = elem.closest('.slider-menu__body')
-				let idBtn = body.dataset.id
-				if (element.id == idBtn) {
-					elem.classList.add('disabled')
-				}
-			})
+			id = element.id
 		})
 	}
+	sliderMenuBtn.forEach(elem => {
+		let body = elem.closest('.slider-menu__body')
+		let idBtn = body.dataset.id
+		if (id == idBtn) {
+			elem.classList.add('disabled')
+		}
+	})
 }
 funcDisabled()
 
