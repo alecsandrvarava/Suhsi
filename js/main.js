@@ -813,10 +813,9 @@ if (sliderMenuBtn) {
 				count: parent.dataset.count,
 			}
 			const cartMobile = document.querySelector('.cart-mobile')
-			cartMobile.innerHTML = dataObj.priceString
 			// data.push(dataObj)
 			// localStorage.setItem('Data', JSON.stringify(data))
-			// plusFullPrice(dataObj.priceNumber)
+			plusFullPrice(dataObj.priceNumber)
 			printFullPrice()
 			cartSubBodyItems.insertAdjacentHTML('afterbegin', generateCartProduct(dataObj.img, dataObj.title, dataObj.priceString, dataObj.id, dataObj.count))
 			printCart()
@@ -824,7 +823,7 @@ if (sliderMenuBtn) {
 			// 	priceTest.fullCount = cartNumb
 			// 	localStorage.setItem('Full', JSON.stringify(priceTest))
 			// 	funcCartMobile(cartNumb)
-			funcDisabled()
+			// funcDisabled()
 		})
 	})
 }
