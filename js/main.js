@@ -927,23 +927,26 @@ if (formBtn) {
 	})
 }
 
-// const searcher = document.getElementById('searсher')
-svg.addEventListener('click', () => {
-	homeSlider.classList.toggle('searher')
-})
-
-const homeSlider = document.querySelector('.home-slider')
-// console.log(searсherBody)
+const homeSlider = document.querySelector('.home-slider__swiper')
 searcher.oninput = function (e) {
-	// const searсherBody = document.querySelector('.searher')
-	// if (!e.target.value.length == 0) {
-	// 	// searсherBody.remove()
-	// 	homeSlider.classList.add('searher')
-	// 	console.log('remove')
-	// } else {
-	// 	homeSlider.classList.remove('searher')
-	// }
-	// console.log(e.target.value.length)
+	const searсherBody = document.querySelector('.searher')
+	if (!e.target.value.length == 0) {
+		if (homeSlider) {
+			homeSlider.classList.add('hidden')
+			searсherBody.classList.remove('hidden')
+		} else {
+			pageGrid.classList.add('hidden')
+			searсherBody.classList.remove('hidden')
+		}
+	} else {
+		if (homeSlider) {
+			homeSlider.classList.remove('hidden')
+			searсherBody.classList.add('hidden')
+		} else {
+			pageGrid.classList.remove('hidden')
+			searсherBody.classList.add('hidden')
+		}
+	}
 	let searchData = [];
 	productBase.map(function (elem) {
 		const textTest = elem.title.toLowerCase()
@@ -953,8 +956,7 @@ searcher.oninput = function (e) {
 
 		}
 	})
-
-	// searсherBody.innerHTML = ''
+	searсherBody.innerHTML = ''
 	searchData.map(function (element) {
 		searсherBody.insertAdjacentHTML('beforeend', `<div class="slider-menu__slide">
 		<div data-id="${element.id}" class="slider-menu__body">
@@ -973,7 +975,6 @@ searcher.oninput = function (e) {
 			</div>
 		</div>`)
 	})
-	// funcPrintPage(searchData)
 }
 
 
