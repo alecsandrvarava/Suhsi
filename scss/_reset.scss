@@ -157,6 +157,23 @@ h6 {
 	visibility: visible;
 	transition: 0.3s;
 }
+.searher {
+	grid-column: 3 span;
+	display: grid;
+	grid-gap: 30px;
+	grid-template-columns: repeat(3, 1fr);
+	margin-bottom: 50px;
+	@media (max-width: 1400px) {
+		grid-gap: 20px;
+	}
+	@media (max-width: 991px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@media (max-width: 768px) {
+		grid-gap: 10px;
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
 /*------ Одна строка, сокращение(троеточие)-------
 display: -webkit-box;
 		-webkit-line-clamp: 1;

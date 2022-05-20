@@ -202,6 +202,37 @@ h6 {
   transition: 0.3s;
 }
 
+.searher {
+  grid-column: 3 span;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 30px;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 50px;
+}
+
+@media (max-width: 1400px) {
+  .searher {
+    grid-gap: 20px;
+  }
+}
+
+@media (max-width: 991px) {
+  .searher {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .searher {
+    grid-gap: 10px;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 /*------ Одна строка, сокращение(троеточие)-------
 display: -webkit-box;
 		-webkit-line-clamp: 1;

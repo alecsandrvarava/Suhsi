@@ -278,18 +278,18 @@ if (set) {
 		return item.type === 'set'
 	})
 }
-if (swiperSlide) {
-	setData = productBase.filter((item) => {
-		funcMenuImg()
-		// return item.type === 'set'
-		// localStorage.removeItem("set")
-		if (item.name === 'popular') {
-			return item.name === 'popular'
-		} else if (item.name === 'new') {
-			return item.name === 'new'
-		}
-	})
-}
+// if (swiperSlide) {
+// 	setData = productBase.filter((item) => {
+// 		funcMenuImg()
+// 		// return item.type === 'set'
+// 		// localStorage.removeItem("set")
+// 		if (item.name === 'popular') {
+// 			return item.name === 'popular'
+// 		} else if (item.name === 'new') {
+// 			return item.name === 'new'
+// 		}
+// 	})
+// }
 function compareNumeric(a, b) {
 	let numb1 = parseInt(priceWithoutSpaces(a.price))
 	let numb2 = parseInt(priceWithoutSpaces(b.price))
@@ -372,7 +372,6 @@ searchLinkList.forEach(element => {
 	})
 });
 // card-product.html
-
 function funcPrintPage(item) {
 	pageGrid.innerHTML = ''
 	item.map(function (element) {
@@ -800,31 +799,32 @@ if (sliderMenuBtn) {
 	sliderMenuBtn.forEach(elem => {
 		elem.closest('.slider-menu__body').setAttribute('data-count', 1)
 		elem.addEventListener('click', (e) => {
-			header.style.backgroundColor = "red"
-			let self = e.currentTarget
-			let parent = self.closest('.slider-menu__body')
-			// elem.classList.add('disabled')
-			let dataObj = {
-				id: parent.dataset.id,
-				title: parent.querySelector('.slider-menu__title').textContent,
-				img: parent.querySelector('.slider-menu__img img').getAttribute('src'),
-				priceString: priceWithoutSpaces(parent.querySelector('.slider-menu__price').textContent),
-				priceNumber: parseInt(priceWithoutSpaces(parent.querySelector('.slider-menu__price').textContent)),
-				count: parent.dataset.count,
-			}
-			const cartMobile = document.querySelector('.cart-mobile')
-			data.push(dataObj)
-			localStorage.setItem('Data', JSON.stringify(data))
-			plusFullPrice(dataObj.priceNumber)
-			printFullPrice()
-			cartSubBodyItems.insertAdjacentHTML('afterbegin', generateCartProduct(dataObj.img, dataObj.title, dataObj.priceString, dataObj.id, dataObj.count))
-			printCart()
-			cartNumb = cartSubBodyItems.children.length
-			priceTest.fullCount = cartNumb
-			localStorage.setItem('Full', JSON.stringify(priceTest))
-			cartMobileNumb.innerHTML = cartNumb
-			// funcCartMobile(cartNumb)
-			funcDisabled()
+			localStorage.clear()
+			// header.style.backgroundColor = "red"
+			// let self = e.currentTarget
+			// let parent = self.closest('.slider-menu__body')
+			// // elem.classList.add('disabled')
+			// let dataObj = {
+			// 	id: parent.dataset.id,
+			// 	title: parent.querySelector('.slider-menu__title').textContent,
+			// 	img: parent.querySelector('.slider-menu__img img').getAttribute('src'),
+			// 	priceString: priceWithoutSpaces(parent.querySelector('.slider-menu__price').textContent),
+			// 	priceNumber: parseInt(priceWithoutSpaces(parent.querySelector('.slider-menu__price').textContent)),
+			// 	count: parent.dataset.count,
+			// }
+			// const cartMobile = document.querySelector('.cart-mobile')
+			// data.push(dataObj)
+			// localStorage.setItem('Data', JSON.stringify(data))
+			// plusFullPrice(dataObj.priceNumber)
+			// printFullPrice()
+			// cartSubBodyItems.insertAdjacentHTML('afterbegin', generateCartProduct(dataObj.img, dataObj.title, dataObj.priceString, dataObj.id, dataObj.count))
+			// printCart()
+			// cartNumb = cartSubBodyItems.children.length
+			// priceTest.fullCount = cartNumb
+			// localStorage.setItem('Full', JSON.stringify(priceTest))
+			// cartMobileNumb.innerHTML = cartNumb
+			// // funcCartMobile(cartNumb)
+			// funcDisabled()
 		})
 	})
 }
@@ -928,29 +928,51 @@ if (formBtn) {
 	})
 }
 
+// const searcher = document.getElementById('searсher')
+
+
+const homeSlider = document.querySelector('.home-slider')
+// console.log(searсherBody)
 searcher.oninput = function (e) {
+	const searсherBody = document.querySelector('.searher')
+	if (!e.target.value.length == 0) {
+		// searсherBody.remove()
+		homeSlider.classList.add('searher')
+		console.log('remove')
+	} else {
+		homeSlider.classList.remove('searher')
+	}
+	console.log(e.target.value.length)
 	let searchData = [];
 	productBase.map(function (elem) {
 		const textTest = elem.title.toLowerCase()
 		const result = textTest.search(e.target.value.toLowerCase())
 		if (result !== -1 && e.target.value !== ' ') {
 			searchData.push(elem)
-			console.log(searchData)
+
 		}
 	})
-	// product.innerHTML = ''
-	// searchData.map(function (element) {
-	// 	product.insertAdjacentHTML('beforeend', `<div class = 'product-item'>
-	// 		<div class='item'>
-	// 			<img class = 'item__img' src="${element.img}" alt="">
-	// 			<h2 class = 'item__title'>${element.title}</h2>
-	// 			<p class = 'item__text'>${element.text}</p>
-	// 			<div>
-	// 				<button class = 'item__button'>${element.button}</button>
-	// 			</div>
-	// 		</div>
-	// 	</div>`)
-	// })
+
+	// searсherBody.innerHTML = ''
+	searchData.map(function (element) {
+		searсherBody.insertAdjacentHTML('beforeend', `<div class="slider-menu__slide">
+		<div data-id="${element.id}" class="slider-menu__body">
+			<a href="card-product.html" class="slider-menu__img">
+				<img src="${element.img}" alt="картинка">
+			</a>
+			<div class="slider-menu__block">
+				<div class="slider-menu__sub-block">
+					<h2 class="slider-menu__title">${element.title}</h2>
+					<div class="slider-menu__text">${element.text}</div>
+				</div>
+				<div class="slider-menu__items">
+					<div class="slider-menu__price">${element.price}</div>
+					<div class="slider-menu__btn">Хочу</div>
+				</div>
+			</div>
+		</div>`)
+	})
+	// funcPrintPage(searchData)
 }
 
 
