@@ -3799,6 +3799,20 @@ input[id="time"]:checked ~ .glider {
   }
 }
 
+@media (max-width: 768px) {
+  .cart-mobile {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cart-mobile svg {
+    width: 50px;
+    height: 50px;
+  }
+}
+
 .cart-mobile__numb {
   position: absolute;
   top: 0px;
@@ -3818,5 +3832,12 @@ input[id="time"]:checked ~ .glider {
           align-items: center;
   color: #ffffff;
   font-size: 24px;
+}
+
+@media (max-width: 768px) {
+  .cart-mobile__numb {
+    top: -10px;
+    left: -10px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

@@ -924,11 +924,34 @@ if (formBtn) {
 	formBtn.addEventListener('click', () => {
 		localStorage.clear()
 		cartSubBodyItems.remove()
-		data.length = 0
+		// data.length = 0
 	})
-
 }
 
+searcher.oninput = function (e) {
+	let searchData = [];
+	productBase.map(function (elem) {
+		const textTest = elem.title.toLowerCase()
+		const result = textTest.search(e.target.value.toLowerCase())
+		if (result !== -1 && e.target.value !== ' ') {
+			searchData.push(elem)
+			console.log(searchData)
+		}
+	})
+	// product.innerHTML = ''
+	// searchData.map(function (element) {
+	// 	product.insertAdjacentHTML('beforeend', `<div class = 'product-item'>
+	// 		<div class='item'>
+	// 			<img class = 'item__img' src="${element.img}" alt="">
+	// 			<h2 class = 'item__title'>${element.title}</h2>
+	// 			<p class = 'item__text'>${element.text}</p>
+	// 			<div>
+	// 				<button class = 'item__button'>${element.button}</button>
+	// 			</div>
+	// 		</div>
+	// 	</div>`)
+	// })
+}
 
 
 const checkboxCars = document.querySelectorAll('input[name="news"]')
