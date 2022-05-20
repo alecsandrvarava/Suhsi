@@ -3227,6 +3227,9 @@ display: -webkit-box;
 
 .sectionsets__search-list li:not(:last-child) {
   margin-bottom: 10px;
+}
+
+.sectionsets__search-list li {
   padding: 10px 0;
 }
 
