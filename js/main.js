@@ -813,17 +813,17 @@ if (sliderMenuBtn) {
 				count: parent.dataset.count,
 			}
 			const cartMobile = document.querySelector('.cart-mobile')
-			// data.push(dataObj)
-			// localStorage.setItem('Data', JSON.stringify(data))
+			data.push(dataObj)
+			localStorage.setItem('Data', JSON.stringify(data))
 			plusFullPrice(dataObj.priceNumber)
 			printFullPrice()
 			cartSubBodyItems.insertAdjacentHTML('afterbegin', generateCartProduct(dataObj.img, dataObj.title, dataObj.priceString, dataObj.id, dataObj.count))
 			printCart()
-			// 	cartNumb = cartSubBodyItems.children.length
-			// 	priceTest.fullCount = cartNumb
-			// 	localStorage.setItem('Full', JSON.stringify(priceTest))
-			// 	funcCartMobile(cartNumb)
-			// funcDisabled()
+			cartNumb = cartSubBodyItems.children.length
+			priceTest.fullCount = cartNumb
+			localStorage.setItem('Full', JSON.stringify(priceTest))
+			funcCartMobile(cartNumb)
+			funcDisabled()
 		})
 	})
 }
