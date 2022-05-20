@@ -743,7 +743,7 @@ const deleteProducts = (productParent) => {
 			if (el.count == 0) {
 				cartNumb = --cartSubBodyItems.children.length
 				localStorage.setItem('Full', JSON.stringify(priceTest))
-				funcCartMobile(cartNumb)
+				// funcCartMobile(cartNumb)
 				const sliderMenuBtn = document.querySelectorAll('.slider-menu__btn')
 				sliderMenuBtn.forEach(elem => {
 					let body = elem.closest('.slider-menu__body')
@@ -793,7 +793,7 @@ function funcPlusCount(productParent) {
 	printFullPrice()
 }
 const header = document.querySelector('.header__body')
-
+const cartMobileNumb = document.querySelector('.cart-mobile__numb')
 const sliderMenuBtn = document.querySelectorAll('.slider-menu__btn')
 if (sliderMenuBtn) {
 
@@ -822,7 +822,8 @@ if (sliderMenuBtn) {
 			cartNumb = cartSubBodyItems.children.length
 			priceTest.fullCount = cartNumb
 			localStorage.setItem('Full', JSON.stringify(priceTest))
-			funcCartMobile(cartNumb)
+			cartMobileNumb.innerHTML = cartNumb
+			// funcCartMobile(cartNumb)
 			funcDisabled()
 		})
 	})
@@ -864,11 +865,12 @@ if (sliderMenuBtn) {
 // 	})
 // }
 // funcSliderMenuBtn()
-const cartMobileNumb = document.querySelector('.cart-mobile__numb')
-function funcCartMobile(item) {
-	FullCount = JSON.parse(localStorage.getItem("Full"))
-	cartMobileNumb.innerHTML = item
-}
+
+
+// function funcCartMobile(item) {
+// 	// FullCount = JSON.parse(localStorage.getItem("Full"))
+// 	cartMobileNumb.innerHTML = item
+// }
 
 if (priceTest.fullCount > 0 && cartMobileNumb) {
 	FullCount = JSON.parse(localStorage.getItem("Full"))
