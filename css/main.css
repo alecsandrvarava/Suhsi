@@ -152,9 +152,9 @@ h6 {
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 768px) {
   .container-body {
-    padding: 0;
+    padding: 0px 15px 0 15px;
   }
 }
 
@@ -3269,12 +3269,18 @@ display: -webkit-box;
   display: grid;
   -ms-grid-columns: 70% 30%;
       grid-template-columns: 70% 30%;
+  overflow-y: scroll;
+  background-color: #f2f2f2;
+}
+
+@media (max-width: 991px) {
+  .checkout {
+    display: block;
+  }
 }
 
 .block1 {
   width: 100%;
-  height: 100vh;
-  background-color: #f2f2f2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3302,8 +3308,14 @@ display: -webkit-box;
 
 .block2 {
   width: 100%;
-  height: 100vh;
+  border-radius: 5px;
   background-color: #ffffff;
+}
+
+@media (max-width: 991px) {
+  .block2 {
+    display: none;
+  }
 }
 
 .block2__body {
@@ -3315,11 +3327,26 @@ display: -webkit-box;
   border-right: none;
 }
 
+.block1__title {
+  font-size: 36px;
+  text-align: center;
+  padding: 20px 0;
+}
+
 .form__items {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media (max-width: 768px) {
+  .form__items {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .form__item {
@@ -3329,12 +3356,30 @@ display: -webkit-box;
   width: 50%;
 }
 
+@media (max-width: 768px) {
+  .form__item {
+    width: 100%;
+  }
+}
+
 .form__item:last-child {
   padding-left: 10px;
 }
 
+@media (max-width: 768px) {
+  .form__item:last-child {
+    padding: 0;
+  }
+}
+
 .form__item:first-child {
   padding-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .form__item:first-child {
+    padding: 0;
+  }
 }
 
 .form__block {
@@ -3345,6 +3390,12 @@ display: -webkit-box;
   gap: 20px;
 }
 
+@media (max-width: 768px) {
+  .form__block {
+    gap: 10px;
+  }
+}
+
 .form__label {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 100%;
@@ -3353,8 +3404,20 @@ display: -webkit-box;
   margin-bottom: 20px;
 }
 
+@media (max-width: 768px) {
+  .form__label {
+    margin-bottom: 10px;
+  }
+}
+
 .form__label-grid:last-child {
   margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .form__label-grid:last-child {
+    margin-bottom: 10px;
+  }
 }
 
 .form__input, .form__input-text, .form__input-grid {
@@ -3389,6 +3452,12 @@ display: -webkit-box;
   width: 100%;
 }
 
+@media (max-width: 991px) {
+  .form__input-text {
+    margin-bottom: 10px;
+  }
+}
+
 .form__input-grid {
   width: 100%;
 }
@@ -3401,6 +3470,12 @@ display: -webkit-box;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .form__elem {
+    margin: 10px 0;
+  }
 }
 
 .form__text {
@@ -3421,6 +3496,12 @@ display: -webkit-box;
   gap: 20px;
 }
 
+@media (max-width: 768px) {
+  .form__grid {
+    gap: 10px;
+  }
+}
+
 .form__btn {
   width: 100%;
   padding: 9px 0;
@@ -3429,6 +3510,73 @@ display: -webkit-box;
   background-color: #ff9846;
   border-radius: 5px;
   margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (max-width: 991px) {
+  .flex {
+    margin-right: 0;
+  }
+}
+
+.header__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.items-header {
+  margin-bottom: 0;
+}
+
+.header__works,
+.header__citys {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px;
+}
+
+.header__works p,
+.header__citys p {
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+  .header__citys {
+    display: none;
+  }
+}
+
+.background {
+  background-color: #f2f2f2;
 }
 
 /* ------------------input radio--------------------*/
@@ -3440,6 +3588,12 @@ display: -webkit-box;
   background-color: #fff;
   border-radius: 5px;
   margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .tabs {
+    margin-bottom: 10px;
+  }
 }
 
 .tabs * {
@@ -3505,13 +3659,6 @@ input[id="time"]:checked ~ .glider {
   border-radius: 5px;
   -webkit-transition: 0.25s ease-out;
   transition: 0.25s ease-out;
-}
-
-@media (max-width: 700px) {
-  .tabs {
-    -webkit-transform: scale(0.6);
-            transform: scale(0.6);
-  }
 }
 
 .card-product {

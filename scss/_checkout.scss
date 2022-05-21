@@ -3,16 +3,24 @@
 .checkout {
 	display: grid;
 	grid-template-columns: 70% 30%;
+	overflow-y: scroll;
+	background-color: $color-bg-gray;
+	// min-height: 100%;
 	// margin-bottom: 50px;
+	@media (max-width: 991px) {
+		display: block;
+	}
 }
 .block1 {
+	// position: sticky;
 	width: 100%;
-	height: 100vh;
-	background-color: $color-bg-gray;
+	// height: 100%;
+	// background-color: $color-bg-gray;
 	display: flex;
 	flex-direction: column;
 	&__header {
 		flex: 0 0 auto;
+		// background-color: $color-bg-gray;
 	}
 	&__footer {
 		margin-bottom: 30px;
@@ -23,8 +31,12 @@
 }
 .block2 {
 	width: 100%;
-	height: 100vh;
+	border-radius: 5px;
+	// height: 100vh;
 	background-color: $color-white;
+	@media (max-width: 991px) {
+		display: none;
+	}
 	&__body {
 		width: 29%;
 		right: 0;
@@ -40,6 +52,9 @@
 	}
 
 	&__title {
+		font-size: 36px;
+		text-align: center;
+		padding: 20px 0;
 	}
 }
 .form {
@@ -47,17 +62,29 @@
 		width: 100%;
 		display: flex;
 		// margin: 0 -10px;
+		@media (max-width: 768px) {
+			flex-direction: column;
+		}
 	}
 
 	&__item {
 		flex: 1 1 50%;
 		// padding: 0 10px;
 		width: 50%;
+		@media (max-width: 768px) {
+			width: 100%;
+		}
 		&:last-child {
 			padding-left: 10px;
+			@media (max-width: 768px) {
+				padding: 0;
+			}
 		}
 		&:first-child {
 			padding-right: 10px;
+			@media (max-width: 768px) {
+				padding: 0;
+			}
 		}
 	}
 
@@ -65,16 +92,25 @@
 		display: flex;
 		width: 100%;
 		gap: 20px;
+		@media (max-width: 768px) {
+			gap: 10px;
+		}
 	}
 
 	&__label {
 		flex: 1 1 100%;
 		width: 100%;
 		margin-bottom: 20px;
+		@media (max-width: 768px) {
+			margin-bottom: 10px;
+		}
 		// max-width: 110px;
 	}
 	&__label-grid:last-child {
 		margin-bottom: 20px;
+		@media (max-width: 768px) {
+			margin-bottom: 10px;
+		}
 	}
 
 	&__input,
@@ -94,6 +130,9 @@
 	}
 	&__input-text {
 		width: 100%;
+		@media (max-width: 991px) {
+			margin-bottom: 10px;
+		}
 	}
 	&__input-grid {
 		width: 100%;
@@ -106,6 +145,9 @@
 		margin: 20px 0;
 		display: flex;
 		justify-content: space-between;
+		@media (max-width: 768px) {
+			margin: 10px 0;
+		}
 	}
 
 	&__text {
@@ -118,6 +160,9 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		gap: 20px;
+		@media (max-width: 768px) {
+			gap: 10px;
+		}
 	}
 
 	&__btn {
@@ -128,9 +173,46 @@
 		background-color: $color-orange;
 		border-radius: 5px;
 		margin-top: 20px;
+		margin-bottom: 20px;
+		@media (max-width: 768px) {
+		}
 	}
 }
-
+.flex {
+	display: flex;
+	flex-direction: column;
+	@media (max-width: 991px) {
+		margin-right: 0;
+	}
+}
+.header__block {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	// align-items: center;
+}
+.items-header {
+	margin-bottom: 0;
+}
+.header__works,
+.header__citys {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 5px;
+	& p {
+		text-align: center;
+	}
+}
+.header__citys {
+	@media (max-width: 991px) {
+		display: none;
+	}
+}
+.background {
+	background-color: $color-bg-gray;
+}
 /* ------------------input radio--------------------*/
 
 .tabs {
@@ -141,6 +223,9 @@
 	// padding: 9px;
 	border-radius: 5px;
 	margin-bottom: 20px;
+	@media (max-width: 768px) {
+		margin-bottom: 10px;
+	}
 	* {
 		z-index: 2;
 	}
@@ -206,7 +291,7 @@ input[id="time"] {
 
 @media (max-width: 700px) {
 	.tabs {
-		transform: scale(0.6);
+		// transform: scale(0.6);
 	}
 }
 
