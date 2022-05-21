@@ -194,7 +194,7 @@ if (swiperSlide) {
 	})
 	switcFunc(searchData)
 	activeSwiper()
-	funcMenuImg()
+	// funcMenuImg()
 	// funcCartProduct(searchData)
 	product.forEach(el => {
 		el.addEventListener('click', (e) => {
@@ -209,8 +209,8 @@ if (swiperSlide) {
 				switcFunc(searchData)
 				activeSwiper()
 				// funcSliderMenuBtn()
-				funcDisabled()
-				funcMenuImg()
+				// funcDisabled()
+
 			} else if (item.id = 'popular') {
 				productNew.classList.remove('_active')
 				productPopular.classList.add('_active')
@@ -218,10 +218,12 @@ if (swiperSlide) {
 				switcFunc(searchData)
 				activeSwiper()
 				// funcSliderMenuBtn()
-				funcDisabled()
-				funcMenuImg()
+				// funcDisabled()
+				// funcMenuImg()
 			}
 			funcSliderMenuBtn()
+			funcDisabled()
+			funcMenuImg()
 		})
 	});
 	// card-product.html
@@ -282,6 +284,7 @@ if (set) {
 if (swiperSlide) {
 	setData = productBase.filter((item) => {
 		funcMenuImg()
+		funcDisabled()
 		// return item.type === 'set'
 		// localStorage.removeItem("set")
 		if (item.name === 'popular') {
@@ -835,48 +838,6 @@ function funcSliderMenuBtn() {
 	})
 }
 funcSliderMenuBtn()
-// }
-// }
-// function funcSliderMenuBtn() {
-// 	const sliderMenuBtn = document.querySelectorAll('.slider-menu__btn')
-// 	sliderMenuBtn.forEach(elem => {
-
-// 		// elem.closest('.slider-menu__body').setAttribute('data-id', randomId())
-// 		elem.closest('.slider-menu__body').setAttribute('data-count', 1)
-// 		elem.addEventListener('click', (e) => {
-
-// 			let self = e.currentTarget
-// 			let parent = self.closest('.slider-menu__body')
-// 			// elem.classList.add('disabled')
-// 			let dataObj = {
-// 				id: parent.dataset.id,
-// 				title: parent.querySelector('.slider-menu__title').textContent,
-// 				img: parent.querySelector('.slider-menu__img img').getAttribute('src'),
-// 				priceString: priceWithoutSpaces(parent.querySelector('.slider-menu__price').textContent),
-// 				priceNumber: parseInt(priceWithoutSpaces(parent.querySelector('.slider-menu__price').textContent)),
-// 				count: parent.dataset.count,
-// 			}
-// 			data.push(dataObj)
-// 			localStorage.setItem('Data', JSON.stringify(data))
-// 			plusFullPrice(dataObj.priceNumber)
-// 			printFullPrice()
-// 			cartSubBodyItems.insertAdjacentHTML('afterbegin', generateCartProduct(dataObj.img, dataObj.title, dataObj.priceString, dataObj.id, dataObj.count))
-// 			printCart()
-// 			cartNumb = cartSubBodyItems.children.length
-// 			priceTest.fullCount = cartNumb
-// 			localStorage.setItem('Full', JSON.stringify(priceTest))
-// 			// funcCartMobile(cartNumb)
-// 			funcDisabled()
-// 		})
-// 	})
-// }
-// funcSliderMenuBtn()
-
-
-// function funcCartMobile(item) {
-// 	// FullCount = JSON.parse(localStorage.getItem("Full"))
-// 	cartMobileNumb.innerHTML = item
-// }
 
 if (priceTest.fullCount > 0 && cartMobileNumb) {
 	FullCount = JSON.parse(localStorage.getItem("Full"))
@@ -900,28 +861,6 @@ function funcDisabled() {
 }
 funcDisabled()
 
-
-
-// function funcDisabled() {
-// 	const sliderMenuBtn = document.querySelectorAll('.slider-menu__btn')
-// 	let id = ''
-// 	DataNews = JSON.parse(localStorage.getItem("Data"))
-// 	if (DataNews) {
-// 		DataNews.forEach(element => {
-// 			id = element.id
-// 		})
-// 	}
-// 	sliderMenuBtn.forEach(elem => {
-// 		let body = elem.closest('.slider-menu__body')
-// 		let idBtn = body.dataset.id
-// 		if (id == idBtn) {
-// 			elem.classList.add('disabled')
-// 		}
-// 	})
-// }
-// funcDisabled()
-
-
 const cart = document.querySelector('.cart-body')
 if (cart) {
 	cart.addEventListener('click', (e) => {
@@ -942,13 +881,11 @@ if (data.length > 0) {
 	});
 }
 
-
 const formBtn = document.querySelector('.form__btn')
 if (formBtn) {
 	formBtn.addEventListener('click', () => {
 		localStorage.clear()
 		cartSubBodyItems.remove()
-		// data.length = 0
 	})
 }
 const searcher = document.getElementById('searcher')
@@ -979,7 +916,6 @@ if (searcher) {
 			const result = textTest.search(e.target.value.toLowerCase())
 			if (result !== -1 && e.target.value !== ' ') {
 				searchData.push(elem)
-
 			}
 		})
 		searсherBody.innerHTML = ''
@@ -1004,12 +940,3 @@ if (searcher) {
 	}
 }
 
-
-
-
-const checkboxCars = document.querySelectorAll('input[name="news"]')
-checkboxCars.forEach(function (elem) {
-	elem.onclick = function () {
-		flag = this.dataset.flag
-	}
-})
