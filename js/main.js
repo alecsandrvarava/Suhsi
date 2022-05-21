@@ -704,6 +704,8 @@ const printCart = () => {
 		cartSubBody.classList.add('hidden')
 		localStorage.clear()
 		data.length = 0;
+		back.classList.remove('modal')
+		cartWrapper.classList.add('hidden')
 	} else if (price > 0) {
 		cartBodyWrapper.classList.add('hidden')
 		cartSubBody.classList.remove('hidden')
@@ -750,6 +752,7 @@ const deleteProducts = (productParent) => {
 			DataNewse = data.filter((el) => el.count !== 0);
 			if (el.count == 0) {
 				cartNumb = --cartSubBodyItems.children.length
+				cartMobileNumb.innerHTML = cartNumb
 				localStorage.setItem('Full', JSON.stringify(priceTest))
 				// funcCartMobile(cartNumb)
 				const sliderMenuBtn = document.querySelectorAll('.slider-menu__btn')
@@ -913,6 +916,7 @@ if (searcher) {
 				searсherBody.classList.add('hidden')
 			}
 		}
+
 		let searchData = [];
 		productBase.map(function (elem) {
 			const textTest = elem.title.toLowerCase()
@@ -940,6 +944,25 @@ if (searcher) {
 				</div>
 			</div>`)
 		})
+		funcSliderMenuBtn()
+		funcDisabled()
 	}
 }
 
+const cartWrapper = document.querySelector('.cart')
+const cartMobile = document.querySelector('.cart-mobile')
+const back = document.querySelector('.back')
+if (cartWrapper) {
+	if (screen.width < 991) {
+		// cartWrapper.classList.add('opacity')
+		cartWrapper.classList.add('hidden')
+	}
+}
+cartMobile.addEventListener('click', () => {
+	// cartWrapper.classList.toggle('opacity')
+	cartWrapper.classList.toggle('hidden')
+	if (cartSubBodyItems.children.length > 0) {
+		back.classList.toggle('modal')
+	}
+
+})
