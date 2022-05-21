@@ -3472,9 +3472,9 @@ display: -webkit-box;
           justify-content: space-between;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .form__elem {
-    margin: 10px 0;
+    margin: 15px 0;
   }
 }
 
@@ -3503,13 +3503,15 @@ display: -webkit-box;
 }
 
 .form__btn {
+  display: block;
   width: 100%;
-  padding: 9px 0;
-  font-size: 18px;
+  padding: 10px 0;
+  font-size: 24px;
+  text-align: center;
   color: #ffffff;
   background-color: #ff9846;
   border-radius: 5px;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 20px;
 }
 
