@@ -290,7 +290,7 @@
 		color: $color-white;
 		background-color: $color-orange;
 		cursor: pointer;
-		padding: 5px 5px;
+		padding: 5px;
 		font-size: 18px;
 		line-height: 18px;
 		display: inline-block;
@@ -298,14 +298,13 @@
 		transition: 0.3s;
 		@media (max-width: 1400px) {
 			font-size: 17px;
-			padding: 5px 3px;
 		}
 		&:hover {
 			background-color: $color-orange-btn;
 		}
-		@media (max-width: 1400px) {
-			font-size: 13px;
-		}
+		// @media (max-width: 1400px) {
+		// 	font-size: 13px;
+		// }
 	}
 }
 // .cart-body__title {

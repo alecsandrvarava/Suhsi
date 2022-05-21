@@ -152,8 +152,14 @@ h6 {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .container-body {
+    padding: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .body-container {
     padding: 0px 15px 0 15px;
   }
 }
@@ -2429,7 +2435,7 @@ display: -webkit-box;
   color: #ffffff;
   background-color: #ff9846;
   cursor: pointer;
-  padding: 5px 5px;
+  padding: 5px;
   font-size: 18px;
   line-height: 18px;
   display: inline-block;
@@ -2441,18 +2447,11 @@ display: -webkit-box;
 @media (max-width: 1400px) {
   .cart-sub-body__btn {
     font-size: 17px;
-    padding: 5px 3px;
   }
 }
 
 .cart-sub-body__btn:hover {
   background-color: #f46d40;
-}
-
-@media (max-width: 1400px) {
-  .cart-sub-body__btn {
-    font-size: 13px;
-  }
 }
 
 .disabled {
