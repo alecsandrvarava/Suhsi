@@ -41,6 +41,16 @@
 			line-height: 16px;
 			// padding: 15px 5px 15px 5px;
 		}
+		@media (max-width: 991px) {
+			font-size: 36px;
+			line-height: 16px;
+			// padding: 15px 5px 15px 5px;
+		}
+		@media (max-width: 768px) {
+			font-size: 26px;
+			line-height: 16px;
+			// padding: 15px 5px 15px 5px;
+		}
 	}
 	&__sub-title {
 		font-size: 20px;
@@ -314,11 +324,11 @@
 			}
 		}
 		@media (max-width: 768px) {
-			width: 35px;
-			height: 35px;
+			width: 30px;
+			height: 30px;
 			& svg {
-				width: 35px;
-				height: 35px;
+				width: 30px;
+				height: 30px;
 			}
 		}
 	}

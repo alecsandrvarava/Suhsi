@@ -75,9 +75,42 @@ const productPopular = document.getElementById('productPopular')
 
 const pageGrid = document.querySelector('.sectionsets__grid')
 const set = document.querySelector('.set')
+const pizza = document.querySelector('.pizza')
+const wok = document.querySelector('.wok')
+const rols = document.querySelector('.rols')
 let setData = []
 
 const productBase = [
+	{
+		name: 'new',
+		img: 'img/caesar.webp',
+		title: 'Цезар"',
+		feature: 'Лист салату, моцарела, соус Цезар, курка, пармезан, помідори черрі',
+		text: '30cm, 340грам',
+		price: '205 UAH',
+		type: 'pizza',
+		id: '0013',
+	},
+	{
+		name: 'new',
+		img: 'img/4-cheses.webp',
+		title: 'Чотири Сири',
+		feature: 'Вершкова основа, моцарела, пармезан, горгондзола, рiкота',
+		text: '30cm, 340грам',
+		price: '175 UAH',
+		type: 'pizza',
+		id: '0014',
+	},
+	{
+		name: 'new',
+		img: 'img/diablo.webp',
+		title: 'Diablo',
+		text: '30cm, 340грам',
+		feature: 'Томатна основа, моцарела, салямі Picanto',
+		price: '215 UAH',
+		type: 'pizza',
+		id: '0015',
+	},
 	{
 		name: 'new',
 		img: 'img/set-4.png',
@@ -122,6 +155,36 @@ const productBase = [
 		price: '990 UAH',
 		type: 'set',
 		id: '0005',
+	},
+	{
+		name: 'popular',
+		img: 'img/hunting.webp',
+		title: 'Мисливська',
+		text: '30cm, 340грам',
+		feature: 'Томатна основа, моцарела, мисливськi ковбаски, печерицi, пармезан',
+		price: '205 UAH',
+		type: 'pizza',
+		id: '0016',
+	},
+	{
+		name: 'popular',
+		img: 'img/margarita.webp',
+		title: 'Маргарита',
+		text: '30cm, 340грам',
+		feature: 'Томатна основа, моцарела, помідори, прованські трави',
+		price: '160 UAH',
+		type: 'pizza',
+		id: '0017',
+	},
+	{
+		name: 'popular',
+		img: 'img/white-mushrooms.webp',
+		title: 'З білими грибами',
+		text: '30cm, 340грам',
+		feature: 'Вершкова основа, моцарела, горгонзола, білі гриби',
+		price: '225 UAH',
+		type: 'pizza',
+		id: '0018',
 	},
 	{
 		name: 'popular',
@@ -245,16 +308,40 @@ if (swiperSlide) {
 		</div>`)
 		})
 	}
+	// const recommendations = document.querySelector('.recommendations')
+	// if (recommendations) {
+	// 	console.log('!!!!!!!!!!!!!!')
+	// 	function switcFunc(item) {
+	// 		swiperSlide.innerHTML = ''
+	// 		item.map(function (element) {
+	// 			swiperSlide.insertAdjacentHTML('beforeend', `<div class="slider-menu__slide swiper-slide recommendations__slide">
+	// 			<div data-id="${element.id}" class="slider-menu__body recommendations__body">
+	// 				<a href="card-product.html" class="slider-menu__img recommendations__img">
+	// 					<img src="${element.img}" alt="картинка">
+	// 				</a>
+	// 				<h2 class="slider-menu__title recommendations__title">${element.title}</h2>
+	// 				<div class="slider-menu__text recommendations__text">${element.text}</div>
+	// 				<div class="slider-menu__items recommendations__items">
+	// 					<div class="slider-menu__price recommendations__price">${element.price}</div>
+	// 					<div class="slider-menu__btn recommendations__btn">Хочу</div>
+	// 				</div>
+	// 			</div>
+	// 		</div>`)
+	// 		})
+	// 	}
+	// }
+
 
 	function activeSwiper() {
 		new Swiper(".slider-menu__swiper", {
 			slidesPerView: 3,
-			loopedSlides: 3,
-			spaceBetween: 30,
-			slidesPerGroup: 1,
-			loopAdditionalSlides: 3,
-			paginationClickable: true,
 			loop: true,
+			loopedSlides: 3,
+			loopAdditionalSlides: 3,
+			spaceBetween: 30,
+			slidesPerGroup: 3,
+			paginationClickable: true,
+
 			navigation: {
 				nextEl: ".swiper-button-next",
 				prevEl: ".swiper-button-prev",
@@ -270,15 +357,24 @@ if (swiperSlide) {
 	}
 }
 
-
-if (pageGrid) {
+if (pizza) {
 	setData = productBase.filter((item) => {
-		return item.type === 'set'
+		return item.type === 'pizza'
 	})
 }
 if (set) {
 	setData = productBase.filter((item) => {
 		return item.type === 'set'
+	})
+}
+if (wok) {
+	setData = productBase.filter((item) => {
+		return item.type === 'wok'
+	})
+}
+if (rols) {
+	setData = productBase.filter((item) => {
+		return item.type === 'rols'
 	})
 }
 if (swiperSlide) {
@@ -419,11 +515,24 @@ function compareNumericTest(a, b) {
 	if (numb2 < numb1) return -1;
 }
 let menuImgId = ''
+// function funcMenuImgData() {
+// 	const menuImg = document.querySelectorAll('.slider-menu__img')
+// 	menuImg.forEach(el => {
+// 		el.closest('.slider-menu__body').setAttribute('data-numb', 1)
+// 		el.addEventListener('click', (e) => {
+// 			console.log(el)
+// 		})
+// 	});
+// }
+// funcMenuImgData()
+
+
 function funcMenuImg() {
 	const menuImg = document.querySelectorAll('.slider-menu__img')
 	menuImg.forEach(el => {
 		el.closest('.slider-menu__body').setAttribute('data-numb', 1)
 		el.addEventListener('click', (e) => {
+			console.log(el)
 			let self = e.currentTarget
 			let parent = self.closest('.slider-menu__body')
 			let numb = +parent.dataset.numb
@@ -438,20 +547,8 @@ function funcMenuImg() {
 				// funcCartProduct(setData)
 				localStorage.setItem('set', JSON.stringify(setData));
 			});
-
-			// console.log(setData)
-			// setData.forEach(el => {
-
-			// 	el.numb = numb++
-			// 	console.log(setData)
-			// });
-
-			// id = 0
-			// console.log(id)
-			// setData.sort(compareNumericTest)
-			// // funcCartProduct(setData)
-			// localStorage.setItem('set', JSON.stringify(setData));
 		})
+
 	});
 }
 funcMenuImg()
@@ -495,7 +592,7 @@ function funcCartProduct(item) {
 				</div>
 				<div class="card-product__compound">
 					<div class="compound__title">Состав:</div>
-					<div class="compound__text">Лосось, сыр "Филадельфия", огурец, авокадо</div>
+					<div class="compound__text">${element.feature}</div>
 				</div>
 				<!-- <div class="card-product__button slider-menu__btn"> -->
 				<div class="slider-menu__btn card-product__btn">Хочу!</d>
@@ -705,7 +802,7 @@ const printCart = () => {
 		localStorage.clear()
 		data.length = 0;
 		back.classList.remove('modal')
-		cartWrapper.classList.add('hidden')
+		// cartWrapper.classList.add('hidden')
 	} else if (price > 0) {
 		cartBodyWrapper.classList.add('hidden')
 		cartSubBody.classList.remove('hidden')
@@ -764,19 +861,6 @@ const deleteProducts = (productParent) => {
 					}
 				})
 				productParent.remove()
-				// arr.forEach(function (element, index) {
-				// 	if (element.id == id) {
-				// 		arr.splice(index, 1)
-				// 		// const sliderMenuBtn = document.querySelectorAll('.slider-menu__btn')
-				// 		// sliderMenuBtn.forEach(elem => {
-				// 		// 	let body = elem.closest('.slider-menu__body')
-				// 		// 	let idBtn = body.dataset.id
-				// 		// 	if (element.id == idBtn) {
-				// 		// 		elem.classList.remove('disabled')
-				// 		// 	}
-				// 		// })
-				// 	}
-				// })
 			}
 		}
 	})
@@ -807,7 +891,6 @@ const header = document.querySelector('.header__body')
 const cartMobileNumb = document.querySelector('.cart-mobile__numb')
 
 
-// if (sliderMenuBtn) {
 function funcSliderMenuBtn() {
 	const sliderMenuBtn = document.querySelectorAll('.slider-menu__btn')
 	// console.log(sliderMenuBtn)
@@ -951,15 +1034,21 @@ if (searcher) {
 
 const cartWrapper = document.querySelector('.cart')
 const cartMobile = document.querySelector('.cart-mobile')
+const cartFooter = document.querySelector('.footer-cart')
 const back = document.querySelector('.back')
 if (cartWrapper) {
 	if (screen.width < 991) {
-		// cartWrapper.classList.add('opacity')
 		cartWrapper.classList.add('hidden')
 	}
 }
 cartMobile.addEventListener('click', () => {
-	// cartWrapper.classList.toggle('opacity')
+	cartWrapper.classList.toggle('hidden')
+	if (cartSubBodyItems.children.length > 0) {
+		back.classList.toggle('modal')
+	}
+
+})
+cartFooter.addEventListener('click', () => {
 	cartWrapper.classList.toggle('hidden')
 	if (cartSubBodyItems.children.length > 0) {
 		back.classList.toggle('modal')

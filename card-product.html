@@ -66,13 +66,13 @@
 									<li class="link-hidden"><a href="#">Отзывы</a> </li>
 									<li class="link-hidden"><a href="#">Доставка и оплата</a></li>
 								</ul>
-								<a class="search-link" id="search-link" href="#">
+								<!-- <a class="search-link" id="search-link" href="#">
 									<input id="searcher" type="text" maxlength="10" class="search hidden">
 									<svg class="svg" width="30" height="30">
 										<use xlink:href="img/sprite-icon.svg#search"></use>
 									</svg>
 									<!-- <a class="close hidden" href="#">X</a> -->
-								</a>
+								<!-- </a>  -->
 
 
 
@@ -173,32 +173,30 @@
 						</div>
 
 					</section>
-					<section class="recomend">
+
+					<!-- <section class="recommendations">
 						<div class="container-body">
-							<h3 class="recomend__title">Рекомендации к этому товару</h3>
+							<h3 class="recommendations__title">Рекомендуем к этому товару</h3>
 							<div class="slider-menu__swiper swiper">
-								<div id="swiperSlide" class="slider-menu__wrapper swiper-wrapper">
+								<div id="swiperSlide"
+									class="slider-menu__wrapper swiper-wrapper recommendations__swiper-wrapper">
 
 
 
-									<!-- <button class="slider-menu__btn">Хочу</button> -->
 								</div>
 							</div>
-							<div class="slider-menu__buttons">
-								<div class="slider-menu__button-next swiper-button-next"></div>
-								<div class="slider-menu__button-prev swiper-button-prev"></div>
-							</div>
 						</div>
-					</section>
+					</section> -->
 
 					<section class="cart-mobile">
-						<a href="checkout.html">
+						<div>
 							<span class="cart-mobile__numb">0</span>
 							<svg width="68" height="60">
 								<use xlink:href="img/sprite-icon.svg#cart"></use>
 							</svg>
-						</a>
+						</div>
 					</section>
+					<div class="back"></div>
 
 					<section class="description">
 
@@ -356,17 +354,16 @@
 	</div>
 
 	<div class="footer__mobile">
-		<div class="footer__mobile-link"><a href="#"><svg width="50" height="31">
+		<div class="footer__mobile-link"><a href="index.html"><svg width="50" height="31">
 					<use xlink:href="img/sprite-icon.svg#menu"></use>
 				</svg>
 				<p>Меню</p>
 			</a>
 		</div>
-		<div class="footer__mobile-link"><a href="#"><svg width="34" height="30">
-					<use xlink:href="img/sprite-icon.svg#cart"></use>
-				</svg>
-				<p>Корзина</p>
-			</a>
+		<div class="footer__mobile-link footer-cart"><svg width="34" height="30">
+				<use xlink:href="img/sprite-icon.svg#cart"></use>
+			</svg>
+			<p>Корзина</p>
 		</div>
 		<div class="footer__mobile-link"><a href="#"><svg width="32" height="30">
 					<use xlink:href="img/sprite-icon.svg#comment"></use>
