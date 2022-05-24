@@ -2894,13 +2894,13 @@ display: -webkit-box;
 
 @media (max-width: 400px) {
   .slider-menu__body {
-    height: 140px;
+    height: 150px;
   }
 }
 
 @media (max-width: 360px) {
   .slider-menu__body {
-    height: 130px;
+    height: 140px;
   }
 }
 
