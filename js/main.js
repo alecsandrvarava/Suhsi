@@ -115,6 +115,7 @@ const productBase = [
 		name: 'new',
 		img: 'img/set-4.png',
 		title: 'Сет "4 Филадельфии"',
+		feature: 'Лосось, сыр "Филадельфия", огурец, авокадо',
 		text: '1100 грамм 32 кусочек',
 		price: '550 UAH',
 		type: 'set',
@@ -124,6 +125,7 @@ const productBase = [
 		name: 'new',
 		img: 'img/set-5.png',
 		title: 'Сет "5 Филадельфий"',
+		feature: 'Лосось, сыр "Филадельфия", огурец, авокадо',
 		text: '1120 грамм 40 кусочек',
 		price: '900 UAH',
 		type: 'set',
@@ -133,6 +135,7 @@ const productBase = [
 		name: 'new',
 		img: 'img/set-6.png',
 		title: 'Сет "6 Филадельфий"',
+		feature: 'Лосось, сыр "Филадельфия", огурец, авокадо',
 		text: '1320 грамм 46 кусочек',
 		price: '1100 UAH',
 		type: 'set',
@@ -142,6 +145,7 @@ const productBase = [
 		name: 'new',
 		img: 'img/top-set.png',
 		title: 'Топовый сет',
+		feature: 'Лосось, сыр "Филадельфия", огурец, авокадо',
 		text: '1050 грамм, 30 кусочков',
 		price: '990 UAH',
 		type: 'set',
@@ -151,6 +155,7 @@ const productBase = [
 		name: 'new',
 		img: 'img/set-ikudza.png',
 		title: 'Якудза сет',
+		feature: 'Лосось, сыр "Филадельфия", огурец, авокадо',
 		text: '1270 грамм 50 кусочек',
 		price: '990 UAH',
 		type: 'set',
@@ -190,6 +195,7 @@ const productBase = [
 		name: 'popular',
 		img: 'img/product-base3.png',
 		title: 'Самая большая Филадельфия',
+		feature: 'Лосось, сыр "Филадельфия", огурец, авокадо',
 		text: '2050 грамм, 45 кусочков',
 		price: '600 UAH',
 		type: 'set',
@@ -199,6 +205,7 @@ const productBase = [
 		name: 'popular',
 		img: 'img/product-base1.png',
 		title: 'Соломон сет',
+		feature: 'Лосось, сыр "Филадельфия", огурец, авокадо',
 		text: '1050 грамм, 30 кусочков',
 		price: '450 UAH',
 		type: 'set',
@@ -208,6 +215,7 @@ const productBase = [
 		name: 'popular',
 		img: 'img/product-base2.png',
 		title: 'Филадельфия и лосось сет',
+		feature: 'Лосось, сыр "Филадельфия", огурец, авокадо',
 		text: '1260 грамм, 36 кусочков',
 		price: '400 UAH',
 		type: 'set',
@@ -217,6 +225,7 @@ const productBase = [
 		name: 'popular',
 		img: 'img/product-base3.png',
 		title: 'Большая Филадельфия',
+		feature: 'Лосось, сыр "Филадельфия", огурец, авокадо',
 		text: '2050 грамм, 45 кусочков',
 		price: '600 UAH',
 		type: 'set',
@@ -226,6 +235,7 @@ const productBase = [
 		name: 'popular',
 		img: 'img/product-base1.png',
 		title: 'Камикадзе сет',
+		feature: 'Лосось, сыр "Филадельфия", огурец, авокадо',
 		text: '1050 грамм, 30 кусочков',
 		price: '450 UAH',
 		type: 'set',
@@ -235,6 +245,7 @@ const productBase = [
 		name: 'popular',
 		img: 'img/product-base2.png',
 		title: 'Лосось сет',
+		feature: 'Лосось, сыр "Филадельфия", огурец, авокадо',
 		text: '1260 грамм, 36 кусочков',
 		price: '400 UAH',
 		type: 'set',
@@ -244,10 +255,131 @@ const productBase = [
 		name: 'popular',
 		img: 'img/product-base2.png',
 		title: 'Лосось top сет',
+		feature: 'Лосось, сыр "Филадельфия", огурец, авокадо',
 		text: '1260 грамм, 36 кусочков',
 		price: '400 UAH',
 		type: 'set',
 		id: '0012',
+	},
+	{
+		name: 'popular',
+		img: 'img/product-base2.png',
+		title: 'Лосось top сет',
+		feature: 'Лосось, сыр "Филадельфия", огурец, авокадо',
+		text: '1260 грамм, 36 кусочков',
+		price: '400 UAH',
+		type: 'wok',
+		id: '0019',
+	},
+	{
+		name: 'popular',
+		img: 'img/product-base2.png',
+		title: 'Лосось top сет',
+		feature: 'Лосось, сыр "Филадельфия", огурец, авокадо',
+		text: '1260 грамм, 36 кусочков',
+		price: '400 UAH',
+		type: 'wok',
+		id: '0020',
+	},
+	{
+		name: 'popular',
+		img: 'img/product-base2.png',
+		title: 'Лосось top сет',
+		feature: 'Лосось, сыр "Филадельфия", огурец, авокадо',
+		text: '1260 грамм, 36 кусочков',
+		price: '400 UAH',
+		type: 'wok',
+		id: '0021',
+	},
+	{
+		name: 'new',
+		img: 'img/product-base2.png',
+		title: 'Лосось top сет',
+		feature: 'Лосось, сыр "Филадельфия", огурец, авокадо',
+		text: '1260 грамм, 36 кусочков',
+		price: '400 UAH',
+		type: 'wok',
+		id: '0022',
+	},
+	{
+		name: 'new',
+		img: 'img/product-base2.png',
+		title: 'Лосось top сет',
+		feature: 'Лосось, сыр "Филадельфия", огурец, авокадо',
+		text: '1260 грамм, 36 кусочков',
+		price: '400 UAH',
+		type: 'wok',
+		id: '0023',
+	},
+	{
+		name: 'new',
+		img: 'img/product-base2.png',
+		title: 'Лосось top сет',
+		feature: 'Лосось, сыр "Филадельфия", огурец, авокадо',
+		text: '1260 грамм, 36 кусочков',
+		price: '400 UAH',
+		type: 'wok',
+		id: '0024',
+	},
+	{
+		name: 'popular',
+		img: 'img/product-base2.png',
+		title: 'Лосось top сет',
+		feature: 'Лосось, сыр "Филадельфия", огурец, авокадо',
+		text: '1260 грамм, 36 кусочков',
+		price: '400 UAH',
+		type: 'rols',
+		id: '0025',
+	},
+	{
+		name: 'popular',
+		img: 'img/product-base2.png',
+		title: 'Лосось top сет',
+		feature: 'Лосось, сыр "Филадельфия", огурец, авокадо',
+		text: '1260 грамм, 36 кусочков',
+		price: '400 UAH',
+		type: 'rols',
+		id: '0026',
+	},
+	{
+		name: 'popular',
+		img: 'img/product-base2.png',
+		title: 'Лосось top сет',
+		feature: 'Лосось, сыр "Филадельфия", огурец, авокадо',
+		text: '1260 грамм, 36 кусочков',
+		price: '400 UAH',
+		type: 'rols',
+		id: '0027',
+	},
+	{
+		name: 'new',
+		img: 'img/product-base2.png',
+		title: 'Лосось top сет',
+		feature: 'Лосось, сыр "Филадельфия", огурец, авокадо',
+		text: '1260 грамм, 36 кусочков',
+		price: '400 UAH',
+		type: 'rols',
+		id: '0028',
+	},
+	{
+		name: 'new',
+		img: 'img/product-base2.png',
+		title: 'Лосось top сет',
+		feature: 'Лосось, сыр "Филадельфия", огурец, авокадо',
+		text: '1260 грамм, 36 кусочков',
+		price: '400 UAH',
+		type: 'rols',
+		id: '0029',
+	},
+	{
+		name: 'new',
+		img: 'img/product-base2.png',
+		title: 'Лосось top сет',
+		feature: 'Лосось, сыр "Филадельфия", огурец, авокадо',
+		text: '1260 грамм, 36 кусочков',
+		price: '400 UAH',
+		type: 'rols',
+		id: '0030',
 	},
 ]
 let searchData = []
@@ -257,8 +389,6 @@ if (swiperSlide) {
 	})
 	switcFunc(searchData)
 	activeSwiper()
-	// funcMenuImg()
-	// funcCartProduct(searchData)
 	product.forEach(el => {
 		el.addEventListener('click', (e) => {
 			const item = e.currentTarget
@@ -289,7 +419,7 @@ if (swiperSlide) {
 			funcMenuImg()
 		})
 	});
-	// card-product.html
+
 	function switcFunc(item) {
 		swiperSlide.innerHTML = ''
 		item.map(function (element) {
@@ -308,29 +438,6 @@ if (swiperSlide) {
 		</div>`)
 		})
 	}
-	// const recommendations = document.querySelector('.recommendations')
-	// if (recommendations) {
-	// 	console.log('!!!!!!!!!!!!!!')
-	// 	function switcFunc(item) {
-	// 		swiperSlide.innerHTML = ''
-	// 		item.map(function (element) {
-	// 			swiperSlide.insertAdjacentHTML('beforeend', `<div class="slider-menu__slide swiper-slide recommendations__slide">
-	// 			<div data-id="${element.id}" class="slider-menu__body recommendations__body">
-	// 				<a href="card-product.html" class="slider-menu__img recommendations__img">
-	// 					<img src="${element.img}" alt="картинка">
-	// 				</a>
-	// 				<h2 class="slider-menu__title recommendations__title">${element.title}</h2>
-	// 				<div class="slider-menu__text recommendations__text">${element.text}</div>
-	// 				<div class="slider-menu__items recommendations__items">
-	// 					<div class="slider-menu__price recommendations__price">${element.price}</div>
-	// 					<div class="slider-menu__btn recommendations__btn">Хочу</div>
-	// 				</div>
-	// 			</div>
-	// 		</div>`)
-	// 		})
-	// 	}
-	// }
-
 
 	function activeSwiper() {
 		new Swiper(".slider-menu__swiper", {
@@ -381,8 +488,6 @@ if (swiperSlide) {
 	setData = productBase.filter((item) => {
 		funcMenuImg()
 		funcDisabled()
-		// return item.type === 'set'
-		// localStorage.removeItem("set")
 		if (item.name === 'popular') {
 			return item.name === 'popular'
 		} else if (item.name === 'new') {
@@ -413,13 +518,10 @@ function compareNumericQuantity(a, b) {
 }
 const searchBtn = document.querySelector('.sectionsets__search-btn')
 const search = document.querySelector('.sectionsets__search')
-// const searchList = document.querySelector('.sectionsets__search-list')
 const searchLinkList = document.querySelectorAll('.sectionsets__search-link')
 if (search) {
 	search.addEventListener('click', (e) => {
 		funcMenuImg()
-		// funcSliderMenuBtn()
-		// funcDisabled()
 		let list = e.currentTarget.querySelector('.sectionsets__search-list')
 		let arrow = e.currentTarget.querySelector('.sectionsets__arrow')
 		arrow.classList.toggle('turn')
@@ -430,55 +532,29 @@ if (search) {
 searchLinkList.forEach(element => {
 	element.addEventListener('click', (e) => {
 		console.log(element)
-		// list.classList.toggle('hidden')
-		// funcSliderMenuBtn()
-		// funcDisabled()
 		let elem = e.currentTarget.textContent
 		let sorting = e.currentTarget.dataset.sorting
 		searchBtn.innerHTML = elem
 		if (sorting == 'cheap') {
 			setData.sort(compareNumeric)
 			funcPrintPage(setData)
-
-			// funcDisabled()
-			// setData = JSON.parse(localStorage.getItem("set"))
-			// funcMenuImg()
 		} else if (sorting == 'expensive') {
 			setData.sort(compareNumericBig)
 			funcPrintPage(setData)
-			// funcSliderMenuBtn()
-			// funcDisabled()
-			// setData = JSON.parse(localStorage.getItem("set"))
-			// funcMenuImg()
 		} else if (sorting == 'quantity') {
 			setData.sort(compareNumericQuantity)
 			funcPrintPage(setData)
-			// funcSliderMenuBtn()
-			// funcDisabled()
 			console.log('vaga')
-			// setData = JSON.parse(localStorage.getItem("set"))
-			// funcMenuImg()
 		} else if (sorting == 'default') {
 			setData = productBase.filter((item) => {
 				return item.type === 'set'
-
-				// funcSliderMenuBtn()
-				// funcDisabled()
 			})
 			funcPrintPage(setData)
-			// funcSliderMenuBtn()
-			// funcDisabled()
-			// setData = JSON.parse(localStorage.getItem("set"))
-			// funcMenuImg()
-			// funcPrintPage(setData)
 		}
 		funcSliderMenuBtn()
 		funcDisabled()
-		// searchList.classList.toggle('hidden')
-		// arrow.classList.toggle('turn')
 	})
 });
-// card-product.html
 function funcPrintPage(item) {
 	pageGrid.innerHTML = ''
 	item.map(function (element) {
@@ -515,18 +591,6 @@ function compareNumericTest(a, b) {
 	if (numb2 < numb1) return -1;
 }
 let menuImgId = ''
-// function funcMenuImgData() {
-// 	const menuImg = document.querySelectorAll('.slider-menu__img')
-// 	menuImg.forEach(el => {
-// 		el.closest('.slider-menu__body').setAttribute('data-numb', 1)
-// 		el.addEventListener('click', (e) => {
-// 			console.log(el)
-// 		})
-// 	});
-// }
-// funcMenuImgData()
-
-
 function funcMenuImg() {
 	const menuImg = document.querySelectorAll('.slider-menu__img')
 	menuImg.forEach(el => {
@@ -548,15 +612,9 @@ function funcMenuImg() {
 				localStorage.setItem('set', JSON.stringify(setData));
 			});
 		})
-
 	});
 }
 funcMenuImg()
-
-
-
-
-
 
 const cardProduct = document.querySelector('.card-product__wrapper')
 function funcCartProduct(item) {
