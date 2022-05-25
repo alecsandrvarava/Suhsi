@@ -2745,6 +2745,7 @@ display: -webkit-box;
   .cart-sub-body__btn {
     font-size: 22px;
     padding: 10px 5px;
+    width: 60%;
   }
 }
 
@@ -3500,8 +3501,8 @@ display: -webkit-box;
           align-items: center;
   position: relative;
   right: -10px;
-  width: 175px;
-  padding: 5px;
+  width: 210px;
+  padding: 5px 0px 5px 0px;
   background-color: transparent;
   font-size: 18px;
   cursor: pointer;
