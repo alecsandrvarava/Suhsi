@@ -1073,6 +1073,7 @@ if (searcher) {
 		})
 		funcSliderMenuBtn()
 		funcDisabled()
+		funcMenuImg()
 	}
 }
 
