@@ -434,6 +434,7 @@ if (swiperSlide) {
 			// virtualTranslate: true,
 			// cssMode: false,
 			preventClicks: false,
+			shortSwipes: false,
 			navigation: {
 				nextEl: ".swiper-button-next",
 				prevEl: ".swiper-button-prev",
