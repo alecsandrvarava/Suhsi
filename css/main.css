@@ -2856,6 +2856,7 @@ display: -webkit-box;
   background-color: #ffffff;
   height: 400px;
   border-radius: 5px;
+  position: relative;
 }
 
 @media (max-width: 1400px) {
@@ -2944,29 +2945,6 @@ display: -webkit-box;
   margin-bottom: 20px;
   cursor: pointer;
   position: relative;
-}
-
-.slider-menu__img::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  background-color: #a4acad;
-  position: absolute;
-  bottom: -120px;
-  left: 0;
-}
-
-@media (max-width: 991px) {
-  .slider-menu__img::after {
-    bottom: -140px;
-  }
-}
-
-@media (max-width: 768px) {
-  .slider-menu__img::after {
-    display: none;
-  }
 }
 
 @media (max-width: 1400px) {

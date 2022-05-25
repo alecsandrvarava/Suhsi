@@ -38,7 +38,6 @@ const formSubmission = document.getElementById('formSubmission')
 // 		}
 // 	}
 // }
-
 const swiper = document.getElementById('swiper')
 if (swiper) {
 	new Swiper('.home-slider__swiper', {
@@ -380,7 +379,7 @@ if (swiperSlide) {
 				})
 				// funcCartProduct(searchData)
 				switcFunc(searchData)
-				activeSwiper()
+
 				// funcSliderMenuBtn()
 				// funcDisabled()
 
@@ -389,7 +388,7 @@ if (swiperSlide) {
 				productPopular.classList.add('_active')
 				// funcCartProduct(searchData)
 				switcFunc(searchData)
-				activeSwiper()
+				// activeSwiper()
 				// funcSliderMenuBtn()
 				// funcDisabled()
 				// funcMenuImg()
@@ -397,6 +396,7 @@ if (swiperSlide) {
 			funcSliderMenuBtn()
 			funcDisabled()
 			funcMenuImg()
+			activeSwiper()
 		})
 	});
 
@@ -421,14 +421,19 @@ if (swiperSlide) {
 
 	function activeSwiper() {
 		new Swiper(".slider-menu__swiper", {
+			// slideToClickedSlide: false,
 			slidesPerView: 3,
-			loop: true,
-			loopedSlides: 3,
-			loopAdditionalSlides: 3,
+			// loop: true,
+			// loopedSlides: 3,
+			// loopAdditionalSlides: 3,
 			spaceBetween: 30,
 			slidesPerGroup: 3,
-			paginationClickable: true,
-
+			// paginationClickable: true,
+			// clickable: true,
+			// grabCursor: true,
+			// virtualTranslate: true,
+			// cssMode: false,
+			preventClicks: false,
 			navigation: {
 				nextEl: ".swiper-button-next",
 				prevEl: ".swiper-button-prev",
@@ -438,7 +443,7 @@ if (swiperSlide) {
 			// 	disableOnInteraction: false,
 			// },
 			// speed: 1500,
-			// slideToClickedSlide: true,
+
 
 		})
 	}
@@ -466,7 +471,7 @@ if (rols) {
 }
 if (swiperSlide) {
 	setData = productBase.filter((item) => {
-		funcMenuImg()
+		// funcMenuImg()
 		funcDisabled()
 		if (item.name === 'popular') {
 			return item.name === 'popular'
@@ -474,6 +479,7 @@ if (swiperSlide) {
 			return item.name === 'new'
 		}
 	})
+	funcMenuImg()
 }
 function compareNumeric(a, b) {
 	let numb1 = parseInt(priceWithoutSpaces(a.price))
